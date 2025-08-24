@@ -5,6 +5,8 @@ import Card3D from '../card-3d';
 import SectionWrapper from '../section-wrapper';
 import { contactInfo } from '@/lib/data';
 import { useToast } from '@/hooks/use-toast';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const ContactContent = ({ isVisible }: { isVisible?: boolean }) => {
     const [status, setStatus] = useState('idle');
@@ -18,14 +20,41 @@ const ContactContent = ({ isVisible }: { isVisible?: boolean }) => {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setStatus('sending');
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        setStatus('success');
-        toast({
-            title: "✅ Message Sent!",
-            description: "Thanks for reaching out. I'll be in touch soon.",
-        });
-        (event.target as HTMLFormElement).reset();
-        setTimeout(() => setStatus('idle'), 4000);
+        
+        const form = event.target as HTMLFormElement;
+        const formData = new FormData(form);
+        const name = formData.get('name') as string;
+        const email = formData.get('email') as string;
+        const projectType = formData.get('projectType') as string;
+        const details = formData.get('details') as string;
+
+        try {
+            await addDoc(collection(db, "contacts"), {
+                name,
+                email,
+                projectType,
+                details,
+                createdAt: serverTimestamp(),
+            });
+            
+            setStatus('success');
+            toast({
+                title: "✅ Message Sent!",
+                description: "Thanks for reaching out. I'll be in touch soon.",
+            });
+            form.reset();
+
+        } catch (error) {
+            console.error("Error adding document: ", error);
+            setStatus('error');
+            toast({
+                title: "❌ Oops! Something went wrong.",
+                description: "Could not send your message. Please try again later.",
+                variant: 'destructive',
+            });
+        } finally {
+             setTimeout(() => setStatus('idle'), 4000);
+        }
     };
 
     if (!isVisible) return null;
