@@ -114,14 +114,8 @@ const HeroSection = () => {
             </div>
 
             <div className="max-w-6xl mx-auto text-center relative z-10">
-                <div className="mb-8">
-                    <span className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20 text-blue-300 text-sm font-semibold backdrop-blur-sm">
-                        <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                        Available for Full-Time & Freelance Projects
-                    </span>
-                </div>
 
-                <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
+                <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight pt-16">
                     <span className="gradient-text">Full-Stack Developer</span><br />
                     <span className="solution-text typing-cursor">{typingText}</span>
                 </h1>

@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect } from 'react';
+import { Button } from "./ui/button";
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -49,11 +50,10 @@ const Header = () => {
                             <a key={link.href} href={link.href} className="nav-link text-sm font-medium hover:text-blue-400 transition-colors">{link.label}</a>
                         ))}
                     </div>
-
-                    <div className="hidden md:flex items-center space-x-4">
-                        <div className="status-dot"></div>
-                        <span className="text-sm text-green-400 font-semibold">Available for Hire</span>
-                    </div>
+                    
+                    <a href="#contact" className="hidden md:block">
+                        <Button className="btn-primary rounded-xl">Contact Me</Button>
+                    </a>
                 </div>
             </div>
         </nav>

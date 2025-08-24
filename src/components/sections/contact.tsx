@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import Card3D from '../card-3d';
 import SectionWrapper from '../section-wrapper';
-import { contactInfo, availability } from '@/lib/data';
+import { contactInfo } from '@/lib/data';
 import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
-    const { toast } = useToast();
     const [status, setStatus] = useState('idle');
+    const { toast } = useToast();
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -18,25 +18,18 @@ const ContactSection = () => {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setStatus('sending');
-
-        // Simulate form submission
         await new Promise(resolve => setTimeout(resolve, 2000));
-        
         setStatus('success');
         toast({
             title: "✅ Message Sent!",
             description: "Thanks for reaching out. I'll be in touch soon.",
         });
-
         (event.target as HTMLFormElement).reset();
-
-        setTimeout(() => {
-            setStatus('idle');
-        }, 4000);
+        setTimeout(() => setStatus('idle'), 4000);
     };
 
-    const ContactContent = () => {
-        return (
+    return (
+        <SectionWrapper id="contact" className="py-32 px-6">
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-20">
                     <h2 className="text-5xl md:text-6xl font-black mb-8">
@@ -44,7 +37,6 @@ const ContactSection = () => {
                     </h2>
                     <p className="text-2xl text-gray-300 font-light">Ready to bring your ideas to life</p>
                 </div>
-
                 <div className="grid md:grid-cols-2 gap-16">
                     <div className="space-y-10">
                         <Card3D className="glass-card rounded-3xl p-10">
@@ -62,19 +54,6 @@ const ContactSection = () => {
                                         </div>
                                     </div>
                                 ))}
-                            </div>
-
-                            <div className="mt-10 pt-10 border-t border-white/10">
-                                <div className="text-center">
-                                    <div className="text-lg font-bold gradient-text mb-4">Available For</div>
-                                    <div className="flex justify-center space-x-4">
-                                        {availability.map((item, index) => (
-                                            <span key={index} className={`px-4 py-2 ${item.color} rounded-full text-sm font-semibold`}>
-                                                {item.label}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
                             </div>
                         </Card3D>
                     </div>
@@ -123,12 +102,6 @@ const ContactSection = () => {
                     </Card3D>
                 </div>
             </div>
-        );
-    }
-
-    return (
-        <SectionWrapper id="contact" className="py-32 px-6">
-            <ContactContent />
         </SectionWrapper>
     );
 };

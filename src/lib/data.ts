@@ -110,9 +110,3 @@ export const contactInfo = [
     { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/alexchen-dev', detail: 'Professional networking', color: 'text-blue-400' },
     { icon: '🐙', label: 'GitHub', value: 'github.com/alexchen', detail: 'Check out my code', color: 'text-purple-400' },
 ];
-
-export const availability = [
-    { label: 'Full-Time', color: 'bg-green-500/20 text-green-400' },
-    { label: 'Freelance', color: 'bg-blue-500/20 text-blue-400' },
-    { label: 'Consulting', color: 'bg-purple-500/20 text-purple-400' },
-];
