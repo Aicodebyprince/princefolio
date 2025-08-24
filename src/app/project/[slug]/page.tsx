@@ -1,18 +1,17 @@
 
 'use client';
 
-import React, { useContext } from 'react';
+import React from 'react';
 import { projects } from '@/lib/data';
-import { notFound, useParams } from 'next/navigation';
+import { notFound, useParams, useRouter } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import ProjectDetails from '@/components/sections/explore/project-details';
 import AnimatedBackground from '@/components/animated-background';
 import { Button } from '@/components/ui/button';
-import { TransitionContext } from '@/context/transition-context';
 
 export default function ProjectPage() {
     const params = useParams();
-    const { handleTransition } = useContext(TransitionContext);
+    const router = useRouter();
     const project = projects.find(p => p.slug === params.slug);
 
     if (!project) {
@@ -20,7 +19,7 @@ export default function ProjectPage() {
     }
 
     const handleBack = () => {
-        handleTransition('/explore?tab=projects');
+        router.push('/explore?tab=projects');
     };
 
     return (
