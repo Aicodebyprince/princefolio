@@ -52,8 +52,8 @@ const TransitionScreen = () => {
             }, 50);
 
             // --- Launch Sequence Orchestration ---
-            const rumbleDuration = 400; // Faster rumble
-            const launchDuration = 1000; // Faster launch
+            const rumbleDuration = 400; 
+            const launchDuration = 1000;
 
             // Stop the smoke burst after the rumble
             setTimeout(() => clearInterval(smokeInterval), rumbleDuration);
@@ -103,7 +103,7 @@ const TransitionScreen = () => {
                     overflow: hidden;
                     display: flex;
                     justify-content: center;
-                    align-items: center; /* Centered rocket */
+                    align-items: center;
                     animation: fadeIn 0.1s ease-out, camera-shake 0.4s ease-in-out, fadeOut 0.3s ease-in 1s forwards;
                 }
                 
@@ -153,7 +153,7 @@ const TransitionScreen = () => {
                     height: 200px;
                     display: flex;
                     justify-content: center;
-                    align-items: flex-end; /* Smoke at the bottom */
+                    align-items: flex-end;
                 }
 
                 .smoke {
@@ -179,8 +179,11 @@ const TransitionScreen = () => {
                 }
 
                 @keyframes launch {
-                    0% { transform: translateY(0); }
-                    100% { transform: translateY(-120vh); }
+                    0% { transform: translateY(0) scale(1); }
+                    10% { transform: translateY(0) scale(1.1); } /* Zoom pulse */
+                    20% { transform: translateY(-5px) scale(1.1); } /* Vibrate */
+                    30% { transform: translateY(0) scale(1.1); } /* Vibrate */
+                    100% { transform: translateY(-120vh) scale(0.5); }
                 }
 
                 @keyframes parallax-scroll {
