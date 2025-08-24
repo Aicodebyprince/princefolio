@@ -1,15 +1,29 @@
-import type { Metadata } from 'next';
+
+"use client";
+
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import AnimatedBackground from '@/components/animated-background';
 import ScrollProgress from '@/components/scroll-progress';
-import { TransitionProvider } from '@/context/transition-context';
+import { TransitionProvider, TransitionContext } from '@/context/transition-context';
 import TransitionScreen from '@/components/transition-screen';
+import { useContext } from 'react';
+import { cn } from '@/lib/utils';
+import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: 'Prince Sherathiya - Developer',
   description: 'Portfolio of Prince Sherathiya, a developer and Computer Science student.',
 };
+
+const AppContent = ({ children }: { children: React.ReactNode }) => {
+  const { isTransitioning, transitionFinished } = useContext(TransitionContext);
+  return (
+    <div className={cn({ 'opacity-0': isTransitioning && !transitionFinished })}>
+      {children}
+    </div>
+  )
+}
 
 export default function RootLayout({
   children,
@@ -27,7 +41,7 @@ export default function RootLayout({
         <TransitionProvider>
           <AnimatedBackground />
           <ScrollProgress />
-          {children}
+          <AppContent>{children}</AppContent>
           <Toaster />
           <TransitionScreen />
         </TransitionProvider>
