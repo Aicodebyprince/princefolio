@@ -1,5 +1,41 @@
-import { GraduationCap, School, Swords } from 'lucide-react';
+import { GraduationCap, School, Code, Layers, Paintbrush } from 'lucide-react';
 import React from 'react';
+
+export const services = [
+    {
+        title: "Mobile App Development",
+        description: "Creating high-performance, cross-platform mobile apps with a focus on user experience and scalability.",
+        icon: Code,
+        features: [
+            "Full-cycle development from idea to App Store/Play Store.",
+            "Clean, maintainable, and scalable code with Flutter & Dart.",
+            "Firebase integration for backend services (Auth, Firestore, etc.).",
+            "Integration of third-party APIs and services.",
+        ]
+    },
+    {
+        title: "UI/UX Design",
+        description: "Designing intuitive and beautiful user interfaces that are both user-friendly and aligned with your brand.",
+        icon: Paintbrush,
+        features: [
+            "User flow mapping and wireframing.",
+            "High-fidelity mockups and prototypes using Figma.",
+            "Responsive design for all screen sizes.",
+            "Focus on accessibility and usability best practices.",
+        ]
+    },
+    {
+        title: "API Development & Integration",
+        description: "Building and integrating robust RESTful APIs to power your applications with data and functionality.",
+        icon: Layers,
+        features: [
+            "Custom API development with Python (Django).",
+            "Integration of external APIs (payment gateways, social media, etc.).",
+            "Secure and efficient data handling.",
+            "Clear documentation for API endpoints.",
+        ]
+    }
+];
 
 export const skills = {
     mobile: [

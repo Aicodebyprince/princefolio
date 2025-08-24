@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
-import { ArrowLeft, Rss, LayoutTemplate, Code, Menu, GraduationCap, Briefcase, Swords } from 'lucide-react';
+import { ArrowLeft, Rss, LayoutTemplate, Code, Menu, GraduationCap, Briefcase, Swords, Layers } from 'lucide-react';
 import AllProjectsSection from './sections/explore/all-projects';
 import BlogSection from './sections/explore/blog';
 import DesignSection from './sections/explore/designs';
@@ -11,6 +11,7 @@ import JourneySectionExplore from './sections/explore/journey';
 import AllExperiencesSection from './sections/explore/all-experiences';
 import { useRouter, useSearchParams } from 'next/navigation';
 import HackathonsSection from './sections/explore/hackathons';
+import AllServicesSection from './sections/explore/all-services';
 
 type ExploreViewProps = {
   onBackClick: () => void;
@@ -40,6 +41,7 @@ const ExploreView = ({ onBackClick, initialTab = 'projects' }: ExploreViewProps)
     { id: 'experience', label: 'My Experience', icon: <Briefcase className="w-5 h-5" /> },
     { id: 'journey', label: 'My Journey', icon: <GraduationCap className="w-5 h-5" /> },
     { id: 'hackathons', label: 'Hackathons', icon: <Swords className="w-5 h-5" /> },
+    { id: 'services', label: 'Services', icon: <Layers className="w-5 h-5" /> },
     { id: 'blog', label: 'Blog', icon: <Rss className="w-5 h-5" /> },
     { id: 'designs', label: 'Design Templates', icon: <LayoutTemplate className="w-5 h-5" /> },
   ];
@@ -54,6 +56,8 @@ const ExploreView = ({ onBackClick, initialTab = 'projects' }: ExploreViewProps)
         return <JourneySectionExplore />;
       case 'hackathons':
         return <HackathonsSection />;
+      case 'services':
+        return <AllServicesSection />;
       case 'blog':
         return <BlogSection />;
       case 'designs':

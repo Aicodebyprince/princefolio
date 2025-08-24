@@ -10,6 +10,7 @@ import ProjectsSection from "@/components/sections/projects";
 import SkillsSection from "@/components/sections/skills";
 import Footer from "@/components/footer";
 import JourneySection from '@/components/sections/journey';
+import ServicesSection from '@/components/sections/services';
 import { useRouter } from 'next/navigation';
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         <HeroSection onExploreClick={() => handleExploreClick('projects')} />
         <AboutSection />
         <SkillsSection />
+        <ServicesSection />
         <ProjectsSection onExploreClick={() => handleExploreClick('projects')} />
         <ExperienceSection />
         <JourneySection onExploreClick={() => handleExploreClick('journey')} />
