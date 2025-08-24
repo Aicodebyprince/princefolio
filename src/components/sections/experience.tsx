@@ -6,15 +6,8 @@ import SectionWrapper from '../section-wrapper';
 import { experiences } from '@/lib/data';
 import { Button } from '../ui/button';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
-const ExperienceContent = ({ isVisible }: { isVisible?: boolean }) => {
-    const router = useRouter();
-
-    const handleExploreClick = () => {
-        router.push('/explore?tab=experience');
-    };
-
+const ExperienceContent = ({ isVisible, onExploreClick }: { isVisible?: boolean, onExploreClick: () => void }) => {
     if (!isVisible) return null;
     return (
         <div className="max-w-6xl mx-auto">
@@ -47,7 +40,7 @@ const ExperienceContent = ({ isVisible }: { isVisible?: boolean }) => {
                                     </li>
                                 ))}
                             </ul>
-                            <Button className="btn-primary" onClick={handleExploreClick}>
+                            <Button className="btn-primary" onClick={onExploreClick}>
                                 Explore My Work →
                             </Button>
                         </div>
@@ -59,9 +52,9 @@ const ExperienceContent = ({ isVisible }: { isVisible?: boolean }) => {
 }
 
 
-const ExperienceSection = () => (
+const ExperienceSection = ({ onExploreClick }: { onExploreClick: () => void }) => (
     <SectionWrapper id="experience" className="py-32 px-6">
-        <ExperienceContent />
+        <ExperienceContent onExploreClick={onExploreClick} />
     </SectionWrapper>
 );
 

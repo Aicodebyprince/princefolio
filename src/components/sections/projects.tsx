@@ -72,11 +72,9 @@ const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => voi
             </div>
 
             <div className="text-center mt-16">
-                 <Link href="/explore">
-                    <Button className="btn-primary">
-                        Explore All Projects
-                    </Button>
-                 </Link>
+                 <Button className="btn-primary" onClick={onExploreClick}>
+                    Explore All Projects
+                </Button>
             </div>
         </div>
     );

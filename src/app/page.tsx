@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from "@/components/header";
 import AboutSection from "@/components/sections/about";
 import ContactSection from "@/components/sections/contact";
@@ -12,11 +12,14 @@ import Footer from "@/components/footer";
 import JourneySection from '@/components/sections/journey';
 import ServicesSection from '@/components/sections/services';
 import { useRouter } from 'next/navigation';
+import { TransitionContext } from '@/context/transition-context';
 
 export default function Home() {
   const router = useRouter();
+  const { handleTransition } = useContext(TransitionContext);
+
   const handleExploreClick = (tab: string = 'projects') => {
-    router.push(`/explore?tab=${tab}`);
+    handleTransition(`/explore?tab=${tab}`);
   };
 
   return (
@@ -26,9 +29,9 @@ export default function Home() {
         <HeroSection onExploreClick={() => handleExploreClick('projects')} />
         <AboutSection />
         <SkillsSection />
-        <ServicesSection />
+        <ServicesSection onExploreClick={() => handleExploreClick('services')} />
         <ProjectsSection onExploreClick={() => handleExploreClick('projects')} />
-        <ExperienceSection />
+        <ExperienceSection onExploreClick={() => handleExploreClick('experience')} />
         <JourneySection onExploreClick={() => handleExploreClick('journey')} />
         <ContactSection />
       </main>

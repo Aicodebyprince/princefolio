@@ -7,7 +7,7 @@ import { services } from '@/lib/data';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 
-const ServicesContent = ({ isVisible }: { isVisible?: boolean }) => {
+const ServicesContent = ({ isVisible, onExploreClick }: { isVisible?: boolean, onExploreClick: () => void }) => {
     if (!isVisible) return null;
 
     return (
@@ -36,19 +36,17 @@ const ServicesContent = ({ isVisible }: { isVisible?: boolean }) => {
                 })}
             </div>
             <div className="text-center mt-20">
-                <Link href="/explore?tab=services">
-                    <Button className="btn-primary">
-                        Explore All Services
-                    </Button>
-                </Link>
+                <Button className="btn-primary" onClick={onExploreClick}>
+                    Explore All Services
+                </Button>
             </div>
         </div>
     );
 };
 
-const ServicesSection = () => (
+const ServicesSection = ({ onExploreClick }: { onExploreClick: () => void }) => (
     <SectionWrapper id="services" className="py-32 px-6">
-        <ServicesContent />
+        <ServicesContent onExploreClick={onExploreClick} />
     </SectionWrapper>
 );
 
