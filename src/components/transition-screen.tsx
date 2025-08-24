@@ -13,7 +13,7 @@ const TransitionScreen = () => {
 
             <style jsx>{`
                 .rocket-container {
-                    animation: launch 1.5s ease-out forwards;
+                    animation: launch 0.8s ease-out forwards;
                 }
 
                 .rocket {
@@ -30,7 +30,7 @@ const TransitionScreen = () => {
                     border-radius: 50%;
                     transform: translate(-50%, -50%);
                     opacity: 0;
-                    animation: blast 1s ease-in forwards 1.5s;
+                    animation: blast 0.7s ease-in forwards 0.8s;
                 }
 
                 @keyframes launch {
