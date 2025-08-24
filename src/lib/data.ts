@@ -71,6 +71,29 @@ export const experiences = [
     }
 ];
 
+export const education = [
+    {
+        degree: 'MSc in Computer Science',
+        college: 'Mithibai College',
+        period: '2022 - 2024',
+        details: [
+            'Specialized in advanced algorithms and mobile application development.',
+            'Led a team project to develop a campus-wide event management app.',
+            'Published a research paper on AI-driven data analysis.',
+        ],
+    },
+    {
+        degree: 'BSc in Information Technology',
+        college: 'RMC College',
+        period: '2019 - 2022',
+        details: [
+            'Graduated with First Class honors.',
+            'Developed a library management system as a final year project.',
+            'Active member of the college coding club, organized multiple hackathons.',
+        ],
+    },
+];
+
 export const contactInfo = [
     { icon: '📧', label: 'Email', value: 'princesher321@gmail.com', detail: 'Usually respond within 24 hours', color: 'text-green-400', link: 'mailto:princesher321@gmail.com' },
     { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/princesherathiya', detail: 'Professional networking', color: 'text-blue-400', link: 'https://www.linkedin.com/in/princesherathiya/' },
