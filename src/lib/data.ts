@@ -96,8 +96,8 @@ export const projects: Project[] = [
         tags: ['Flutter', 'Firebase', 'Dart', 'State Management', 'UI/UX'],
         stat: 'Full-cycle Flutter development',
         screenshots: [
-            { url: '/projects/college-app-1.png', dataAiHint: 'mobile app login' },
-            { url: '/projects/college-app-2.png', dataAiHint: 'dashboard analytics' },
+            { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Screenshot%202025-01-27%20135532.png?alt=media&token=0099cb45-d057-4ebe-bcb5-8fbb6b7ea79c', dataAiHint: 'mobile app screen' },
+            { url: 'https://placehold.co/1280x720.png', dataAiHint: 'dashboard analytics' },
         ],
         features: [
             "Real-time student-teacher interaction via chat.",
