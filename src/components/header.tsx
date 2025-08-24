@@ -3,7 +3,6 @@
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect } from 'react';
 import { Button } from "./ui/button";
-import Link from "next/link";
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -49,9 +48,7 @@ const Header = () => {
 
                     <div className="hidden md:flex items-center space-x-8">
                         {navLinks.map(link => (
-                             <Link key={link.href} href={link.href} passHref>
-                                <span className="nav-link text-sm font-medium hover:text-blue-400 transition-colors cursor-pointer">{link.label}</span>
-                            </Link>
+                             <a key={link.href} href={link.href} className="nav-link text-sm font-medium hover:text-blue-400 transition-colors cursor-pointer">{link.label}</a>
                         ))}
                     </div>
                     
