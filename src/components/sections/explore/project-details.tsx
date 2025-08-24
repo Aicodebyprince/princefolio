@@ -23,19 +23,21 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                 </div>
             </header>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.screenshots?.map((ss, index) => (
-                     <div key={index} className="glass-card rounded-lg overflow-hidden p-2">
-                        <Image
-                            src={ss.url}
-                            alt={`${project.title} Screenshot ${index + 1}`}
-                            width={1280}
-                            height={720}
-                            className="rounded-md"
-                            data-ai-hint={ss.dataAiHint}
-                        />
-                    </div>
-                ))}
+            <div className="max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {project.screenshots?.map((ss, index) => (
+                         <div key={index} className="glass-card rounded-lg overflow-hidden p-2">
+                            <Image
+                                src={ss.url}
+                                alt={`${project.title} Screenshot ${index + 1}`}
+                                width={1280}
+                                height={720}
+                                className="rounded-md"
+                                data-ai-hint={ss.dataAiHint}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12">
