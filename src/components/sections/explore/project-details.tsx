@@ -78,6 +78,7 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                                     stopOnInteraction: false,
                                     stopOnMouseEnter: false,
                                     stopOnLastSnap: false,
+                                    direction: role.role === 'visitors' || role.role === 'teachers' ? 'backward' : 'forward',
                                 })
                             ]}
                             className="w-full"
