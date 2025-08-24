@@ -72,7 +72,7 @@ export const experiences = [
 ];
 
 export const contactInfo = [
-    { icon: '📧', label: 'Email', value: 'sherathiyaprince@gmail.com', detail: 'Usually respond within 24 hours', color: 'text-green-400', link: 'mailto:sherathiyaprince@gmail.com' },
+    { icon: '📧', label: 'Email', value: 'princesher321@gmail.com', detail: 'Usually respond within 24 hours', color: 'text-green-400', link: 'mailto:princesher321@gmail.com' },
     { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/princesherathiya', detail: 'Professional networking', color: 'text-blue-400', link: 'https://www.linkedin.com/in/princesherathiya/' },
     { icon: '🐙', label: 'GitHub', value: 'github.com/Aicodebyprince', detail: 'Check out my code', color: 'text-purple-400', link: 'https://github.com/Aicodebyprince' },
 ];
