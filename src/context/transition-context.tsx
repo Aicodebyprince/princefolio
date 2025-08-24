@@ -21,10 +21,10 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
         setIsTransitioning(true);
         setTimeout(() => {
             router.push(path);
-        }, 800); // Match this to animation duration
+        }, 400); // Match this to animation duration
         setTimeout(() => {
             setIsTransitioning(false);
-        }, 1500); // A bit longer to allow for fade out
+        }, 900); // A bit longer to allow for fade out
     };
 
     return (
