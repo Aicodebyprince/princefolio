@@ -476,7 +476,7 @@ body {
 .journey-card {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 24px;
-    padding: 40px 30px;
+    padding: 24px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -487,6 +487,19 @@ body {
     transform: translateY(50px);
     animation: cardSlideIn 0.8s ease forwards;
 }
+
+@media (min-width: 768px) {
+  .journey-card {
+    padding: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .journey-card {
+    padding: 40px 30px;
+  }
+}
+
 
 .journey-card:nth-child(1) { animation-delay: 0.2s; }
 .journey-card:nth-child(2) { animation-delay: 0.4s; }
@@ -541,8 +554,8 @@ body {
 }
 
 .card-icon {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
     display: flex;
@@ -553,6 +566,13 @@ body {
     position: relative;
     z-index: 2;
     transition: all 0.4s ease;
+}
+
+@media (min-width: 1024px) {
+  .card-icon {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 .card-icon::before {
@@ -615,6 +635,10 @@ body {
   
   .glass-card:hover {
       transform: translateY(-4px) scale(1.01);
+  }
+
+  .nav-bar {
+    display: none;
   }
 }
 

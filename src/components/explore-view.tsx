@@ -95,7 +95,7 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
     <div className="bg-black text-white h-screen w-screen flex antialiased overflow-hidden">
       {/* Sidebar */}
       <nav className={cn(
-        "bg-gray-900/50 backdrop-blur-lg border-r border-white/10 transition-all duration-300 ease-in-out flex flex-col",
+        "bg-gray-900/50 backdrop-blur-lg border-r border-white/10 transition-all duration-300 ease-in-out flex-col hidden md:flex",
         isSidebarOpen ? 'w-64' : 'w-20'
       )}>
         <div className={cn("flex items-center border-b border-white/10 transition-all", isSidebarOpen ? 'p-4 h-16 justify-between' : 'p-4 h-16 justify-center')}>
@@ -132,12 +132,33 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
       {/* Main Content */}
       <main className="flex-grow overflow-y-auto relative">
         <div className="absolute inset-0 bg-grid-pattern opacity-10 animate-pan"></div>
-        <div className="relative z-10 p-8 md:p-12">
+        <div className="relative z-10 p-6 md:p-12">
            <Suspense fallback={<LoadingSkeleton />}>
             {renderContent()}
           </Suspense>
         </div>
       </main>
+
+      {/* Mobile Bottom Bar */}
+       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-gray-900/80 backdrop-blur-lg border-t border-white/10 z-50">
+           <div className="flex justify-around items-center p-2">
+               {navItems.slice(0, 5).map((item) => (
+                   <Button
+                       key={item.id}
+                       variant="ghost"
+                       onClick={() => handleTabChange(item.id)}
+                       className={cn(
+                           'flex flex-col items-center justify-center h-16 w-16 rounded-lg transition-colors text-xs',
+                           activeTab === item.id ? 'text-accent' : 'text-gray-400'
+                       )}
+                   >
+                       {item.icon}
+                       <span className="mt-1">{item.label.split(' ')[0]}</span>
+                   </Button>
+               ))}
+           </div>
+       </div>
+
 
       <style jsx>{`
         .bg-grid-pattern {

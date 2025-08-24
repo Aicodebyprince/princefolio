@@ -104,7 +104,7 @@ const HeroSection = ({ onExploreClick, onNavigate }: { onExploreClick: (tab: str
     }, []);
 
     return (
-        <section id="home" ref={sectionRef} className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden section-fade" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(50px)' }}>
+        <section id="home" ref={sectionRef} className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 relative overflow-hidden section-fade" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(50px)' }}>
             <div className="absolute top-20 left-10 floating-element">
                 <div className="w-20 h-20 bg-gradient-to-br from-red-500/20 to-orange-600/20 rounded-full blur-xl"></div>
             </div>
@@ -117,16 +117,16 @@ const HeroSection = ({ onExploreClick, onNavigate }: { onExploreClick: (tab: str
 
             <div className="max-w-6xl mx-auto text-center relative z-10">
 
-                <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight pt-16">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 md:mb-8 leading-tight pt-16">
                     <span className="gradient-text">Prince Sherathiya</span><br />
                     <span className="solution-text typing-cursor">{typingText}</span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+                <p className="text-lg md:text-xl text-gray-300 mb-10 md:mb-12 max-w-4xl mx-auto leading-relaxed font-light">
                     MSc Computer Science student with a passion for building beautiful and functional applications.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-16 md:mb-20">
                     <Button onClick={() => onExploreClick('projects')} className="btn-primary px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
                         <span className="relative z-10">Explore More</span>
                     </Button>
@@ -141,9 +141,9 @@ const HeroSection = ({ onExploreClick, onNavigate }: { onExploreClick: (tab: str
                     </a>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
                     {STATS.map(stat => (
-                        <Card3D key={stat.label} className="glass-card rounded-2xl p-6">
+                        <Card3D key={stat.label} className="glass-card rounded-2xl p-4 sm:p-6">
                             <AnimatedCounter target={stat.count} isVisible={isVisible} />
                             <div className="text-xs text-gray-400 uppercase tracking-wider font-semibold">{stat.label}</div>
                         </Card3D>
