@@ -17,6 +17,7 @@ const ProblemSolvingSection = dynamic(() => import('./sections/explore/problem-s
 const HackathonsSection = dynamic(() => import('./sections/explore/hackathons'));
 const AllServicesSection = dynamic(() => import('./sections/explore/all-services'));
 const DesignSection = dynamic(() => import('./sections/explore/designs'));
+const BlogSection = dynamic(() => import('./sections/explore/blog'));
 
 type ExploreViewProps = {
   onBackClick: () => void;
@@ -64,6 +65,7 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
     { id: 'hackathons', label: 'Hackathons', icon: <Swords className="w-5 h-5" /> },
     { id: 'services', label: 'Services', icon: <Layers className="w-5 h-5" /> },
     { id: 'designs', label: 'Design Templates', icon: <LayoutTemplate className="w-5 h-5" /> },
+    { id: 'blog', label: 'Blog', icon: <Rss className="w-5 h-5" /> },
   ];
 
   const renderContent = () => {
@@ -82,6 +84,8 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
         return <AllServicesSection />;
       case 'designs':
         return <DesignSection />;
+      case 'blog':
+        return <BlogSection />;
       default:
         return null;
     }
