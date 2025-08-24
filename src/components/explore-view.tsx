@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
-import { ArrowLeft, Rss, LayoutTemplate, Code, Menu, GraduationCap, Briefcase, Swords, Layers } from 'lucide-react';
+import { ArrowLeft, Rss, LayoutTemplate, Code, Menu, GraduationCap, Briefcase, Swords, Layers, Puzzle } from 'lucide-react';
 import AllProjectsSection from './sections/explore/all-projects';
 import BlogSection from './sections/explore/blog';
 import DesignSection from './sections/explore/designs';
@@ -12,6 +12,7 @@ import AllExperiencesSection from './sections/explore/all-experiences';
 import { useRouter, useSearchParams } from 'next/navigation';
 import HackathonsSection from './sections/explore/hackathons';
 import AllServicesSection from './sections/explore/all-services';
+import ProblemSolvingSection from './sections/explore/problem-solving';
 
 type ExploreViewProps = {
   onBackClick: () => void;
@@ -40,6 +41,7 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
     { id: 'projects', label: 'All Projects', icon: <Code className="w-5 h-5" /> },
     { id: 'experience', label: 'My Experience', icon: <Briefcase className="w-5 h-5" /> },
     { id: 'journey', label: 'My Journey', icon: <GraduationCap className="w-5 h-5" /> },
+    { id: 'problem-solving', label: 'Problem Solving', icon: <Puzzle className="w-5 h-5" /> },
     { id: 'hackathons', label: 'Hackathons', icon: <Swords className="w-5 h-5" /> },
     { id: 'services', label: 'Services', icon: <Layers className="w-5 h-5" /> },
     { id: 'blog', label: 'Blog', icon: <Rss className="w-5 h-5" /> },
@@ -54,6 +56,8 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
         return <AllExperiencesSection />;
       case 'journey':
         return <JourneySectionExplore />;
+      case 'problem-solving':
+        return <ProblemSolvingSection />;
       case 'hackathons':
         return <HackathonsSection />;
       case 'services':

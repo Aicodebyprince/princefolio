@@ -1,4 +1,4 @@
-import { GraduationCap, School, Code, Layers, Paintbrush } from 'lucide-react';
+import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle } from 'lucide-react';
 import React from 'react';
 
 export const services = [
@@ -330,5 +330,29 @@ export const hackathons = [
         outcome: "1st Place Winner",
         tags: ["Django", "Python", "JavaScript", "Web"],
         link: "#"
+    }
+];
+
+export const problemSolving = [
+    {
+        platform: "LeetCode",
+        stat: "150+ Problems Solved",
+        description: "Consistently solving problems across various difficulty levels, focusing on data structures and algorithms to improve efficiency and code quality.",
+        link: "#",
+        tags: ["Algorithms", "Data Structures", "Hard", "Medium"]
+    },
+    {
+        platform: "HackerRank",
+        stat: "5-Star Gold Badge",
+        description: "Achieved a 5-star rating in the problem-solving domain, demonstrating proficiency in logical reasoning and implementation.",
+        link: "#",
+        tags: ["Problem Solving", "Python", "Java", "SQL"]
+    },
+    {
+        platform: "Codeforces",
+        stat: "Pupil Rating",
+        description: "Regularly participate in competitive programming contests, tackling complex challenges under time constraints to sharpen my skills.",
+        link: "#",
+        tags: ["Competitive Programming", "Math", "Algorithms"]
     }
 ];
