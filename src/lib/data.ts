@@ -96,8 +96,8 @@ export const projects: Project[] = [
         tags: ['Flutter', 'Firebase', 'Dart', 'State Management', 'UI/UX'],
         stat: 'Full-cycle Flutter development',
         screenshots: [
-            { url: 'https://placehold.co/1280x720.png', dataAiHint: 'mobile app login' },
-            { url: 'https://placehold.co/1280x720.png', dataAiHint: 'dashboard analytics' },
+            { url: '/projects/college-app-1.png', dataAiHint: 'mobile app login' },
+            { url: '/projects/college-app-2.png', dataAiHint: 'dashboard analytics' },
         ],
         features: [
             "Real-time student-teacher interaction via chat.",
