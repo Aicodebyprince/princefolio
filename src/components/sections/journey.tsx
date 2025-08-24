@@ -5,62 +5,51 @@ import SectionWrapper from '../section-wrapper';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { journeyData } from '@/lib/data';
-import Card3D from '../card-3d';
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
+import { cn } from '@/lib/utils';
 
 const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void }> = ({ isVisible, onExploreClick }) => {
     if (!isVisible) return null;
 
     return (
-        <div className="max-w-6xl mx-auto">
+        <div className="container mx-auto">
             <div className="text-center mb-20">
-                <h2 className="text-3xl md:text-4xl font-black mb-8">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-5">
                     My Academic <span className="gradient-text">Journey</span>
                 </h2>
-                <p className="text-lg text-gray-300 font-light">From foundational principles to advanced specialization.</p>
+                <p className="text-lg md:text-xl text-gray-400 font-light max-w-3xl mx-auto">
+                    Transforming curiosity into expertise through continuous learning and academic excellence.
+                </p>
             </div>
 
-            <Carousel
-                opts={{
-                    align: "start",
-                }}
-                className="w-full"
-            >
-                <CarouselContent>
+            <div className="journey-timeline">
+                <div className="timeline-line hidden lg:block">
+                    <div className="timeline-progress"></div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative z-[2]">
                     {journeyData.map((item, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                            <div className="p-1 h-full">
-                                <Card3D className="glass-card rounded-3xl p-6 h-full flex flex-col justify-between">
-                                    <div>
-                                        <div className="flex items-center mb-4">
-                                            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 via-purple-600/20 to-pink-500/20 flex items-center justify-center text-white shadow-lg ring-4 ring-black mr-4">
-                                                {item.icon}
-                                            </div>
-                                            <div>
-                                                <h3 className="text-lg font-bold gradient-text">{item.college}</h3>
-                                                <p className="text-md text-gray-300 font-semibold">{item.degree}</p>
-                                            </div>
-                                        </div>
-                                        <p className="text-sm font-semibold text-blue-400 mb-2">{item.period}</p>
-                                        <p className="text-xs text-gray-400">{item.description}</p>
-                                    </div>
-                                </Card3D>
+                        <div 
+                            key={index}
+                            className="journey-card"
+                            style={{ animationDelay: `${0.2 * (index + 1)}s` }}
+                        >
+                            <div className="achievement-badge"></div>
+                            <div className="relative mx-auto mb-8 w-[90px] h-[90px]">
+                                <div className="card-icon">
+                                    {React.cloneElement(item.icon, { size: 40 })}
+                                </div>
                             </div>
-                        </CarouselItem>
+                            <h3 className="text-xl font-bold text-white mb-3 leading-tight z-[2] relative">{item.college}</h3>
+                            <p className="text-base text-gray-400 font-medium mb-5 z-[2] relative">{item.degree}</p>
+                            <span className="text-sm font-semibold text-blue-400 z-[2] relative bg-blue-500/10 px-4 py-2 rounded-full border border-blue-500/20">
+                                {item.period}
+                            </span>
+                        </div>
                     ))}
-                </CarouselContent>
-                <CarouselPrevious className="hidden md:flex"/>
-                <CarouselNext className="hidden md:flex"/>
-            </Carousel>
+                </div>
+            </div>
 
-
-            <div className="text-center mt-20">
+             <div className="text-center mt-20">
                 <Link href="/explore?tab=journey">
                     <Button className="btn-solve">
                         Explore Full Journey →
