@@ -2,12 +2,12 @@
 
 import React from 'react';
 import ExploreView from '@/components/explore-view';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function ExplorePage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const initialTab = searchParams.get('tab') || 'projects';
 
-  // The 'initialTab' logic can be handled via search params if needed in the future.
-  // For now, we'll just show the default tab.
-  return <ExploreView onBackClick={() => router.push('/')} initialTab="projects" />;
+  return <ExploreView onBackClick={() => router.push('/')} initialTab={initialTab} />;
 }

@@ -1,13 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
-import { ArrowLeft, Rss, LayoutTemplate, Code, Menu, GraduationCap } from 'lucide-react';
+import { ArrowLeft, Rss, LayoutTemplate, Code, Menu, GraduationCap, Briefcase } from 'lucide-react';
 import AllProjectsSection from './sections/explore/all-projects';
 import BlogSection from './sections/explore/blog';
 import DesignSection from './sections/explore/designs';
 import { cn } from '@/lib/utils';
 import JourneySectionExplore from './sections/explore/journey';
+import AllExperiencesSection from './sections/explore/all-experiences';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 type ExploreViewProps = {
   onBackClick: () => void;
@@ -17,9 +19,24 @@ type ExploreViewProps = {
 const ExploreView = ({ onBackClick, initialTab = 'projects' }: ExploreViewProps) => {
   const [activeTab, setActiveTab] = useState(initialTab);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const tab = searchParams.get('tab');
+    if (tab && tab !== activeTab) {
+      setActiveTab(tab);
+    }
+  }, [searchParams, activeTab]);
+
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId);
+    router.replace(`/explore?tab=${tabId}`, { scroll: false });
+  }
 
   const navItems = [
     { id: 'projects', label: 'All Projects', icon: <Code className="w-5 h-5" /> },
+    { id: 'experience', label: 'My Experience', icon: <Briefcase className="w-5 h-5" /> },
     { id: 'journey', label: 'My Journey', icon: <GraduationCap className="w-5 h-5" /> },
     { id: 'blog', label: 'Blog', icon: <Rss className="w-5 h-5" /> },
     { id: 'designs', label: 'Design Templates', icon: <LayoutTemplate className="w-5 h-5" /> },
@@ -29,6 +46,8 @@ const ExploreView = ({ onBackClick, initialTab = 'projects' }: ExploreViewProps)
     switch (activeTab) {
       case 'projects':
         return <AllProjectsSection />;
+      case 'experience':
+        return <AllExperiencesSection />;
       case 'journey':
         return <JourneySectionExplore />;
       case 'blog':
@@ -58,7 +77,7 @@ const ExploreView = ({ onBackClick, initialTab = 'projects' }: ExploreViewProps)
             <Button
               key={item.id}
               variant={activeTab === item.id ? 'secondary' : 'ghost'}
-              onClick={() => setActiveTab(item.id)}
+              onClick={() => handleTabChange(item.id)}
               className={cn(
                 'w-full flex items-center justify-start text-sm font-medium rounded-lg transition-colors',
                 activeTab === item.id ? 'bg-white/10' : 'hover:bg-white/10',

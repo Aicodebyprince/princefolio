@@ -6,8 +6,15 @@ import SectionWrapper from '../section-wrapper';
 import { experiences } from '@/lib/data';
 import { Button } from '../ui/button';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const ExperienceContent = ({ isVisible }: { isVisible?: boolean }) => {
+    const router = useRouter();
+
+    const handleExploreClick = () => {
+        router.push('/explore?tab=experience');
+    };
+
     if (!isVisible) return null;
     return (
         <div className="max-w-6xl mx-auto">
@@ -40,11 +47,9 @@ const ExperienceContent = ({ isVisible }: { isVisible?: boolean }) => {
                                     </li>
                                 ))}
                             </ul>
-                            <Link href={exp.path}>
-                                <Button className="btn-primary">
-                                    Explore My Work →
-                                </Button>
-                            </Link>
+                            <Button className="btn-primary" onClick={handleExploreClick}>
+                                Explore My Work →
+                            </Button>
                         </div>
                     </Card3D>
                 ))}
