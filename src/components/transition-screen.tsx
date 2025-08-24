@@ -26,7 +26,7 @@ const TransitionScreen = () => {
                         width: `${size}px`,
                         height: `${size}px`,
                         animationDelay: `${Math.random() * 2}s`,
-                        animationDuration: `${Math.random() * 2 + 1}s` // Slower parallax for depth
+                        animationDuration: `${Math.random() * 2 + 1}s`
                     }
                 });
             }
@@ -81,7 +81,6 @@ const TransitionScreen = () => {
                 <div className="rocket-container">
                     <div className="rocket">
                         <Rocket className="w-full h-full text-white" style={{ filter: 'drop-shadow(0 0 10px #667eea)'}} />
-                        <div className="exhaust-flame"></div>
                     </div>
                 </div>
 
@@ -130,17 +129,6 @@ const TransitionScreen = () => {
                     height: 170px;
                     position: relative;
                 }
-                
-                .exhaust-flame {
-                    position: absolute;
-                    bottom: -50px;
-                    left: 50%;
-                    width: 25px;
-                    background: linear-gradient(to top, #ffaf4d, transparent);
-                    border-radius: 50% 50% 0 0;
-                    filter: blur(5px);
-                    animation: flicker 0.1s infinite, flame-scale 0.4s ease-out forwards;
-                }
 
                 .smoke-container {
                     position: absolute;
@@ -176,7 +164,7 @@ const TransitionScreen = () => {
 
                 @keyframes launch {
                     0% { transform: translateY(100vh) scale(0.5); }
-                    20% { transform: translateY(0) scale(1); }
+                    20% { transform: translateY(0vh) scale(1.1); }
                     30% { transform: translateY(0) scale(1.1); }
                     40% { transform: translateY(-5px) scale(1.1); }
                     50% { transform: translateY(0) scale(1.1); }
@@ -191,16 +179,6 @@ const TransitionScreen = () => {
                 @keyframes star-move {
                     from { transform: translateY(0px); }
                     to { transform: translateY(-2000px); }
-                }
-
-                @keyframes flicker {
-                    0%, 100% { transform: translateX(-50%) scale(1, 1); }
-                    50% { transform: translateX(-50%) scale(0.9, 1.1); }
-                }
-
-                @keyframes flame-scale {
-                    0% { height: 0; opacity: 0; }
-                    100% { height: 75px; opacity: 1; }
                 }
                 
                 @keyframes smoke-plume {
