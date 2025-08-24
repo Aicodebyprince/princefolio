@@ -11,15 +11,17 @@ import { useContext } from 'react';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 
+// Note: Metadata is not used in a client component, but we can keep it here for reference.
 const metadata: Metadata = {
   title: 'Prince Sherathiya - Developer',
   description: 'Portfolio of Prince Sherathiya, a developer and Computer Science student.',
 };
 
 const AppContent = ({ children }: { children: React.ReactNode }) => {
-  const { isTransitioning, transitionFinished } = useContext(TransitionContext);
+  const { isTransitioning } = useContext(TransitionContext);
+  // Hide content during the transition animation to prevent flashes of old/new pages.
   return (
-    <div className={cn({ 'opacity-0': isTransitioning && !transitionFinished })}>
+    <div className={cn({ 'opacity-0': isTransitioning })}>
       {children}
     </div>
   )
@@ -41,9 +43,9 @@ export default function RootLayout({
         <TransitionProvider>
           <AnimatedBackground />
           <ScrollProgress />
+          <TransitionScreen />
           <AppContent>{children}</AppContent>
           <Toaster />
-          <TransitionScreen />
         </TransitionProvider>
       </body>
     </html>

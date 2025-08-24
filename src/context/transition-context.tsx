@@ -23,7 +23,8 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
     const pathname = usePathname();
 
     useEffect(() => {
-        // Reset transition state when route change is complete
+        // This effect runs on the client after hydration.
+        // It ensures that when the user navigates back/forward, our state is correct.
         setTransitionFinished(true);
     }, [pathname]);
 
@@ -35,11 +36,12 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
 
         setTimeout(() => {
             router.push(path);
-        }, 500);
+        }, 500); // Duration of the initial part of the animation
 
+        // Corresponds to the total animation time before it fades out
         setTimeout(() => {
             setIsTransitioning(false);
-        }, 1400);
+        }, 1400); 
     };
 
     return (
