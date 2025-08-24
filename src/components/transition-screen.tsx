@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useContext, useEffect, useState } from 'react';
@@ -165,9 +166,6 @@ const TransitionScreen = () => {
                 @keyframes launch {
                     0% { transform: translateY(100vh) scale(0.5); }
                     20% { transform: translateY(0vh) scale(1.1); }
-                    30% { transform: translateY(0) scale(1.1); }
-                    40% { transform: translateY(-5px) scale(1.1); }
-                    50% { transform: translateY(0) scale(1.1); }
                     100% { transform: translateY(-120vh) scale(0.5); }
                 }
 
