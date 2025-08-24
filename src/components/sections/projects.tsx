@@ -3,7 +3,7 @@
 import React from 'react';
 import SectionWrapper from '../section-wrapper';
 import { projects } from '@/lib/data';
-import { GitBranch, HelpingHand, BookOpen } from 'lucide-react';
+import { GitBranch, HelpingHand, BookOpen, ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 
@@ -30,37 +30,18 @@ const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => voi
                 {featuredProjects.map((project, index) => {
                     const ProjectIcon = iconMap[project.icon];
                     return (
-                        <div key={index} className="project-showcase project-card rounded-2xl overflow-hidden">
-                            <div className="h-48 bg-gradient-to-br from-blue-500/10 via-purple-600/10 to-pink-500/10 flex items-center justify-center relative">
-                                <div className="text-center">
-                                    {ProjectIcon && <ProjectIcon className="text-white mx-auto mb-3" size={48} />}
-                                    <div className="text-md font-bold">{project.category}</div>
-                                </div>
-                                <div className="project-overlay">
-                                    <div className="text-center p-4">
-                                        <h4 className="text-xl font-bold mb-4">{project.title}</h4>
-                                        <p className="text-xs mb-6 opacity-90 leading-relaxed">{project.shortDescription}</p>
-                                        <div className="flex flex-col gap-3 justify-center">
-                                            {project.slug && (
-                                                <Link href={`/project/${project.slug}`} passHref>
-                                                    <Button className="w-full bg-white text-black px-5 py-2 rounded-lg font-bold text-xs hover:bg-gray-200 transition-all">
-                                                        View Case Study
-                                                    </Button>
-                                                </Link>
-                                            )}
-                                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="w-full bg-white/20 text-white px-5 py-2 rounded-lg font-bold text-xs hover:bg-white/30 transition-all">
-                                                GitHub
-                                            </a>
-                                            {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="w-full border-2 border-white px-5 py-2 rounded-lg text-xs font-bold hover:bg-white/10 transition-all">
-                                                Live Demo
-                                            </a>}
-                                        </div>
+                        <div key={index} className="project-card rounded-2xl flex flex-col">
+                            <div className="p-6 flex-grow">
+                                <div className="flex items-center gap-4 mb-4">
+                                     <div className="bg-white/10 p-3 rounded-lg">
+                                        {ProjectIcon && <ProjectIcon className="w-6 h-6 text-accent" />}
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-white">{project.title}</h3>
+                                        <p className="text-sm text-gray-400">{project.category}</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="p-6">
-                                <h3 className="text-md font-bold mb-3 gradient-text">{project.title}</h3>
-                                <p className="text-gray-400 mb-4 text-xs leading-relaxed">
+                                <p className="text-gray-400 text-sm mb-4">
                                     {project.description}
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
@@ -72,6 +53,29 @@ const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => voi
                                     <GitBranch className="w-4 h-4 mr-2" />
                                     {project.stat}
                                 </div>}
+                            </div>
+                            <div className="p-6 mt-auto border-t border-white/10 space-y-3">
+                                {project.slug && (
+                                     <Link href={`/project/${project.slug}`} passHref>
+                                        <Button className="w-full btn-solve">
+                                            View Case Study <ArrowRight />
+                                        </Button>
+                                    </Link>
+                                )}
+                                <div className="flex gap-3">
+                                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="w-full">
+                                        <Button variant="outline" className="w-full text-gray-300 border-white/20 hover:bg-white/10 hover:text-white">
+                                            GitHub <ExternalLink />
+                                        </Button>
+                                    </a>
+                                    {project.liveUrl && (
+                                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="w-full">
+                                            <Button variant="outline" className="w-full text-gray-300 border-white/20 hover:bg-white/10 hover:text-white">
+                                                Live Demo
+                                            </Button>
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     )
