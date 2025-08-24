@@ -4,23 +4,27 @@ import React from 'react';
 import SectionWrapper from '../section-wrapper';
 import { Button } from '../ui/button';
 import Link from 'next/link';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, Briefcase } from 'lucide-react';
 
 const JourneyContent = ({ isVisible }: { isVisible?: boolean }) => {
     if (!isVisible) return null;
 
-    const journeyCards = [
+    const journeyData = [
         {
             college: "RMC College",
             degree: "BSc in Information Technology",
             period: "2019 - 2022",
-            link: "/rmc-journey"
+            link: "/rmc-journey",
+            icon: <GraduationCap />,
+            description: "Built a strong foundation in IT, covering core concepts of programming, databases, and networking."
         },
         {
             college: "Mithibai College",
             degree: "MSc in Computer Science",
             period: "2022 - 2024",
-            link: "/mithibai-journey"
+            link: "/mithibai-journey",
+            icon: <GraduationCap />,
+            description: "Specialized in advanced computer science topics, with a focus on mobile application development and AI."
         }
     ];
 
@@ -35,20 +39,41 @@ const JourneyContent = ({ isVisible }: { isVisible?: boolean }) => {
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12">
-                {journeyCards.map((card, index) => (
-                    <div key={index} className="project-card rounded-3xl p-10 h-full flex flex-col justify-between items-center text-center">
-                        <div className="mb-6">
-                            <GraduationCap className="w-16 h-16 text-blue-400 mx-auto mb-4" />
-                            <h3 className="text-3xl font-bold gradient-text">{card.college}</h3>
-                            <p className="text-xl text-gray-300 font-semibold mt-2">{card.degree}</p>
-                            <p className="text-md text-gray-400 mt-1">{card.period}</p>
+            <div className="relative">
+                {/* Vertical Line */}
+                <div className="absolute left-1/2 -ml-px w-0.5 h-full bg-white/10" aria-hidden="true"></div>
+
+                {journeyData.map((item, index) => (
+                    <div key={index} className="relative mb-12">
+                        <div className="flex items-center justify-between">
+                            <div className={`w-[calc(50%-2rem)] text-right pr-8 ${index % 2 === 1 ? 'order-1' : ''}`}>
+                                {/* Content for one side */}
+                            </div>
+                            <div className="relative z-10">
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg ring-8 ring-gray-900">
+                                    {React.cloneElement(item.icon, { size: 32 })}
+                                </div>
+                            </div>
+                            <div className={`w-[calc(50%-2rem)] pl-8 ${index % 2 === 0 ? 'order-1' : ''}`}>
+                                {/* Content for the other side */}
+                            </div>
                         </div>
-                        <Link href={card.link}>
-                            <Button className="btn-solve">
-                                Explore My {card.college} Journey →
-                            </Button>
-                        </Link>
+
+                        <div className={`w-[calc(50%-4rem)] mx-auto p-1`}>
+                            <div className={`glass-card p-6 rounded-2xl text-center`}>
+                                 <p className="text-lg font-semibold text-blue-400 mb-2">{item.period}</p>
+                                <h3 className="text-2xl font-bold gradient-text">{item.college}</h3>
+                                <p className="text-lg text-gray-300 font-semibold mt-1">{item.degree}</p>
+                                <p className="text-sm text-gray-400 mt-3">{item.description}</p>
+                                <div className="mt-6">
+                                    <Link href={item.link}>
+                                        <Button className="btn-solve">
+                                            Explore Journey →
+                                        </Button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
