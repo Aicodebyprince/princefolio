@@ -19,12 +19,15 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
 
     const handleTransition = (path: string) => {
         setIsTransitioning(true);
+        // Page change logic
         setTimeout(() => {
             router.push(path);
-        }, 400); // Match this to animation duration
+        }, 800); // Corresponds to rumble animation
+
+        // End of animation cleanup
         setTimeout(() => {
             setIsTransitioning(false);
-        }, 900); // A bit longer to allow for fade out
+        }, 2000); // Total animation duration
     };
 
     return (
