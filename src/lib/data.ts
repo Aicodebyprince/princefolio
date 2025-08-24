@@ -163,6 +163,7 @@ export const journeyData = [
         period: "2022 - 2024",
         icon: React.createElement(GraduationCap),
         description: "Specialized in advanced computer science topics, with a focus on mobile application development and AI.",
+        path: "/mithibai-journey",
         highlights: [
             {
                 type: 'academic',
@@ -197,6 +198,7 @@ export const journeyData = [
         period: "2019 - 2022",
         icon: React.createElement(GraduationCap),
         description: "Built a strong foundation in IT, covering core concepts of programming, databases, and networking.",
+        path: "/rmc-journey",
         highlights: [
             {
                 type: 'academic',

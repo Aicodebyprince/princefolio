@@ -2,10 +2,8 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { GraduationCap } from 'lucide-react';
 import { journeyData } from '@/lib/data';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import JourneyDetails from './journey-details';
+import Link from 'next/link';
 
 const JourneySectionExplore = () => {
     return (
@@ -19,38 +17,30 @@ const JourneySectionExplore = () => {
 
             <div className="max-w-4xl mx-auto space-y-8">
                 {journeyData.map((item, index) => (
-                    <Sheet key={index}>
-                        <div className="glass-card rounded-2xl p-8">
-                            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                                <div className="flex items-center">
-                                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg ring-8 ring-black mr-6">
-                                        {React.cloneElement(item.icon, { size: 32 })}
-                                    </div>
-                                    <div>
-                                        <h3 className="text-2xl font-bold gradient-text">{item.college}</h3>
-                                        <p className="text-lg text-gray-300 font-semibold mt-1">{item.degree}</p>
-                                        <p className="text-md font-semibold text-blue-400 mt-1">{item.period}</p>
-                                    </div>
+                    <div key={index} className="glass-card rounded-2xl p-8">
+                        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                            <div className="flex items-center">
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg ring-8 ring-black mr-6">
+                                    {React.cloneElement(item.icon, { size: 32 })}
                                 </div>
-                                <div className="w-full md:w-auto flex-shrink-0">
-                                    <SheetTrigger asChild>
-                                        <Button className="btn-solve w-full">
-                                            Explore Journey →
-                                        </Button>
-                                    </SheetTrigger>
+                                <div>
+                                    <h3 className="text-2xl font-bold gradient-text">{item.college}</h3>
+                                    <p className="text-lg text-gray-300 font-semibold mt-1">{item.degree}</p>
+                                    <p className="text-md font-semibold text-blue-400 mt-1">{item.period}</p>
                                 </div>
                             </div>
-                            <p className="text-sm text-gray-400 mt-6 pl-22 md:pl-0">
-                                {item.description}
-                            </p>
+                            <div className="w-full md:w-auto flex-shrink-0">
+                                <Link href={item.path}>
+                                    <Button className="btn-solve w-full">
+                                        Explore Journey →
+                                    </Button>
+                                </Link>
+                            </div>
                         </div>
-                        <SheetContent className="bg-gray-900/80 backdrop-blur-lg border-l-white/10 text-white w-full md:w-1/2 lg:w-1/3 overflow-y-auto">
-                           <SheetHeader>
-                               <SheetTitle className="gradient-text text-3xl font-bold mb-6">{item.college} Journey</SheetTitle>
-                           </SheetHeader>
-                           <JourneyDetails highlights={item.highlights} />
-                        </SheetContent>
-                    </Sheet>
+                        <p className="text-sm text-gray-400 mt-6 pl-22 md:pl-0">
+                            {item.description}
+                        </p>
+                    </div>
                 ))}
             </div>
         </section>
