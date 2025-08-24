@@ -1,7 +1,8 @@
 
 "use client";
 
-import React, { createContext, useState, ReactNode, useEffect } from 'react';
+import React, from 'react';
+import { createContext, useState, ReactNode, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 
 interface TransitionContextProps {
@@ -23,24 +24,27 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
     const pathname = usePathname();
 
     useEffect(() => {
-        // This effect runs on the client after hydration.
-        // It ensures that when the user navigates back/forward, our state is correct.
+        // This effect runs on the client after hydration and on route changes.
+        // It ensures that when the user navigates, we reset the state to show content.
         setTransitionFinished(true);
     }, [pathname]);
 
     const handleTransition = (path: string) => {
-        if (pathname === path) return;
+        if (pathname === path || isTransitioning) return;
 
-        setIsTransitioning(true);
         setTransitionFinished(false);
+        setIsTransitioning(true);
 
+        // Delay navigation to allow the initial part of the animation to play
         setTimeout(() => {
             router.push(path);
-        }, 500); // Duration of the initial part of the animation
+        }, 500);
 
         // Corresponds to the total animation time before it fades out
+        // and we want to stop rendering the transition screen
         setTimeout(() => {
             setIsTransitioning(false);
+            // The useEffect for pathname will set transitionFinished to true
         }, 1400); 
     };
 

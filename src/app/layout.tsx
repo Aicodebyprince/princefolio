@@ -18,11 +18,11 @@ const metadata: Metadata = {
 };
 
 const AppContent = ({ children }: { children: React.ReactNode }) => {
-  const { isTransitioning } = useContext(TransitionContext);
-  // Hide content during the transition animation to prevent flashes of old/new pages.
+  const { transitionFinished } = useContext(TransitionContext);
+  // Only render children when the transition is finished to prevent flashes of old/new pages.
   return (
-    <div className={cn({ 'opacity-0': isTransitioning })}>
-      {children}
+    <div className={cn({ 'opacity-0': !transitionFinished })}>
+      {transitionFinished && children}
     </div>
   )
 }
