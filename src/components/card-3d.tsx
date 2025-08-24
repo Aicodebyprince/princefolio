@@ -21,8 +21,8 @@ const Card3D = ({ children, className }: Card3DProps) => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = (y - centerY) / 10;
-    const rotateY = (centerX - x) / 10;
+    const rotateX = (y - centerY) / 20;
+    const rotateY = (centerX - x) / 20;
 
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
   };
