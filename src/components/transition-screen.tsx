@@ -1,59 +1,63 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Rocket } from 'lucide-react';
 
 const TransitionScreen = () => {
-    const [animationState, setAnimationState] = useState('start');
-
-    useEffect(() => {
-        const timer1 = setTimeout(() => setAnimationState('launching'), 100);
-        const timer2 = setTimeout(() => setAnimationState('in-space'), 1500);
-        return () => {
-            clearTimeout(timer1);
-            clearTimeout(timer2);
-        };
-    }, []);
-
     return (
         <div className="fixed inset-0 bg-black z-[100] flex items-center justify-center overflow-hidden">
-            <div
-                className={`absolute transition-all duration-1000 ease-in-out ${
-                    animationState === 'launching' || animationState === 'in-space'
-                        ? 'opacity-100 scale-100'
-                        : 'opacity-0 scale-50'
-                }`}
-            >
-                <div className="relative">
-                    <Rocket
-                        className={`text-white transition-transform duration-1000 ease-in-out ${
-                            animationState === 'launching' ? '-translate-y-96 scale-150' : 'translate-y-0'
-                        } ${animationState === 'in-space' ? 'opacity-0' : 'opacity-100'}`}
-                        size={100}
-                    />
-                </div>
+            <div className="rocket-container">
+                <Rocket className="rocket" size={100} />
             </div>
-
-            <div className={`absolute text-white text-2xl font-bold transition-opacity duration-500 ${animationState === 'in-space' ? 'opacity-100' : 'opacity-0'}`}>
-                Entering Exploration Mode...
-            </div>
-            
-            {/* Stars */}
-            {[...Array(50)].map((_, i) => {
-                const style = {
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    width: `${Math.random() * 2 + 1}px`,
-                    height: `${Math.random() * 2 + 1}px`,
-                    animation: `twinkle ${Math.random() * 5 + 2}s linear infinite`,
-                };
-                return <div key={i} className="absolute bg-white rounded-full" style={style}></div>;
-            })}
+            <div className="blast-wave"></div>
 
             <style jsx>{`
-                @keyframes twinkle {
-                    0%, 100% { opacity: 0.5; }
-                    50% { opacity: 1; }
+                .rocket-container {
+                    animation: launch 1.5s ease-out forwards;
+                }
+
+                .rocket {
+                    color: white;
+                }
+
+                .blast-wave {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    background-color: white;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                    animation: blast 1s ease-in forwards 1.5s;
+                }
+
+                @keyframes launch {
+                    0% {
+                        transform: translateY(100vh) scale(0.5);
+                        opacity: 0;
+                    }
+                    50% {
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translateY(0) scale(1);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes blast {
+                    0% {
+                        width: 0;
+                        height: 0;
+                        opacity: 1;
+                    }
+                    100% {
+                        width: 300vmax;
+                        height: 300vmax;
+                        opacity: 1;
+                    }
                 }
             `}</style>
         </div>
