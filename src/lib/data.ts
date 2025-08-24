@@ -1,4 +1,4 @@
-import { GraduationCap, School } from 'lucide-react';
+import { GraduationCap, School, Swords } from 'lucide-react';
 import React from 'react';
 
 export const skills = {
@@ -264,5 +264,35 @@ export const journeyData = [
         description: "Laid the foundational stones of my academic and personal growth, developing leadership and teamwork skills.",
         path: "",
         highlights: []
+    }
+];
+
+export const hackathons = [
+    {
+        name: "Innovate AI 2024",
+        date: "April 2024",
+        project: "HealthGuard - AI-Powered Diagnosis",
+        description: "Developed a Flutter app that uses a custom-trained model to analyze medical images and provide preliminary diagnoses for common skin conditions.",
+        outcome: "Top 5 Finalist",
+        tags: ["Flutter", "TensorFlow Lite", "AI", "Healthcare"],
+        link: "#"
+    },
+    {
+        name: "Fintech Future Hack",
+        date: "September 2023",
+        project: "Budget Buddy",
+        description: "A mobile application designed to simplify personal finance management through gamification and AI-powered spending insights.",
+        outcome: "Best UI/UX Award",
+        tags: ["Flutter", "Firebase", "Figma", "Fintech"],
+        link: "#"
+    },
+    {
+        name: "Intra-College Code Clash",
+        date: "March 2022",
+        project: "QuickQueue - Campus Cafeteria System",
+        description: "A web-based system to allow students to pre-order meals from the campus cafeteria, reducing wait times and improving efficiency.",
+        outcome: "1st Place Winner",
+        tags: ["Django", "Python", "JavaScript", "Web"],
+        link: "#"
     }
 ];
