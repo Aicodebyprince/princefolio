@@ -128,11 +128,11 @@ const HeroSection = ({ onExploreClick }: { onExploreClick: (tab: string) => void
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
                     <Link href="/explore">
-                        <Button className="btn-solve px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden">
+                        <Button className="btn-solve px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
                             <span className="relative z-10">Explore More 🚀</span>
                         </Button>
                     </Link>
-                    <a href="/resume.pdf" download="PrinceSherathiya_Resume.pdf" className="border-2 border-white/20 hover:border-white/40 px-8 py-4 rounded-xl font-bold text-base transition-all hover:bg-white/5">
+                    <a href="/resume.pdf" download="PrinceSherathiya_Resume.pdf" className="inline-flex items-center justify-center border-2 border-white/20 hover:border-white/40 px-8 py-4 rounded-xl font-bold text-base transition-all hover:bg-white/5">
                         Download Resume
                     </a>
                 </div>
