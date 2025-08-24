@@ -41,7 +41,7 @@ const Header = () => {
                         </div>
                         <div>
                             <div className="font-bold text-xl gradient-text">Prince Sherathiya</div>
-                            <div className="text-xs text-gray-400 mono">Flutter Developer</div>
+                            <div className="text-xs text-gray-400 mono">Developer</div>
                         </div>
                     </a>
 
