@@ -76,3 +76,18 @@ export const contactInfo = [
     { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/princesherathiya', detail: 'Professional networking', color: 'text-blue-400', link: 'https://www.linkedin.com/in/princesherathiya/' },
     { icon: '🐙', label: 'GitHub', value: 'github.com/Aicodebyprince', detail: 'Check out my code', color: 'text-purple-400', link: 'https://github.com/Aicodebyprince' },
 ];
+
+export const weeklyJourney = [
+    {
+        week: 1,
+        focus: 'Portfolio Website Development',
+        description: 'This week, I focused on building my personal portfolio. I applied concepts of HTML, CSS, JavaScript, and Bootstrap to create a responsive and modern design. I also experimented with hosting platforms like Netlify and Vercel to deploy the site live.',
+        projectHighlights: [
+            'Designed and implemented a clean, professional landing page with sections for services, projects, and blogs.',
+            'Integrated a contact form that connects directly to WhatsApp and email for client inquiries.',
+            'Learned new deployment techniques to ensure fast loading and mobile responsiveness.'
+        ],
+        reflection: 'This week taught me the importance of design consistency and user experience. Next week, I plan to develop demo websites for local businesses to practice real-world client projects.',
+        ctaLink: 'https://github.com/Aicodebyprince'
+    }
+];
