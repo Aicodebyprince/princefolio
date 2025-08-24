@@ -42,8 +42,8 @@ const AllExperiencesSection = () => {
 
                         <div className="mt-6 flex justify-end">
                             <Link href={`/experience/${exp.slug}`}>
-                                <Button variant="link" className="text-accent p-0 h-auto group-hover:underline">
-                                    View Details <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white group-hover:shadow-[0_0_20px_theme(colors.accent)] transition-all duration-300">
+                                    Deep Dive <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </Link>
                         </div>
