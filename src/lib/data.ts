@@ -21,6 +21,8 @@ export type Project = {
     slug?: string;
     screenshots?: Screenshot[];
     features?: string[];
+    problem?: string;
+    solution?: string;
     challenges?: string[];
 };
 
@@ -85,33 +87,31 @@ export const technologies = [
 export const projects: Project[] = [
     {
         icon: 'college',
-        title: 'Smart Campus Ecosystem',
+        title: 'College Management App',
         slug: 'college-management-app',
-        description: 'An AI-enhanced mobile platform designed to create a fully integrated "Smart Campus," connecting students, faculty, and administration in a seamless digital environment.',
-        category: 'Mobile App / AI',
-        shortTitle: 'Smart Campus',
-        shortDescription: 'AI-powered campus management',
+        description: 'A comprehensive mobile platform designed to streamline communication and manage academic information within a college environment.',
+        category: 'Mobile App / Full-Stack',
+        shortTitle: 'College App',
+        shortDescription: 'Streamlined campus communication',
         githubUrl: 'https://github.com/Aicodebyprince/College-Management-App',
         liveUrl: '',
-        tags: ['Flutter', 'Firebase', 'AI', 'State Management', 'UX/UI'],
-        stat: 'Next-Gen Campus Platform',
+        tags: ['Flutter', 'Firebase', 'State Management', 'UX/UI', 'Real-time DB'],
+        stat: 'Full-Stack Campus Platform',
         screenshots: [
             { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Screenshot%202025-01-27%20135532.png?alt=media&token=0099cb45-d057-4ebe-bcb5-8fbb6b7ea79c', dataAiHint: 'mobile app screen' },
             { url: 'https://placehold.co/1280x720.png', dataAiHint: 'dashboard analytics' },
         ],
+        problem: 'Traditional colleges often suffer from scattered information, poor communication between departments, and manual, time-consuming processes. Students and faculty struggle to keep track of schedules, announcements, and academic progress in one unified place.',
+        solution: 'I developed a centralized mobile application using Flutter and Firebase that serves as a single source of truth for the entire campus. The app provides role-based access for students and teachers, offering tailored dashboards with real-time information and interactive features.',
         features: [
-            "AI-powered doubt resolution chatbot to assist students 24/7.",
-            "Gamified learning modules with leaderboards to boost engagement.",
             "Real-time attendance tracking with analytics for faculty.",
             "Push notifications for personalized alerts and campus news.",
-            "Interactive campus map for easy navigation to classes and events.",
             "Secure, role-based access for students, faculty, and administration.",
-        ],
-        challenges: [
-            "Integrating a lightweight AI model on-device for the chatbot feature.",
-            "Developing a fair and engaging gamification logic for academic content.",
-            "Ensuring the real-time notification system is scalable for thousands of users.",
-            "Designing an intuitive and accessible UI for a feature-rich application."
+            "Centralized hub for important notices and circulars.",
+            "Integrated academic calendar with event reminders.",
+            "Direct student-teacher chat functionality for query resolution.",
+            "Module for viewing and tracking academic results.",
+            "User-friendly and intuitive interface designed for quick access to information."
         ],
     },
     {

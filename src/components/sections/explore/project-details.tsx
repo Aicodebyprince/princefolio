@@ -4,7 +4,7 @@
 import React from 'react';
 import type { Project } from '@/lib/data';
 import Image from 'next/image';
-import { CheckCircle, AlertTriangle, Github } from 'lucide-react';
+import { CheckCircle, AlertTriangle, Github, Target, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const ProjectDetails = ({ project }: { project: Project }) => {
@@ -40,28 +40,31 @@ const ProjectDetails = ({ project }: { project: Project }) => {
 
             <div className="grid md:grid-cols-2 gap-12">
                 <div className="glass-card rounded-2xl p-8">
-                    <h3 className="text-2xl font-bold solution-text mb-6">Key Features</h3>
-                    <ul className="space-y-4">
-                        {project.features?.map((feature, i) => (
-                            <li key={i} className="flex items-start text-gray-300">
-                                <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
-                                {feature}
-                            </li>
-                        ))}
-                    </ul>
+                     <h3 className="text-2xl font-bold problem-text mb-6 flex items-center gap-3">
+                        <Target />
+                        The Problem
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">{project.problem}</p>
                 </div>
-
                 <div className="glass-card rounded-2xl p-8">
-                    <h3 className="text-2xl font-bold problem-text mb-6">Challenges Faced</h3>
-                    <ul className="space-y-4">
-                        {project.challenges?.map((challenge, i) => (
-                            <li key={i} className="flex items-start text-gray-300">
-                                <AlertTriangle className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
-                                {challenge}
-                            </li>
-                        ))}
-                    </ul>
+                     <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
+                        <Zap />
+                        The Solution
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">{project.solution}</p>
                 </div>
+            </div>
+
+            <div className="glass-card rounded-2xl p-8">
+                <h3 className="text-2xl font-bold gradient-text mb-6 text-center">Key Outcomes & Features</h3>
+                <ul className="space-y-4 max-w-4xl mx-auto columns-1 md:columns-2">
+                    {project.features?.map((feature, i) => (
+                        <li key={i} className="flex items-start text-gray-300 break-inside-avoid">
+                            <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
+                            {feature}
+                        </li>
+                    ))}
+                </ul>
             </div>
 
             <div className="glass-card rounded-2xl p-8">
