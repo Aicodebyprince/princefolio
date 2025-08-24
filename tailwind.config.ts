@@ -71,6 +71,9 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      boxShadow: {
+        accent: '0 0 20px hsl(var(--accent) / 0.8)',
+      },
       keyframes: {
         'accordion-down': {
           from: {

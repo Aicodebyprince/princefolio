@@ -51,7 +51,7 @@ const HackathonsSection = () => {
                                 <a href={hackathon.link} target="_blank" rel="noopener noreferrer">
                                     <Button
                                         variant="outline"
-                                        className="border-accent text-accent hover:bg-accent hover:text-white group-hover:shadow-[0_0_20px_theme(colors.accent)] transition-all duration-300"
+                                        className="border-accent text-accent hover:bg-accent hover:text-white group-hover:shadow-accent transition-all duration-300"
                                     >
                                         View Project/Submission
                                     </Button>
