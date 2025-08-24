@@ -10,8 +10,6 @@ import Card3D from '../card-3d';
 const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void }> = ({ isVisible, onExploreClick }) => {
     if (!isVisible) return null;
 
-    const displayJourneyData = [...journeyData].reverse();
-
     return (
         <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
@@ -21,42 +19,27 @@ const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void
                 <p className="text-lg text-gray-300 font-light">From foundational principles to advanced specialization.</p>
             </div>
 
-             <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 md:gap-0">
-                {displayJourneyData.map((item, index) => (
-                    <React.Fragment key={index}>
-                        <div className="flex md:flex-col items-center md:items-start">
-                             <div className="w-1/4 md:w-auto">
-                                <Card3D className="glass-card rounded-3xl p-6 text-center h-full flex flex-col justify-between">
-                                    <div>
-                                        <div className="flex justify-center mb-6">
-                                            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500/20 via-purple-600/20 to-pink-500/20 backdrop-blur-sm flex items-center justify-center text-white shadow-lg ring-8 ring-black">
-                                                {item.icon}
-                                            </div>
-                                        </div>
-                                        <h3 className="text-lg font-bold gradient-text mb-2 h-12 flex items-center justify-center">{item.college}</h3>
-                                        <p className="text-sm text-gray-300 font-semibold mb-2 h-10 flex items-center justify-center">{item.degree}</p>
-                                    </div>
-                                    <p className="text-xs font-semibold text-blue-400 mt-4">{item.period}</p>
-                                </Card3D>
-                             </div>
-
-                             {/* Vertical connector for mobile */}
-                            {index < displayJourneyData.length - 1 && (
-                                <div className="md:hidden h-16 w-px bg-gradient-to-b from-blue-500/50 to-purple-600/50 mx-4"></div>
-                            )}
-                        </div>
-                        
-                        {/* Horizontal connector for desktop */}
-                        {index < displayJourneyData.length - 1 && (
-                            <div className="hidden md:flex flex-1 items-center justify-center px-4">
-                                <div className="w-full h-px bg-gradient-to-r from-blue-500/50 to-purple-600/50"></div>
+            <div className="journey-timeline">
+                {journeyData.map((item, index) => (
+                    <div key={index} className={`timeline-item ${index % 2 === 0 ? 'timeline-left' : 'timeline-right'}`}>
+                        <Card3D className="glass-card rounded-3xl p-6 text-left">
+                            <div className="flex items-center mb-4">
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 via-purple-600/20 to-pink-500/20 flex items-center justify-center text-white shadow-lg ring-4 ring-black mr-4">
+                                    {item.icon}
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold gradient-text">{item.college}</h3>
+                                    <p className="text-md text-gray-300 font-semibold">{item.degree}</p>
+                                </div>
                             </div>
-                        )}
-                   </React.Fragment>
+                             <p className="text-sm font-semibold text-blue-400 mb-2">{item.period}</p>
+                            <p className="text-xs text-gray-400">{item.description}</p>
+                        </Card3D>
+                    </div>
                 ))}
             </div>
 
-             <div className="text-center mt-20">
+            <div className="text-center mt-20">
                 <Link href="/explore?tab=journey">
                     <Button className="btn-solve">
                         Explore Full Journey →
