@@ -11,11 +11,7 @@ const iconMap: { [key: string]: React.ElementType } = {
     zap: ZapIcon
 };
 
-const ProjectsContent = () => {
-    const handleLinkClick = (url: string) => {
-        window.open(url, '_blank');
-    };
-
+const ProjectsContent: React.FC<{ isVisible?: boolean }> = ({ isVisible }) => {
     return (
         <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
@@ -40,12 +36,12 @@ const ProjectsContent = () => {
                                         <h4 className="text-2xl font-bold mb-6">{project.shortTitle}</h4>
                                         <p className="text-sm mb-8 opacity-90 leading-relaxed">{project.shortDescription}</p>
                                         <div className="flex gap-4 justify-center">
-                                            <button onClick={() => handleLinkClick(project.githubUrl)} className="bg-white text-black px-6 py-3 rounded-xl font-bold text-sm hover:bg-gray-100 transition-all">
+                                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="bg-white text-black px-6 py-3 rounded-xl font-bold text-sm hover:bg-gray-100 transition-all">
                                                 GitHub
-                                            </button>
-                                            <button onClick={() => handleLinkClick(project.liveUrl)} className="border-2 border-white px-6 py-3 rounded-xl text-sm font-bold hover:bg-white/10 transition-all">
+                                            </a>
+                                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="border-2 border-white px-6 py-3 rounded-xl text-sm font-bold hover:bg-white/10 transition-all">
                                                 Live Demo
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -71,14 +67,13 @@ const ProjectsContent = () => {
             </div>
 
             <div className="text-center mt-16">
-                <button onClick={() => handleLinkClick('https://github.com/alexchen')} className="btn-primary px-12 py-5 rounded-xl font-bold text-lg">
+                <a href="https://github.com/alexchen" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block px-12 py-5 rounded-xl font-bold text-lg">
                     View All Projects on GitHub
-                </button>
+                </a>
             </div>
         </div>
     );
 }
-
 
 const ProjectsSection = () => (
     <SectionWrapper id="projects" className="py-32 px-6">
