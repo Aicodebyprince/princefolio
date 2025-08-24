@@ -75,9 +75,9 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                             plugins={[
                                 Autoplay({
                                     delay: 2000,
-                                    stopOnInteraction: true,
+                                    stopOnInteraction: false,
                                     stopOnMouseEnter: true,
-                                    direction: 'forward',
+                                    stopOnLastSnap: false,
                                 })
                             ]}
                             className="w-full"
