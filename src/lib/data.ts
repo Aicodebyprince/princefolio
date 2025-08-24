@@ -208,29 +208,7 @@ export const projects: Project[] = [
 ];
 
 
-export const blogs = [
-  {
-    title: "Why I'm betting on Flutter for the Future of Mobile",
-    date: "2024-07-15",
-    description: "An exploration of the Flutter framework, its advantages over native development, and why I believe it's the future for building beautiful, high-performance mobile apps.",
-    tags: ["Flutter", "Mobile Development", "Opinion"],
-    link: "#"
-  },
-  {
-    title: "Integrating Firebase in a Weekend Project",
-    date: "2024-06-28",
-    description: "A step-by-step guide on how to quickly integrate Firebase Authentication and Firestore into a new Flutter application, based on my experience building a prototype.",
-    tags: ["Firebase", "Tutorial", "Flutter"],
-    link: "#"
-  },
-  {
-    title: "The Power of AI in Everyday Tools",
-    date: "2024-06-10",
-    description: "Reflections on building the Helpful Vault app and the potential for large language models to revolutionize personal productivity software.",
-    tags: ["AI", "GenAI", "Productivity"],
-    link: "#"
-  }
-];
+export const blogs: any[] = [];
 
 export const designTemplates = [
   {
