@@ -58,7 +58,7 @@ const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void
             </div>
 
              <div className="text-center mt-16">
-                <Link href="/explore">
+                <Link href="/explore?tab=journey">
                     <Button className="btn-solve">
                         Explore Full Journey →
                     </Button>

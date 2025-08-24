@@ -188,7 +188,7 @@ export const experiences = [
             {
                 title: 'Basic Banking System Project',
                 description: 'Designed and developed a functional website for a basic banking system. The project included features for viewing customer data and simulating money transfers between users, demonstrating skills in dynamic web content.',
-                icon: 'bank'
+                icon: 'landmark'
             },
             {
                 title: 'Collaborative Learning',
