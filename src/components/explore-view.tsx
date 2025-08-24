@@ -11,10 +11,11 @@ import JourneySectionExplore from './sections/explore/journey';
 
 type ExploreViewProps = {
   onBackClick: () => void;
+  initialTab?: string;
 };
 
-const ExploreView = ({ onBackClick }: ExploreViewProps) => {
-  const [activeTab, setActiveTab] = useState('projects');
+const ExploreView = ({ onBackClick, initialTab = 'projects' }: ExploreViewProps) => {
+  const [activeTab, setActiveTab] = useState(initialTab);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const navItems = [

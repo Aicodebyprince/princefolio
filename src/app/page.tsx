@@ -11,13 +11,16 @@ import SkillsSection from "@/components/sections/skills";
 import Footer from "@/components/footer";
 import TransitionScreen from '@/components/transition-screen';
 import ExploreView from '@/components/explore-view';
+import JourneySection from '@/components/sections/journey';
 
 export default function Home() {
   const [isExploring, setIsExploring] = useState(false);
   const [showTransition, setShowTransition] = useState(false);
   const [showExploreView, setShowExploreView] = useState(false);
+  const [initialTab, setInitialTab] = useState('projects');
 
-  const handleExploreClick = () => {
+  const handleExploreClick = (tab = 'projects') => {
+    setInitialTab(tab);
     setShowTransition(true);
     setTimeout(() => {
       setShowTransition(false);
@@ -49,11 +52,12 @@ export default function Home() {
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow relative z-10">
-            <HeroSection onExploreClick={handleExploreClick} />
+            <HeroSection onExploreClick={() => handleExploreClick('projects')} />
             <AboutSection />
             <SkillsSection />
-            <ProjectsSection />
+            <ProjectsSection onExploreClick={() => handleExploreClick('projects')} />
             <ExperienceSection />
+            <JourneySection onExploreClick={() => handleExploreClick('journey')} />
             <ContactSection />
           </main>
           <Footer />
@@ -62,7 +66,7 @@ export default function Home() {
       
       {isExploring && (
         <div className={`fixed inset-0 z-50 transition-opacity duration-500 ${showExploreView ? 'opacity-100' : 'opacity-0'}`}>
-           <ExploreView onBackClick={handleBackClick} />
+           <ExploreView onBackClick={handleBackClick} initialTab={initialTab} />
         </div>
       )}
     </>

@@ -4,6 +4,7 @@ import React from 'react';
 import SectionWrapper from '../section-wrapper';
 import { projects } from '@/lib/data';
 import { GitBranch, HelpingHand, BookOpen } from 'lucide-react';
+import { Button } from '../ui/button';
 
 const iconMap: { [key: string]: React.ElementType } = {
     college: GitBranch,
@@ -11,7 +12,7 @@ const iconMap: { [key: string]: React.ElementType } = {
     library: BookOpen
 };
 
-const ProjectsContent: React.FC<{ isVisible?: boolean }> = ({ isVisible }) => {
+const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void }> = ({ isVisible, onExploreClick }) => {
     if (!isVisible) return null;
     const featuredProjects = projects.slice(0, 3);
 
@@ -70,17 +71,17 @@ const ProjectsContent: React.FC<{ isVisible?: boolean }> = ({ isVisible }) => {
             </div>
 
             <div className="text-center mt-16">
-                <a href="https://github.com/Aicodebyprince" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block px-10 py-4 rounded-xl font-bold text-base">
-                    View All Projects on GitHub
-                </a>
+                 <Button onClick={onExploreClick} className="btn-primary">
+                    Explore All Projects
+                </Button>
             </div>
         </div>
     );
 }
 
-const ProjectsSection = () => (
+const ProjectsSection = ({ onExploreClick }: { onExploreClick: () => void }) => (
     <SectionWrapper id="projects" className="py-32 px-6">
-        <ProjectsContent />
+        <ProjectsContent onExploreClick={onExploreClick} />
     </SectionWrapper>
 );
 
