@@ -6,9 +6,6 @@ import { journeyData } from '@/lib/data';
 import Link from 'next/link';
 
 const JourneySectionExplore = () => {
-    // Create a reversed copy of the array to ensure the correct order
-    const reversedJourneyData = [...journeyData].reverse();
-
     return (
         <section id="journey-explore">
              <div className="text-center mb-16">
@@ -19,7 +16,7 @@ const JourneySectionExplore = () => {
             </div>
 
             <div className="max-w-4xl mx-auto space-y-8">
-                {reversedJourneyData.map((item, index) => (
+                {journeyData.map((item, index) => (
                     <div key={index} className="glass-card rounded-2xl p-8">
                         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                             <div className="flex items-center">
