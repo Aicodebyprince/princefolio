@@ -20,7 +20,7 @@ const RMCJourneyPage = () => {
             <AnimatedBackground />
             <div className="relative z-10 p-8 md:p-12">
                 <div className="max-w-4xl mx-auto">
-                    <Link href="/#journey">
+                    <Link href="/">
                         <Button variant="ghost" className="mb-8 hover:bg-white/10">
                             <ArrowLeft className="w-5 h-5 mr-2" />
                             Back to Portfolio
