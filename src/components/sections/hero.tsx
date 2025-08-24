@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Card3D from '../card-3d';
 
-const TYPING_TEXTS = ['Flutter Developer', '& App Innovator', '& Problem Solver'];
+const TYPING_TEXTS = ['Developer', '& App Innovator', '& Problem Solver'];
 const STATS = [
     { label: 'Projects Built', count: 5 },
     { label: 'Years Experience', count: 2 },
