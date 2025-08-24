@@ -23,8 +23,8 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                 </div>
             </header>
 
-            <div className="max-w-4xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="max-w-lg mx-auto">
+                <div className="grid grid-cols-1 gap-4">
                     {project.screenshots?.map((ss, index) => (
                          <div key={index} className="glass-card rounded-lg overflow-hidden p-2">
                             <Image
@@ -43,14 +43,14 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             <div className="grid md:grid-cols-2 gap-12">
                 <div className="glass-card rounded-2xl p-8">
                      <h3 className="text-2xl font-bold problem-text mb-6 flex items-center gap-3">
-                        <Target className="w-6 h-6" />
+                        <Target className="w-5 h-5" />
                         The Problem
                     </h3>
                     <p className="text-gray-300 leading-relaxed">{project.problem}</p>
                 </div>
                 <div className="glass-card rounded-2xl p-8">
                      <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
-                        <Zap className="w-6 h-6" />
+                        <Zap className="w-5 h-5" />
                         The Solution
                     </h3>
                     <p className="text-gray-300 leading-relaxed">{project.solution}</p>
