@@ -37,7 +37,7 @@ const TransitionScreen = () => {
                 const burstCount = Math.random() > 0.5 ? 3 : 2;
                 for (let i = 0; i < burstCount; i++) {
                     const size = Math.random() * 60 + 20;
-                    const duration = Math.random() * 2 + 1.5;
+                    const duration = Math.random() * 1.5 + 1;
                     newSmoke.push({
                         id: Math.random(),
                         style: {
@@ -49,11 +49,11 @@ const TransitionScreen = () => {
                     });
                 }
                 setSmoke(prev => [...prev, ...newSmoke]);
-            }, 60);
+            }, 50);
 
             // --- Launch Sequence Orchestration ---
-            const rumbleDuration = 800;
-            const launchDuration = 1200;
+            const rumbleDuration = 400; // Faster rumble
+            const launchDuration = 1000; // Faster launch
 
             // Stop the smoke burst after the rumble
             setTimeout(() => clearInterval(smokeInterval), rumbleDuration);
@@ -103,8 +103,8 @@ const TransitionScreen = () => {
                     overflow: hidden;
                     display: flex;
                     justify-content: center;
-                    align-items: flex-end;
-                    animation: fadeIn 0.1s ease-out, camera-shake 0.8s ease-in-out, fadeOut 0.3s ease-in 1.2s forwards;
+                    align-items: center; /* Centered rocket */
+                    animation: fadeIn 0.1s ease-out, camera-shake 0.4s ease-in-out, fadeOut 0.3s ease-in 1s forwards;
                 }
                 
                 .star-container {
@@ -113,7 +113,7 @@ const TransitionScreen = () => {
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    animation: parallax-scroll 1.2s cubic-bezier(0.6, 0.04, 0.98, 0.335) 0.8s forwards;
+                    animation: parallax-scroll 1s cubic-bezier(0.6, 0.04, 0.98, 0.335) 0.4s forwards;
                 }
 
                 .star {
@@ -126,7 +126,7 @@ const TransitionScreen = () => {
                 
                 .rocket-container {
                     z-index: 20;
-                    animation: launch 1.2s cubic-bezier(0.6, 0.04, 0.98, 0.335) 0.8s forwards;
+                    animation: launch 1s cubic-bezier(0.6, 0.04, 0.98, 0.335) 0.4s forwards;
                 }
 
                 .rocket {
@@ -143,7 +143,7 @@ const TransitionScreen = () => {
                     background: linear-gradient(to top, #ffaf4d, transparent);
                     border-radius: 50% 50% 0 0;
                     filter: blur(5px);
-                    animation: flicker 0.1s infinite, flame-scale 0.8s ease-out forwards;
+                    animation: flicker 0.1s infinite, flame-scale 0.4s ease-out forwards;
                 }
 
                 .smoke-container {
@@ -153,7 +153,7 @@ const TransitionScreen = () => {
                     height: 200px;
                     display: flex;
                     justify-content: center;
-                    align-items: center;
+                    align-items: flex-end; /* Smoke at the bottom */
                 }
 
                 .smoke {
