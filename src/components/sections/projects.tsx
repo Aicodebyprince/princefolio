@@ -20,17 +20,17 @@ const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => voi
     return (
         <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
-                <h2 className="text-3xl md:text-4xl font-black mb-8">
+                <h2 className="text-5xl md:text-6xl font-black mb-8">
                     Featured <span className="gradient-text">Projects</span>
                 </h2>
-                <p className="text-lg text-gray-300 font-light">A showcase of my passion for building</p>
+                <p className="text-2xl text-gray-300 font-light">A showcase of my passion for building</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {featuredProjects.map((project, index) => {
                     const ProjectIcon = iconMap[project.icon];
                     return (
-                        <div key={index} className="project-card rounded-2xl flex flex-col">
+                        <div key={index} className="project-card rounded-2xl flex flex-col h-full">
                             <div className="p-6 flex-grow">
                                 <div className="flex items-center gap-4 mb-4">
                                      <div className="bg-white/10 p-3 rounded-lg">

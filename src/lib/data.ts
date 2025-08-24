@@ -207,9 +207,6 @@ export const projects: Project[] = [
     },
 ];
 
-
-export const blogs: any[] = [];
-
 export const designTemplates = [
   {
     title: "Modern SaaS Landing Page",

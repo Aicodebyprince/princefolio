@@ -58,13 +58,13 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
   }
 
   const navItems = [
-    { id: 'projects', label: 'All Projects', icon: <Code className="w-5 h-5" /> },
-    { id: 'experience', label: 'My Experience', icon: <Briefcase className="w-5 h-5" /> },
-    { id: 'journey', label: 'My Journey', icon: <GraduationCap className="w-5 h-5" /> },
-    { id: 'problem-solving', label: 'Problem Solving', icon: <Puzzle className="w-5 h-5" /> },
+    { id: 'projects', label: 'Projects', icon: <Code className="w-5 h-5" /> },
+    { id: 'experience', label: 'Experience', icon: <Briefcase className="w-5 h-5" /> },
+    { id: 'journey', label: 'Journey', icon: <GraduationCap className="w-5 h-5" /> },
+    { id: 'problem-solving', label: 'Solving', icon: <Puzzle className="w-5 h-5" /> },
     { id: 'hackathons', label: 'Hackathons', icon: <Swords className="w-5 h-5" /> },
     { id: 'services', label: 'Services', icon: <Layers className="w-5 h-5" /> },
-    { id: 'designs', label: 'Design Templates', icon: <LayoutTemplate className="w-5 h-5" /> },
+    { id: 'designs', label: 'Designs', icon: <LayoutTemplate className="w-5 h-5" /> },
     { id: 'blog', label: 'Blog', icon: <Rss className="w-5 h-5" /> },
   ];
 
@@ -130,7 +130,7 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-grow overflow-y-auto relative">
+      <main className="flex-grow overflow-y-auto relative pb-20 md:pb-0">
         <div className="absolute inset-0 bg-grid-pattern opacity-10 animate-pan"></div>
         <div className="relative z-10 p-6 md:p-12">
            <Suspense fallback={<LoadingSkeleton />}>
@@ -142,18 +142,18 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
       {/* Mobile Bottom Bar */}
        <div className="md:hidden fixed bottom-0 left-0 right-0 bg-gray-900/80 backdrop-blur-lg border-t border-white/10 z-50">
            <div className="flex justify-around items-center p-2">
-               {navItems.slice(0, 5).map((item) => (
+               {navItems.map((item) => (
                    <Button
                        key={item.id}
                        variant="ghost"
                        onClick={() => handleTabChange(item.id)}
                        className={cn(
-                           'flex flex-col items-center justify-center h-16 w-16 rounded-lg transition-colors text-xs',
-                           activeTab === item.id ? 'text-accent' : 'text-gray-400'
+                           'flex flex-col items-center justify-center h-16 w-16 rounded-lg transition-colors text-xs p-1',
+                           activeTab === item.id ? 'text-accent bg-accent/10' : 'text-gray-400'
                        )}
                    >
                        {item.icon}
-                       <span className="mt-1">{item.label.split(' ')[0]}</span>
+                       <span className="mt-1">{item.label}</span>
                    </Button>
                ))}
            </div>

@@ -10,7 +10,7 @@ const STATS = [
     { label: 'Projects Built', count: 10 },
     { label: 'Years Experience', count: 2 },
     { label: 'Lines of Code', count: 50000 },
-    { label: 'Problems Solved', count: 10 },
+    { label: 'Problems Solved', count: 150 },
 ];
 
 const AnimatedCounter = ({ target, isVisible }: { target: number, isVisible: boolean }) => {

@@ -29,7 +29,7 @@ const AllProjectsSection = () => {
                 {projects.map((project, index) => {
                     const ProjectIcon = iconMap[project.icon] || CodeIcon;
                     return (
-                        <div key={index} className="glass-card rounded-2xl p-6 flex flex-col group">
+                        <div key={index} className="glass-card rounded-2xl p-6 flex flex-col group h-full">
                             <div className="flex-grow">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="bg-white/10 p-3 rounded-lg">
