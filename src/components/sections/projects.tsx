@@ -13,9 +13,7 @@ const iconMap: { [key: string]: React.ElementType } = {
 
 const ProjectsContent = () => {
     const handleLinkClick = (url: string) => {
-        if (typeof window !== 'undefined') {
-            window.open(url, '_blank');
-        }
+        window.open(url, '_blank');
     };
 
     return (
