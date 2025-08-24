@@ -5,11 +5,8 @@ import { experiences } from '@/lib/data';
 import { ArrowRight, Building } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { useTransitionRouter } from '@/context/transition-context';
 
 const AllExperiencesSection = () => {
-    const { transitionTo } = useTransitionRouter();
-
     return (
         <section id="all-experiences">
             <div className="text-center mb-16">
@@ -44,13 +41,14 @@ const AllExperiencesSection = () => {
                         </div>
 
                         <div className="mt-6 flex justify-end">
-                            <Button 
-                                variant="outline" 
-                                className="border-accent text-accent hover:bg-accent hover:text-white group-hover:shadow-[0_0_20px_theme(colors.accent)] transition-all duration-300"
-                                onClick={() => transitionTo(`/experience/${exp.slug}`)}
-                            >
-                                Deep Dive <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                            </Button>
+                            <Link href={`/experience/${exp.slug}`} passHref>
+                                <Button 
+                                    variant="outline" 
+                                    className="border-accent text-accent hover:bg-accent hover:text-white group-hover:shadow-[0_0_20px_theme(colors.accent)] transition-all duration-300"
+                                >
+                                    Deep Dive <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 ))}
