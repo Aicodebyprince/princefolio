@@ -127,6 +127,9 @@ const HeroSection = ({ onExploreClick }: { onExploreClick: (tab: string) => void
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
+                    <Button onClick={() => onExploreClick('projects')} className="btn-primary px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
+                        <span className="relative z-10">Explore Projects</span>
+                    </Button>
                     <Link href="/resume">
                         <Button className="btn-solve px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
                             <span className="relative z-10">Live Resume 🚀</span>
