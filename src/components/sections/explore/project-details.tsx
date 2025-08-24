@@ -41,14 +41,14 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             <div className="grid md:grid-cols-2 gap-12">
                 <div className="glass-card rounded-2xl p-8">
                      <h3 className="text-2xl font-bold problem-text mb-6 flex items-center gap-3">
-                        <Target />
+                        <Target className="w-6 h-6" />
                         The Problem
                     </h3>
                     <p className="text-gray-300 leading-relaxed">{project.problem}</p>
                 </div>
                 <div className="glass-card rounded-2xl p-8">
                      <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
-                        <Zap />
+                        <Zap className="w-6 h-6" />
                         The Solution
                     </h3>
                     <p className="text-gray-300 leading-relaxed">{project.solution}</p>
