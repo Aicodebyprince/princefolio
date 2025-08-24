@@ -112,10 +112,12 @@ export const projects: Project[] = [
                 title: 'For the Visitors',
                 description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
                 screenshots: [
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'mobile app screen' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'campus tour' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'events calendar' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'admissions form' },
+                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%201.png?alt=media&token=164b63ad-32e1-445b-b739-772a8401db27', dataAiHint: 'mobile app screen' },
+                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%202.png?alt=media&token=b6e2f256-7e02-4d68-9d82-92a90802eb57', dataAiHint: 'mobile app screen' },
+                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%203.png?alt=media&token=9dfc15b6-0f86-413e-b2c1-dc7da79ca855', dataAiHint: 'mobile app screen' },
+                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%204.png?alt=media&token=e0300cde-fa07-4846-be00-6178f2e1f984', dataAiHint: 'mobile app screen' },
+                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%205.png?alt=media&token=ac9dc7dc-255a-47dd-bd1c-de7a5263d27f', dataAiHint: 'mobile app screen' },
+                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%207.png?alt=media&token=f2beaec9-77b0-42f2-9d8a-590f25e86af2', dataAiHint: 'mobile app screen' },
                 ]
             },
             {
