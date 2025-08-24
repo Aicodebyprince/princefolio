@@ -40,35 +40,50 @@ const JourneySectionExplore = () => {
                 <div className="absolute left-1/2 -ml-px w-0.5 h-full bg-white/10" aria-hidden="true"></div>
 
                 {journeyData.map((item, index) => (
-                    <div key={index} className="relative mb-12">
-                        <div className="flex items-center justify-between">
-                            <div className={`w-[calc(50%-2rem)] text-right pr-8 ${index % 2 === 1 ? 'order-1' : ''}`}>
-                                {/* Content for one side */}
-                            </div>
-                            <div className="relative z-10">
-                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg ring-8 ring-black">
-                                    {React.cloneElement(item.icon, { size: 32 })}
+                    <div key={index} className="relative flex items-center justify-center mb-12">
+                        {/* Left Card */}
+                        <div className={`w-[calc(50%-4rem)] ${index % 2 === 0 ? 'order-1' : 'order-3'}`}>
+                             {index % 2 === 0 && (
+                                <div className="glass-card p-6 rounded-2xl text-right">
+                                    <p className="text-lg font-semibold text-blue-400 mb-2">{item.period}</p>
+                                    <h3 className="text-2xl font-bold gradient-text">{item.college}</h3>
+                                    <p className="text-lg text-gray-300 font-semibold mt-1">{item.degree}</p>
+                                    <p className="text-sm text-gray-400 mt-3">{item.description}</p>
+                                    <div className="mt-6">
+                                        <Link href={item.link}>
+                                            <Button className="btn-solve">
+                                                Explore Journey →
+                                            </Button>
+                                        </Link>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className={`w-[calc(50%-2rem)] pl-8 ${index % 2 === 0 ? 'order-1' : ''}`}>
-                                {/* Content for the other side */}
+                            )}
+                        </div>
+
+                        {/* Center Icon */}
+                        <div className="relative z-10 order-2 mx-8">
+                            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg ring-8 ring-black">
+                                {React.cloneElement(item.icon, { size: 32 })}
                             </div>
                         </div>
 
-                        <div className={`w-[calc(50%-4rem)] mx-auto p-1`}>
-                            <div className={`glass-card p-6 rounded-2xl text-center`}>
-                                 <p className="text-lg font-semibold text-blue-400 mb-2">{item.period}</p>
-                                <h3 className="text-2xl font-bold gradient-text">{item.college}</h3>
-                                <p className="text-lg text-gray-300 font-semibold mt-1">{item.degree}</p>
-                                <p className="text-sm text-gray-400 mt-3">{item.description}</p>
-                                <div className="mt-6">
-                                    <Link href={item.link}>
-                                        <Button className="btn-solve">
-                                            Explore Journey →
-                                        </Button>
-                                    </Link>
+                        {/* Right Card */}
+                        <div className={`w-[calc(50%-4rem)] ${index % 2 === 1 ? 'order-1' : 'order-3'}`}>
+                             {index % 2 === 1 && (
+                                <div className="glass-card p-6 rounded-2xl text-left">
+                                     <p className="text-lg font-semibold text-blue-400 mb-2">{item.period}</p>
+                                    <h3 className="text-2xl font-bold gradient-text">{item.college}</h3>
+                                    <p className="text-lg text-gray-300 font-semibold mt-1">{item.degree}</p>
+                                    <p className="text-sm text-gray-400 mt-3">{item.description}</p>
+                                    <div className="mt-6">
+                                        <Link href={item.link}>
+                                            <Button className="btn-solve">
+                                                Explore Journey →
+                                            </Button>
+                                        </Link>
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
                     </div>
                 ))}
