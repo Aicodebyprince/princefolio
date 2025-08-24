@@ -77,7 +77,7 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                                     delay: 2000,
                                     stopOnInteraction: true,
                                     stopOnMouseEnter: true,
-                                    direction: roleIndex % 2 === 0 ? 'forward' : 'backward',
+                                    direction: 'forward',
                                 })
                             ]}
                             className="w-full"
