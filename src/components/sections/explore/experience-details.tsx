@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Code, Users, FileText, Layout, Bank } from 'lucide-react';
+import { Code, Users, FileText, Layout, Landmark } from 'lucide-react';
 
 type Detail = {
     title: string;
@@ -18,7 +18,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
     code: <Code className="w-8 h-8 text-green-400" />,
     users: <Users className="w-8 h-8 text-purple-400" />,
     layout: <Layout className="w-8 h-8 text-yellow-400" />,
-    bank: <Bank className="w-8 h-8 text-red-400" />,
+    bank: <Landmark className="w-8 h-8 text-red-400" />,
 };
 
 const ExperienceDetails = ({ details }: ExperienceDetailsProps) => {
