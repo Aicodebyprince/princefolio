@@ -33,9 +33,31 @@ const TransitionScreen = () => {
                 }
 
                 @keyframes launch {
-                    0% { transform: translateY(100vh) scale(0.5) rotate(-45deg); opacity: 0; }
-                    25% { opacity: 1; }
-                    100% { transform: translateY(-100vh) scale(1.2) rotate(-45deg); opacity: 0; }
+                    0% {
+                        transform: translateY(50vh) scale(0.5) rotate(-45deg);
+                        opacity: 0;
+                    }
+                    20% {
+                        transform: translateY(0) scale(1) rotate(-45deg);
+                        opacity: 1;
+                    }
+                    /* Vibrate */
+                    25% { transform: translateY(0) scale(1) rotate(-45deg) translate(-2px, 2px); }
+                    30% { transform: translateY(0) scale(1) rotate(-45deg) translate(2px, -2px); }
+                    35% { transform: translateY(0) scale(1) rotate(-45deg) translate(-2px, -2px); }
+                    40% { transform: translateY(0) scale(1) rotate(-45deg) translate(2px, 2px); }
+                    45% { 
+                        transform: translateY(0) scale(1) rotate(-45deg) translate(0, 0); 
+                        opacity: 1;
+                    }
+                    /* Zoom and Launch */
+                    50% {
+                        transform: translateY(0) scale(1.2) rotate(-45deg);
+                    }
+                    100% { 
+                        transform: translateY(-100vh) scale(1.5) rotate(-45deg); 
+                        opacity: 0;
+                    }
                 }
                 .animate-launch {
                     animation: launch 0.9s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
