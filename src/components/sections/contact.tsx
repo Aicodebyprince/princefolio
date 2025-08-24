@@ -76,12 +76,12 @@ const ContactContent = ({ isVisible }: { isVisible?: boolean }) => {
                             <div>
                                 <label className="block text-sm font-semibold mb-3 text-gray-300">Project Type</label>
                                 <select name="projectType" required className="form-input w-full p-4 rounded-xl text-white">
-                                    <option value="">Select project type</option>
-                                    <option value="web-app">Web Application</option>
-                                    <option value="mobile-app">Mobile App</option>
-                                    <option value="api">API Development</option>
-                                    <option value="consulting">Technical Consulting</option>
-                                    <option value="other">Other</option>
+                                    <option value="" className="text-black">Select project type</option>
+                                    <option value="web-app" className="text-black">Web Application</option>
+                                    <option value="mobile-app" className="text-black">Mobile App</option>
+                                    <option value="api" className="text-black">API Development</option>
+                                    <option value="consulting" className="text-black">Technical Consulting</option>
+                                    <option value="other" className="text-black">Other</option>
                                 </select>
                             </div>
                             <div>
