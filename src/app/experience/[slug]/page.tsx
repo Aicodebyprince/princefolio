@@ -2,14 +2,15 @@
 
 import React from 'react';
 import { experiences } from '@/lib/data';
-import { notFound, useRouter } from 'next/navigation';
+import { notFound, useRouter, useParams } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import ExperienceDetails from '@/components/sections/explore/experience-details';
 import AnimatedBackground from '@/components/animated-background';
 import { Button } from '@/components/ui/button';
 
-export default function ExperiencePage({ params }: { params: { slug: string } }) {
+export default function ExperiencePage() {
     const router = useRouter();
+    const params = useParams();
     const experience = experiences.find(exp => exp.slug === params.slug);
 
     if (!experience) {
