@@ -1,3 +1,6 @@
+import { GraduationCap } from 'lucide-react';
+import React from 'react';
+
 export const skills = {
     mobile: [
         { name: 'Flutter & Dart', level: 90 },
@@ -153,64 +156,73 @@ export const contactInfo = [
     { icon: '🐙', label: 'GitHub', value: 'github.com/Aicodebyprince', detail: 'Check out my code', color: 'text-purple-400', link: 'https://github.com/Aicodebyprince' },
 ];
 
-export const rmcJourney = {
-    period: '2019 - 2022',
-    highlights: [
-        {
-            type: 'academic',
-            title: 'Graduated with First Class Honors',
-            description: 'Completed my BSc in Information Technology with a strong academic record, focusing on foundational computer science principles and software development.',
-        },
-        {
-            type: 'project',
-            title: 'Library Management System',
-            description: 'Developed a comprehensive library management system as a final year project. This application streamlined book-keeping, member management, and lending processes.',
-            details: [
-                'Built with Java and MySQL.',
-                'Featured a user-friendly interface for both librarians and members.',
-                'Included search, tracking, and reporting functionalities.'
-            ],
-        },
-        {
-            type: 'event',
-            title: 'Coding Club Activities',
-            description: 'As an active member of the college coding club, I participated in and helped organize multiple events, fostering a culture of collaborative learning and competition.',
-            details: [
-                'Organized two intra-college hackathons.',
-                'Conducted workshops on introductory Python and web development.',
-                'Mentored junior students in competitive programming.'
-            ],
-        }
-    ]
-};
-
-export const mithibaiJourney = {
-    period: '2022 - 2024',
-    highlights: [
-        {
-            type: 'academic',
-            title: 'Specialization in Mobile Development',
-            description: 'Focused my MSc on advanced algorithms and mobile application development, gaining deep expertise in building cross-platform applications with Flutter.',
-        },
-        {
-            type: 'project',
-            title: 'Campus Event Management App',
-            description: 'Led a team to develop a campus-wide event management application. The app served as a central hub for all college events, announcements, and student registrations.',
-            details: [
-                'Developed using Flutter and Firebase for real-time data synchronization.',
-                'Features included event calendars, push notifications, and a user feedback system.',
-                'Successfully managed a team of four developers, following Agile methodologies.'
-            ],
-            ctaLink: 'https://github.com/Aicodebyprince/College-Management-App'
-        },
-        {
-            type: 'academic',
-            title: 'Published Research Paper',
-            description: 'Co-authored and published a research paper on the applications of AI in data analysis, exploring new models for predictive analytics.',
-            details: [
-                'Paper focused on AI-driven data analysis techniques.',
-                'Presented at a national-level computer science conference.',
-            ],
-        }
-    ]
-};
+export const journeyData = [
+    {
+        college: "Mithibai College",
+        degree: "MSc in Computer Science",
+        period: "2022 - 2024",
+        icon: React.createElement(GraduationCap),
+        description: "Specialized in advanced computer science topics, with a focus on mobile application development and AI.",
+        highlights: [
+            {
+                type: 'academic',
+                title: 'Specialization in Mobile Development',
+                description: 'Focused my MSc on advanced algorithms and mobile application development, gaining deep expertise in building cross-platform applications with Flutter.',
+            },
+            {
+                type: 'project',
+                title: 'Campus Event Management App',
+                description: 'Led a team to develop a campus-wide event management application. The app served as a central hub for all college events, announcements, and student registrations.',
+                details: [
+                    'Developed using Flutter and Firebase for real-time data synchronization.',
+                    'Features included event calendars, push notifications, and a user feedback system.',
+                    'Successfully managed a team of four developers, following Agile methodologies.'
+                ],
+                ctaLink: 'https://github.com/Aicodebyprince/College-Management-App'
+            },
+            {
+                type: 'academic',
+                title: 'Published Research Paper',
+                description: 'Co-authored and published a research paper on the applications of AI in data analysis, exploring new models for predictive analytics.',
+                details: [
+                    'Paper focused on AI-driven data analysis techniques.',
+                    'Presented at a national-level computer science conference.',
+                ],
+            }
+        ]
+    },
+    {
+        college: "RMC College",
+        degree: "BSc in Information Technology",
+        period: "2019 - 2022",
+        icon: React.createElement(GraduationCap),
+        description: "Built a strong foundation in IT, covering core concepts of programming, databases, and networking.",
+        highlights: [
+            {
+                type: 'academic',
+                title: 'Graduated with First Class Honors',
+                description: 'Completed my BSc in Information Technology with a strong academic record, focusing on foundational computer science principles and software development.',
+            },
+            {
+                type: 'project',
+                title: 'Library Management System',
+                description: 'Developed a comprehensive library management system as a final year project. This application streamlined book-keeping, member management, and lending processes.',
+                details: [
+                    'Built with Java and MySQL.',
+                    'Featured a user-friendly interface for both librarians and members.',
+                    'Included search, tracking, and reporting functionalities.'
+                ],
+            },
+            {
+                type: 'event',
+                title: 'Coding Club Activities',
+                description: 'As an active member of the college coding club, I participated in and helped organize multiple events, fostering a culture of collaborative learning and competition.',
+                details: [
+                    'Organized two intra-college hackathons.',
+                    'Conducted workshops on introductory Python and web development.',
+                    'Mentored junior students in competitive programming.'
+                ],
+            }
+        ]
+    }
+];
