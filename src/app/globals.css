@@ -645,3 +645,122 @@ body {
   border-color: #667eea;
   outline: none;
 }
+
+/* Live Resume Styles */
+.resume-container {
+    max-width: 1100px;
+    margin: 4rem auto;
+    background-color: #ffffff;
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.resume-sidebar {
+    background-color: #0d47a1;
+    color: #ffffff;
+    padding: 2.5rem;
+    width: 35%;
+}
+.resume-main {
+    padding: 2.5rem;
+    width: 65%;
+    color: #333;
+}
+.resume-header {
+    margin-bottom: 2rem;
+}
+.resume-header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: 1.2;
+}
+.resume-section {
+    margin-bottom: 2rem;
+}
+.resume-section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid;
+    margin-bottom: 1rem;
+}
+.resume-sidebar .resume-section-title {
+    border-color: #42a5f5;
+}
+.resume-main .resume-section-title {
+    color: #0d47a1;
+    border-color: #e0e0e0;
+}
+.resume-sidebar p, .resume-sidebar li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+.resume-sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+.resume-sidebar ul li {
+    margin-bottom: 0.5rem;
+}
+.resume-main .entry {
+    margin-bottom: 1.5rem;
+}
+.resume-main .entry:last-child {
+    margin-bottom: 0;
+}
+.resume-main h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 0.25rem;
+}
+.resume-main .sub-heading {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+.resume-main .entry p, .resume-main .entry ul {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.6;
+}
+.resume-main .entry ul {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+@media print {
+    body {
+        background-color: #fff;
+    }
+    .resume-container {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .resume-sidebar {
+        background-color: #0d47a1 !important;
+        -webkit-print-color-adjust: exact; 
+        color-adjust: exact;
+    }
+    .resume-main .resume-section-title {
+        color: #0d47a1 !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .resume-container {
+        flex-direction: column;
+        margin: 2rem auto;
+    }
+    .resume-sidebar, .resume-main {
+        width: 100%;
+    }
+}

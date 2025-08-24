@@ -127,9 +127,9 @@ const HeroSection = ({ onExploreClick }: { onExploreClick: (tab: string) => void
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
-                    <Link href="/explore">
+                    <Link href="/resume">
                         <Button className="btn-solve px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
-                            <span className="relative z-10">Explore More 🚀</span>
+                            <span className="relative z-10">Live Resume 🚀</span>
                         </Button>
                     </Link>
                     <a href="/resume.pdf" download="PrinceSherathiya_Resume.pdf" className="inline-flex items-center justify-center border-2 border-white/20 hover:border-white/40 px-8 py-4 rounded-xl font-bold text-base transition-all hover:bg-white/5">
