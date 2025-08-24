@@ -30,8 +30,10 @@ const ContactSection = () => {
         }, 4000);
     };
 
-    return (
-        <SectionWrapper id="contact" className="py-32 px-6">
+    // isVisible is passed by SectionWrapper but not used directly here.
+    // Destructuring it prevents it from being passed to the underlying div.
+    const ContactContent = ({ isVisible }: { isVisible?: boolean }) => {
+        return (
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-20">
                     <h2 className="text-5xl md:text-6xl font-black mb-8">
@@ -116,6 +118,12 @@ const ContactSection = () => {
                     </Card3D>
                 </div>
             </div>
+        );
+    }
+
+    return (
+        <SectionWrapper id="contact" className="py-32 px-6">
+            <ContactContent />
         </SectionWrapper>
     );
 };

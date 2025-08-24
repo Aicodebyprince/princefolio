@@ -5,7 +5,7 @@ import Card3D from '../card-3d';
 import SectionWrapper from '../section-wrapper';
 import { experiences } from '@/lib/data';
 
-const ExperienceContent = () => (
+const ExperienceContent = ({ isVisible }: { isVisible?: boolean }) => (
     <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black mb-8">

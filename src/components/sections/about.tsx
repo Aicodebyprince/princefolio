@@ -4,7 +4,7 @@ import React from 'react';
 import Card3D from '../card-3d';
 import SectionWrapper from '../section-wrapper';
 
-const AboutContent = () => {
+const AboutContent = ({ isVisible }: { isVisible?: boolean }) => {
     const whatIDo = [
         { text: 'Build responsive web applications', gradient: 'from-blue-500 to-purple-600' },
         { text: 'Design scalable backend systems', gradient: 'from-purple-600 to-pink-500' },
