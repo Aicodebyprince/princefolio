@@ -4,12 +4,27 @@
 import React from 'react';
 import type { Project } from '@/lib/data';
 import Image from 'next/image';
-import { CheckCircle, AlertTriangle, Github, Target, Zap } from 'lucide-react';
+import { Target, Zap, Users, GraduationCap, Briefcase, UserShield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Github } from 'lucide-react';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
+
+const roleIcons: { [key: string]: React.ReactNode } = {
+    visitors: <Users className="w-8 h-8" />,
+    students: <GraduationCap className="w-8 h-8" />,
+    teachers: <Briefcase className="w-8 h-8" />,
+    admins: <UserShield className="w-8 h-8" />,
+};
 
 const ProjectDetails = ({ project }: { project: Project }) => {
     return (
-        <div className="space-y-12">
+        <div className="space-y-16">
             <header className="text-center">
                 <h1 className="text-5xl font-bold tracking-tighter mb-2 gradient-text">{project.title}</h1>
                 <p className="text-xl text-gray-300 font-semibold">{project.category}</p>
@@ -22,23 +37,6 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                     </a>
                 </div>
             </header>
-
-            <div className="max-w-sm mx-auto">
-                <div className="grid grid-cols-1 gap-4">
-                    {project.screenshots?.map((ss, index) => (
-                         <div key={index} className="glass-card rounded-lg overflow-hidden p-2">
-                            <Image
-                                src={ss.url}
-                                alt={`${project.title} Screenshot ${index + 1}`}
-                                width={640}
-                                height={360}
-                                className="rounded-md"
-                                data-ai-hint={ss.dataAiHint}
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div>
 
             <div className="grid md:grid-cols-2 gap-12">
                 <div className="glass-card rounded-2xl p-8">
@@ -57,17 +55,49 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                 </div>
             </div>
 
-            <div className="glass-card rounded-2xl p-8">
-                <h3 className="text-2xl font-bold gradient-text mb-6 text-center">Key Outcomes & Features</h3>
-                <ul className="space-y-4 max-w-4xl mx-auto columns-1 md:columns-2">
-                    {project.features?.map((feature, i) => (
-                        <li key={i} className="flex items-start text-gray-300 break-inside-avoid">
-                            <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
-                            {feature}
-                        </li>
-                    ))}
-                </ul>
+            {/* User Role Screenshot Carousels */}
+            <div className="space-y-16">
+                {project.screenshotsByRole?.map(role => (
+                    <div key={role.title} className="space-y-6">
+                        <div className="flex flex-col items-center text-center">
+                            <div className="w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
+                                <span className="text-4xl text-accent">{roleIcons[role.role]}</span>
+                            </div>
+                            <h3 className="text-3xl font-bold gradient-text">{role.title}</h3>
+                            <p className="text-gray-400 max-w-2xl">{role.description}</p>
+                        </div>
+                        <Carousel
+                            opts={{
+                                align: "start",
+                                loop: true,
+                            }}
+                            className="w-full"
+                        >
+                            <CarouselContent className="-ml-4">
+                                {role.screenshots.map((ss, index) => (
+                                    <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4 pl-4">
+                                        <div className="p-1">
+                                            <div className="glass-card rounded-lg overflow-hidden p-2 aspect-[9/18]">
+                                                <Image
+                                                    src={ss.url}
+                                                    alt={`${role.title} Screenshot ${index + 1}`}
+                                                    width={250}
+                                                    height={500}
+                                                    className="rounded-md object-cover w-full h-full"
+                                                    data-ai-hint={ss.dataAiHint}
+                                                />
+                                            </div>
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious className="hidden sm:flex" />
+                            <CarouselNext className="hidden sm:flex" />
+                        </Carousel>
+                    </div>
+                ))}
             </div>
+
 
             <div className="glass-card rounded-2xl p-8">
                 <h3 className="text-2xl font-bold gradient-text mb-6 text-center">Tech Stack</h3>

@@ -7,6 +7,13 @@ export type Screenshot = {
     dataAiHint: string;
 };
 
+export type ScreenshotsByRole = {
+    role: 'visitors' | 'students' | 'teachers' | 'admins';
+    title: string;
+    description: string;
+    screenshots: Screenshot[];
+}
+
 export type Project = {
     icon: string;
     title: string;
@@ -19,7 +26,7 @@ export type Project = {
     tags: string[];
     stat: string;
     slug?: string;
-    screenshots?: Screenshot[];
+    screenshotsByRole?: ScreenshotsByRole[];
     features?: string[];
     problem?: string;
     solution?: string;
@@ -97,22 +104,55 @@ export const projects: Project[] = [
         liveUrl: '',
         tags: ['Flutter', 'Firebase', 'State Management', 'UX/UI', 'Real-time DB'],
         stat: 'Full-Stack Campus Platform',
-        screenshots: [
-            { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Screenshot%202025-01-27%20135532.png?alt=media&token=0099cb45-d057-4ebe-bcb5-8fbb6b7ea79c', dataAiHint: 'mobile app screen' },
-            { url: 'https://placehold.co/1280x720.png', dataAiHint: 'dashboard analytics' },
-        ],
         problem: 'Traditional colleges often suffer from scattered information, poor communication between departments, and manual, time-consuming processes. Students and faculty struggle to keep track of schedules, announcements, and academic progress in one unified place.',
-        solution: 'I developed a centralized mobile application using Flutter and Firebase that serves as a single source of truth for the entire campus. The app provides role-based access for students and teachers, offering tailored dashboards with real-time information and interactive features.',
-        features: [
-            "Real-time attendance tracking with analytics for faculty.",
-            "Push notifications for personalized alerts and campus news.",
-            "Secure, role-based access for students, faculty, and administration.",
-            "Centralized hub for important notices and circulars.",
-            "Integrated academic calendar with event reminders.",
-            "Direct student-teacher chat functionality for query resolution.",
-            "Module for viewing and tracking academic results.",
-            "User-friendly and intuitive interface designed for quick access to information."
-        ],
+        solution: 'I developed a centralized mobile application using Flutter and Firebase that serves as a single source of truth for the entire campus. The app provides role-based access for students, teachers, visitors and admins, offering tailored dashboards with real-time information and interactive features.',
+        screenshotsByRole: [
+            {
+                role: 'visitors',
+                title: 'For the Visitors',
+                description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
+                screenshots: [
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'mobile app screen' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'campus tour' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'events calendar' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'admissions form' },
+                ]
+            },
+            {
+                role: 'students',
+                title: 'For the Students',
+                description: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.',
+                screenshots: [
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'student dashboard' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'attendance tracker' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'exam results' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'class schedule' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'chat interface' },
+                ]
+            },
+            {
+                role: 'teachers',
+                title: 'For the Teachers',
+                description: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.',
+                screenshots: [
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'teacher dashboard' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'take attendance' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'upload marks' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'send notification' },
+                ]
+            },
+            {
+                role: 'admins',
+                title: 'For the Admins',
+                description: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.',
+                screenshots: [
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'admin dashboard' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'user management' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'analytics charts' },
+                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'broadcast message' },
+                ]
+            }
+        ]
     },
     {
         icon: 'vault',
