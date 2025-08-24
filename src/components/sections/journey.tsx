@@ -5,10 +5,12 @@ import SectionWrapper from '../section-wrapper';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { journeyData } from '@/lib/data';
+import Card3D from '../card-3d';
 
 const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void }> = ({ isVisible, onExploreClick }) => {
     if (!isVisible) return null;
 
+    // Display in chronological order: St. Jerome -> Mithibai
     const displayJourneyData = [...journeyData].reverse();
 
     return (
@@ -20,30 +22,22 @@ const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void
                 <p className="text-lg text-gray-300 font-light">From foundational principles to advanced specialization.</p>
             </div>
 
-            <div className="relative max-w-2xl mx-auto">
-                {/* Vertical Line */}
-                <div className="absolute left-10 top-0 w-0.5 h-full bg-white/10 -translate-x-1/2" aria-hidden="true"></div>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {displayJourneyData.map((item, index) => (
-                    <div key={index} className="relative pl-24 mb-12">
-                        {/* Icon */}
-                        <div className="absolute left-0 top-0 z-10">
-                            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500/20 via-purple-600/20 to-pink-500/20 backdrop-blur-sm flex items-center justify-center text-white shadow-lg ring-8 ring-black">
+                    <Card3D key={index} className="glass-card rounded-3xl p-6 text-center">
+                        <div className="flex justify-center mb-6">
+                             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500/20 via-purple-600/20 to-pink-500/20 backdrop-blur-sm flex items-center justify-center text-white shadow-lg ring-8 ring-black">
                                 {item.icon}
                             </div>
                         </div>
-                        
-                        {/* Content */}
-                        <div className="glass-card rounded-2xl p-8 w-full">
-                            <p className="text-lg font-semibold text-blue-400 mb-2">{item.period}</p>
-                            <h3 className="text-2xl font-bold gradient-text mb-2">{item.college}</h3>
-                            <p className="text-md text-gray-300 font-semibold">{item.degree}</p>
-                        </div>
-                    </div>
+                        <h3 className="text-lg font-bold gradient-text mb-2 h-12 flex items-center justify-center">{item.college}</h3>
+                        <p className="text-sm text-gray-300 font-semibold mb-2 h-10 flex items-center justify-center">{item.degree}</p>
+                        <p className="text-xs font-semibold text-blue-400">{item.period}</p>
+                    </Card3D>
                 ))}
             </div>
 
-             <div className="text-center mt-16">
+             <div className="text-center mt-20">
                 <Link href="/explore?tab=journey">
                     <Button className="btn-solve">
                         Explore Full Journey →
