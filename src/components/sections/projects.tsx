@@ -5,6 +5,7 @@ import SectionWrapper from '../section-wrapper';
 import { projects } from '@/lib/data';
 import { GitBranch, HelpingHand, BookOpen } from 'lucide-react';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const iconMap: { [key: string]: React.ElementType } = {
     college: GitBranch,
@@ -71,9 +72,11 @@ const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => voi
             </div>
 
             <div className="text-center mt-16">
-                 <Button onClick={onExploreClick} className="btn-primary">
-                    Explore All Projects
-                </Button>
+                 <Link href="/explore">
+                    <Button className="btn-primary">
+                        Explore All Projects
+                    </Button>
+                 </Link>
             </div>
         </div>
     );

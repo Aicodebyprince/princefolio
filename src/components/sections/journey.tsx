@@ -4,6 +4,7 @@ import React from 'react';
 import SectionWrapper from '../section-wrapper';
 import { GraduationCap } from 'lucide-react';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const journeyData = [
     {
@@ -57,9 +58,11 @@ const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void
             </div>
 
              <div className="text-center mt-16">
-                <Button onClick={onExploreClick} className="btn-solve">
-                    Explore Full Journey →
-                </Button>
+                <Link href="/explore">
+                    <Button className="btn-solve">
+                        Explore Full Journey →
+                    </Button>
+                </Link>
             </div>
         </div>
     );

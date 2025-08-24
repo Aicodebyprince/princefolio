@@ -73,7 +73,7 @@ const ExploreView = ({ onBackClick, initialTab = 'projects' }: ExploreViewProps)
         <div className="p-4 border-t border-white/10">
            <Button onClick={onBackClick} variant="ghost" className={cn('w-full flex items-center justify-start hover:bg-white/10', !isSidebarOpen && 'justify-center')}>
               <ArrowLeft className="w-5 h-5" />
-              <span className={cn('ml-3', !isSidebarOpen && 'hidden')}>Back</span>
+              <span className={cn('ml-3', !isSidebarOpen && 'hidden')}>Back to Portfolio</span>
           </Button>
         </div>
       </nav>
