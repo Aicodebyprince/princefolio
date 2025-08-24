@@ -40,11 +40,18 @@ const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => voi
                                     <div className="text-center p-4">
                                         <h4 className="text-xl font-bold mb-4">{project.title}</h4>
                                         <p className="text-xs mb-6 opacity-90 leading-relaxed">{project.shortDescription}</p>
-                                        <div className="flex gap-3 justify-center">
-                                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="bg-white text-black px-5 py-2 rounded-lg font-bold text-xs hover:bg-gray-100 transition-all">
+                                        <div className="flex flex-col gap-3 justify-center">
+                                            {project.slug && (
+                                                <Link href={`/project/${project.slug}`} passHref>
+                                                    <Button className="w-full bg-white text-black px-5 py-2 rounded-lg font-bold text-xs hover:bg-gray-200 transition-all">
+                                                        View Case Study
+                                                    </Button>
+                                                </Link>
+                                            )}
+                                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="w-full bg-white/20 text-white px-5 py-2 rounded-lg font-bold text-xs hover:bg-white/30 transition-all">
                                                 GitHub
                                             </a>
-                                            {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="border-2 border-white px-5 py-2 rounded-lg text-xs font-bold hover:bg-white/10 transition-all">
+                                            {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="w-full border-2 border-white px-5 py-2 rounded-lg text-xs font-bold hover:bg-white/10 transition-all">
                                                 Live Demo
                                             </a>}
                                         </div>
