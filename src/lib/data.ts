@@ -167,35 +167,6 @@ export const experiences = [
                 icon: 'users'
             },
         ]
-    },
-    {
-        role: 'Web Development & Designing Intern',
-        company: 'The Sparks Foundation',
-        slug: 'the-sparks-foundation',
-        period: 'Jun 2021 - Jul 2021',
-        path: '/experience/the-sparks-foundation',
-        achievements: [
-            'Completed tasks using HTML, CSS, and JavaScript.',
-            'Developed a Basic Banking System website as part of the internship.',
-            'Gained practical experience in web design principles and front-end development.',
-        ],
-        details: [
-            {
-                title: 'Front-End Development Tasks',
-                description: 'Worked on various front-end tasks, building responsive web components and layouts using HTML, CSS, and JavaScript. Focused on creating user-friendly and visually appealing interfaces.',
-                icon: 'layout'
-            },
-            {
-                title: 'Basic Banking System Project',
-                description: 'Designed and developed a functional website for a basic banking system. The project included features for viewing customer data and simulating money transfers between users, demonstrating skills in dynamic web content.',
-                icon: 'landmark'
-            },
-            {
-                title: 'Collaborative Learning',
-                description: 'Participated in a remote team environment, collaborating with fellow interns and receiving mentorship on web development best practices and industry standards.',
-                icon: 'users'
-            },
-        ]
     }
 ];
 
