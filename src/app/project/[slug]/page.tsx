@@ -25,8 +25,8 @@ export default function ProjectPage() {
     return (
         <div className="min-h-screen bg-black text-white antialiased">
             <AnimatedBackground />
-            <div className="relative z-10 p-8 md:p-12">
-                <div className="max-w-6xl mx-auto">
+            <div className="relative z-10">
+                <div className="max-w-6xl mx-auto px-8 md:px-12 py-8">
                     <Button variant="ghost" onClick={handleBack} className="mb-8 hover:bg-white/10">
                         <ArrowLeft className="w-5 h-5 mr-2" />
                         Back to All Projects
