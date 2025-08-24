@@ -25,7 +25,8 @@ const TransitionScreen = () => {
                         top: `${Math.random() * 100}%`,
                         width: `${size}px`,
                         height: `${size}px`,
-                        animationDelay: `${Math.random() * 2}s`
+                        animationDelay: `${Math.random() * 2}s`,
+                        animationDuration: `${Math.random() * 2 + 1}s` // Slower parallax for depth
                     }
                 });
             }
@@ -48,20 +49,14 @@ const TransitionScreen = () => {
                         }
                     });
                 }
-                setSmoke(prev => [...prev, ...newSmoke]);
+                setSmoke(prev => [...prev, ...newSmoke].slice(-50)); // Limit particles
             }, 50);
 
-            // --- Launch Sequence Orchestration ---
             const rumbleDuration = 400; 
             const launchDuration = 1000;
 
-            // Stop the smoke burst after the rumble
             setTimeout(() => clearInterval(smokeInterval), rumbleDuration);
-
-            // Clean up old smoke particles
-            const smokeCleanup = setTimeout(() => {
-                setSmoke([]);
-            }, rumbleDuration + launchDuration);
+            const smokeCleanup = setTimeout(() => setSmoke([]), rumbleDuration + launchDuration);
 
             return () => {
                 clearInterval(smokeInterval);
@@ -121,7 +116,8 @@ const TransitionScreen = () => {
                     background: #fff;
                     border-radius: 50%;
                     box-shadow: 0 0 10px #fff;
-                    animation: star-twinkle 3s infinite;
+                    animation-name: star-twinkle, star-move;
+                    animation-timing-function: infinite;
                 }
                 
                 .rocket-container {
@@ -154,13 +150,13 @@ const TransitionScreen = () => {
                     display: flex;
                     justify-content: center;
                     align-items: flex-end;
+                    z-index: 10;
                 }
 
                 .smoke {
                     position: absolute;
                     bottom: -50px;
                     border-radius: 50%;
-                    z-index: 10;
                     background: radial-gradient(circle, #ddd, #aaa 50%, rgba(150, 150, 150, 0.5) 70%, transparent);
                     animation-name: smoke-plume;
                     animation-timing-function: linear;
@@ -179,16 +175,22 @@ const TransitionScreen = () => {
                 }
 
                 @keyframes launch {
-                    0% { transform: translateY(0) scale(1); }
-                    10% { transform: translateY(0) scale(1.1); } /* Zoom pulse */
-                    20% { transform: translateY(-5px) scale(1.1); } /* Vibrate */
-                    30% { transform: translateY(0) scale(1.1); } /* Vibrate */
+                    0% { transform: translateY(100vh) scale(0.5); }
+                    20% { transform: translateY(0) scale(1); }
+                    30% { transform: translateY(0) scale(1.1); }
+                    40% { transform: translateY(-5px) scale(1.1); }
+                    50% { transform: translateY(0) scale(1.1); }
                     100% { transform: translateY(-120vh) scale(0.5); }
                 }
 
                 @keyframes parallax-scroll {
                     0% { transform: translateY(0); }
                     100% { transform: translateY(50vh); }
+                }
+                
+                @keyframes star-move {
+                    from { transform: translateY(0px); }
+                    to { transform: translateY(-2000px); }
                 }
 
                 @keyframes flicker {

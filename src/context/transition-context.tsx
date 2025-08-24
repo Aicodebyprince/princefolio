@@ -19,12 +19,12 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
 
     const handleTransition = (path: string) => {
         setIsTransitioning(true);
-        // Page change logic - faster
+        // Page change logic - synced with animation
         setTimeout(() => {
             router.push(path);
-        }, 400); // Corresponds to rumble animation
+        }, 500); // Wait for the rocket to be centered before changing page
 
-        // End of animation cleanup - faster
+        // End of animation cleanup
         setTimeout(() => {
             setIsTransitioning(false);
         }, 1400); // Total animation duration
