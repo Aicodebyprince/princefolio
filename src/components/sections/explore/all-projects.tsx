@@ -1,9 +1,11 @@
+
 'use client';
 
 import React from 'react';
 import { projects } from '@/lib/data';
-import { GitBranch, HelpingHand, BookOpen, Code as CodeIcon, BarChart } from 'lucide-react';
+import { GitBranch, HelpingHand, BookOpen, Code as CodeIcon, BarChart, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const iconMap: { [key: string]: React.ElementType } = {
     college: GitBranch,
@@ -27,7 +29,7 @@ const AllProjectsSection = () => {
                 {projects.map((project, index) => {
                     const ProjectIcon = iconMap[project.icon] || CodeIcon;
                     return (
-                        <div key={index} className="glass-card rounded-2xl p-6 flex flex-col">
+                        <div key={index} className="glass-card rounded-2xl p-6 flex flex-col group">
                             <div className="flex-grow">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="bg-white/10 p-3 rounded-lg">
@@ -45,11 +47,19 @@ const AllProjectsSection = () => {
                                 </div>
                             </div>
                             <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
-                                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                  <Button variant="link" className="text-gray-300 hover:text-white p-0">
-                                      View on GitHub
-                                  </Button>
-                                </a>
+                                {project.slug ? (
+                                    <Link href={`/project/${project.slug}`} passHref>
+                                        <Button variant="link" className="text-accent p-0">
+                                            View Case Study <ArrowRight className="w-4 h-4 ml-2" />
+                                        </Button>
+                                    </Link>
+                                ) : (
+                                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                        <Button variant="link" className="text-gray-300 hover:text-white p-0">
+                                            View on GitHub
+                                        </Button>
+                                    </a>
+                                )}
                                 {project.liveUrl && (
                                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                         <Button variant="secondary" className="bg-accent/80 hover:bg-accent text-white">

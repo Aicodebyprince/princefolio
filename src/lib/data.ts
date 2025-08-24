@@ -1,5 +1,28 @@
+
 import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle } from 'lucide-react';
 import React from 'react';
+
+export type Screenshot = {
+    url: string;
+    dataAiHint: string;
+};
+
+export type Project = {
+    icon: string;
+    title: string;
+    description: string;
+    category: string;
+    shortTitle: string;
+    shortDescription: string;
+    githubUrl: string;
+    liveUrl: string;
+    tags: string[];
+    stat: string;
+    slug?: string;
+    screenshots?: Screenshot[];
+    features?: string[];
+    challenges?: string[];
+};
 
 export const services = [
     {
@@ -59,18 +82,35 @@ export const technologies = [
     'Flutter', 'Dart', 'Firebase', 'Python', 'Django', 'REST APIs', 'JSON', 'Git', 'GitHub', 'Figma', 'Canva', 'Agile', 'Next.js', 'React', 'TypeScript'
 ];
 
-export const projects = [
+export const projects: Project[] = [
     {
         icon: 'college',
         title: 'College Management App',
+        slug: 'college-management-app',
         description: 'A complete college management app using Flutter & Firebase, integrating real-time student-teacher interactions, attendance, and notification systems.',
         category: 'Mobile App',
         shortTitle: 'College App',
         shortDescription: 'Real-time college management system',
         githubUrl: 'https://github.com/Aicodebyprince/College-Management-App',
         liveUrl: '',
-        tags: ['Flutter', 'Firebase', 'Dart'],
+        tags: ['Flutter', 'Firebase', 'Dart', 'State Management', 'UI/UX'],
         stat: 'Full-cycle Flutter development',
+        screenshots: [
+            { url: 'https://placehold.co/1280x720.png', dataAiHint: 'mobile app login' },
+            { url: 'https://placehold.co/1280x720.png', dataAiHint: 'dashboard analytics' },
+        ],
+        features: [
+            "Real-time student-teacher interaction via chat.",
+            "Digital attendance tracking and reporting.",
+            "Push notifications for important announcements and reminders.",
+            "Secure user authentication for students, teachers, and admins.",
+            "Dynamic timetable and event scheduling.",
+        ],
+        challenges: [
+            "Implementing a real-time notification system that was both reliable and battery-efficient.",
+            "Designing a complex role-based access control system for different user types.",
+            "Ensuring seamless data synchronization across multiple devices in real-time.",
+        ],
     },
     {
         icon: 'vault',
