@@ -4,6 +4,8 @@ import React from 'react';
 import Card3D from '../card-3d';
 import SectionWrapper from '../section-wrapper';
 import { services } from '@/lib/data';
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const ServicesContent = ({ isVisible }: { isVisible?: boolean }) => {
     if (!isVisible) return null;
@@ -32,6 +34,13 @@ const ServicesContent = ({ isVisible }: { isVisible?: boolean }) => {
                         </Card3D>
                     );
                 })}
+            </div>
+            <div className="text-center mt-20">
+                <Link href="/explore?tab=services">
+                    <Button className="btn-primary">
+                        Explore All Services
+                    </Button>
+                </Link>
             </div>
         </div>
     );

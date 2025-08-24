@@ -4,6 +4,8 @@ import React from 'react';
 import Card3D from '../card-3d';
 import SectionWrapper from '../section-wrapper';
 import { skills, technologies } from '@/lib/data';
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 interface SkillBarProps {
     level: number;
@@ -104,6 +106,13 @@ const SkillsContent: React.FC<SkillsContentProps> = ({ isVisible = false }) => {
                         ))}
                     </div>
                 </Card3D>
+            </div>
+            <div className="text-center mt-20">
+                <Link href="/explore?tab=projects">
+                    <Button className="btn-primary">
+                        Explore All Skills & Projects
+                    </Button>
+                </Link>
             </div>
         </div>
     );
