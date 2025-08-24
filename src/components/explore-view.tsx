@@ -1,23 +1,43 @@
+
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
+import dynamic from 'next/dynamic';
 import { Button } from './ui/button';
 import { ArrowLeft, Rss, LayoutTemplate, Code, Menu, GraduationCap, Briefcase, Swords, Layers, Puzzle } from 'lucide-react';
-import AllProjectsSection from './sections/explore/all-projects';
-import BlogSection from './sections/explore/blog';
-import DesignSection from './sections/explore/designs';
 import { cn } from '@/lib/utils';
-import JourneySectionExplore from './sections/explore/journey';
-import AllExperiencesSection from './sections/explore/all-experiences';
 import { useRouter, useSearchParams } from 'next/navigation';
-import HackathonsSection from './sections/explore/hackathons';
-import AllServicesSection from './sections/explore/all-services';
-import ProblemSolvingSection from './sections/explore/problem-solving';
+import { Skeleton } from './ui/skeleton';
+
+// Dynamically import components for lazy loading
+const AllProjectsSection = dynamic(() => import('./sections/explore/all-projects'));
+const AllExperiencesSection = dynamic(() => import('./sections/explore/all-experiences'));
+const JourneySectionExplore = dynamic(() => import('./sections/explore/journey'));
+const ProblemSolvingSection = dynamic(() => import('./sections/explore/problem-solving'));
+const HackathonsSection = dynamic(() => import('./sections/explore/hackathons'));
+const AllServicesSection = dynamic(() => import('./sections/explore/all-services'));
+const BlogSection = dynamic(() => import('./sections/explore/blog'));
+const DesignSection = dynamic(() => import('./sections/explore/designs'));
 
 type ExploreViewProps = {
   onBackClick: () => void;
   initialTab?: string;
 };
+
+const LoadingSkeleton = () => (
+    <div className="space-y-8">
+        <div className="text-center mb-16 space-y-4">
+            <Skeleton className="h-12 w-1/2 mx-auto" />
+            <Skeleton className="h-6 w-3/4 mx-auto" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Skeleton className="h-64 rounded-2xl" />
+            <Skeleton className="h-64 rounded-2xl" />
+            <Skeleton className="h-64 rounded-2xl" />
+        </div>
+    </div>
+);
+
 
 const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
   const [activeTab, setActiveTab] = useState(initialTab);
@@ -113,7 +133,9 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
       <main className="flex-grow overflow-y-auto relative">
         <div className="absolute inset-0 bg-grid-pattern opacity-10 animate-pan"></div>
         <div className="relative z-10 p-8 md:p-12">
-          {renderContent()}
+           <Suspense fallback={<LoadingSkeleton />}>
+            {renderContent()}
+          </Suspense>
         </div>
       </main>
 
