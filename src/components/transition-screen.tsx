@@ -2,8 +2,13 @@
 
 import React from 'react';
 import { Rocket } from 'lucide-react';
+import { useTransition } from '@/context/transition-context';
 
 const TransitionScreen = () => {
+    const { isTransitioning } = useTransition();
+
+    if (!isTransitioning) return null;
+
     return (
         <div className="fixed inset-0 bg-black z-[100] flex items-center justify-center overflow-hidden screen-shake">
             <div className="rocket-container">
