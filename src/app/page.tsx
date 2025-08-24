@@ -10,20 +10,24 @@ import ProjectsSection from "@/components/sections/projects";
 import SkillsSection from "@/components/sections/skills";
 import Footer from "@/components/footer";
 import JourneySection from '@/components/sections/journey';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
+  const handleExploreClick = (tab: string = 'projects') => {
+    router.push(`/explore?tab=${tab}`);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow relative z-10">
-        <HeroSection onExploreClick={() => {}} />
+        <HeroSection onExploreClick={() => handleExploreClick('projects')} />
         <AboutSection />
         <SkillsSection />
-        <ProjectsSection onExploreClick={() => {}} />
+        <ProjectsSection onExploreClick={() => handleExploreClick('projects')} />
         <ExperienceSection />
-        <JourneySection onExploreClick={() => {}} />
+        <JourneySection onExploreClick={() => handleExploreClick('journey')} />
         <ContactSection />
       </main>
       <Footer />

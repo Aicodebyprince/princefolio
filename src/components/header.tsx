@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect } from 'react';
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -23,19 +24,19 @@ const Header = () => {
     }, []);
 
     const navLinks = [
-        { href: "#home", label: "Home" },
-        { href: "#about", label: "About" },
-        { href: "#skills", label: "Skills" },
-        { href: "#projects", label: "Projects" },
-        { href: "#experience", label: "Experience" },
-        { href: "#journey", label: "Journey" },
+        { href: "/#home", label: "Home" },
+        { href: "/#about", label: "About" },
+        { href: "/#skills", label: "Skills" },
+        { href: "/#projects", label: "Projects" },
+        { href: "/#experience", label: "Experience" },
+        { href: "/#journey", label: "Journey" },
     ];
 
     return (
         <nav className={cn("nav-bar fixed top-0 left-0 right-0 z-50", { scrolled })}>
             <div className="max-w-7xl mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
-                    <a href="#home" className="flex items-center space-x-4">
+                    <a href="/#home" className="flex items-center space-x-4">
                         <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
                             <span className="font-bold text-white text-lg">PS</span>
                         </div>
@@ -47,12 +48,14 @@ const Header = () => {
 
                     <div className="hidden md:flex items-center space-x-8">
                         {navLinks.map(link => (
-                            <a key={link.href} href={link.href} className="nav-link text-sm font-medium hover:text-blue-400 transition-colors">{link.label}</a>
+                             <Link key={link.href} href={link.href} passHref>
+                                <span className="nav-link text-sm font-medium hover:text-blue-400 transition-colors cursor-pointer">{link.label}</span>
+                            </Link>
                         ))}
                     </div>
                     
-                    <a href="#contact" className="hidden md:block">
-                        <Button className="btn-primary rounded-xl">Contact Me</Button>
+                    <a href="/#contact">
+                        <Button className="btn-primary rounded-xl hidden md:block">Contact Me</Button>
                     </a>
                 </div>
             </div>
