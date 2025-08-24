@@ -24,7 +24,7 @@ export default function Home() {
       setShowTransition(false);
       setIsExploring(true);
       setShowExploreView(true);
-    }, 1500); // Duration of the transition animation
+    }, 1000); // Duration of the transition animation
   };
 
   const handleBackClick = () => {

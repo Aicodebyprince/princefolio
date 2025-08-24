@@ -13,11 +13,11 @@ const TransitionScreen = () => {
 
             <style jsx>{`
                 .screen-shake {
-                    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both 0.8s;
+                    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both 0.6s;
                 }
                 
                 .rocket-container {
-                    animation: launch 0.8s cubic-bezier(0.61, 1, 0.88, 1) forwards;
+                    animation: launch 0.6s cubic-bezier(0.61, 1, 0.88, 1) forwards;
                 }
 
                 .rocket {
@@ -35,7 +35,7 @@ const TransitionScreen = () => {
                     border-radius: 50%;
                     transform: translate(-50%, -50%);
                     opacity: 0;
-                    animation: blast 0.7s ease-in forwards 0.8s;
+                    animation: blast 0.5s ease-in forwards 0.6s;
                 }
 
                 @keyframes launch {
