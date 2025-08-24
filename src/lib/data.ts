@@ -71,46 +71,70 @@ export const experiences = [
     }
 ];
 
-export const education = [
-    {
-        degree: 'MSc in Computer Science',
-        college: 'Mithibai College',
-        period: '2022 - 2024',
-        details: [
-            'Specialized in advanced algorithms and mobile application development.',
-            'Led a team project to develop a campus-wide event management app.',
-            'Published a research paper on AI-driven data analysis.',
-        ],
-    },
-    {
-        degree: 'BSc in Information Technology',
-        college: 'RMC College',
-        period: '2019 - 2022',
-        details: [
-            'Graduated with First Class honors.',
-            'Developed a library management system as a final year project.',
-            'Active member of the college coding club, organized multiple hackathons.',
-        ],
-    },
-];
-
 export const contactInfo = [
     { icon: '📧', label: 'Email', value: 'princesher321@gmail.com', detail: 'Usually respond within 24 hours', color: 'text-green-400', link: 'mailto:princesher321@gmail.com' },
     { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/princesherathiya', detail: 'Professional networking', color: 'text-blue-400', link: 'https://www.linkedin.com/in/princesherathiya/' },
     { icon: '🐙', label: 'GitHub', value: 'github.com/Aicodebyprince', detail: 'Check out my code', color: 'text-purple-400', link: 'https://github.com/Aicodebyprince' },
 ];
 
-export const weeklyJourney = [
-    {
-        week: 1,
-        focus: 'Portfolio Website Development',
-        description: 'This week, I focused on building my personal portfolio. I applied concepts of HTML, CSS, JavaScript, and Bootstrap to create a responsive and modern design. I also experimented with hosting platforms like Netlify and Vercel to deploy the site live.',
-        projectHighlights: [
-            'Designed and implemented a clean, professional landing page with sections for services, projects, and blogs.',
-            'Integrated a contact form that connects directly to WhatsApp and email for client inquiries.',
-            'Learned new deployment techniques to ensure fast loading and mobile responsiveness.'
-        ],
-        reflection: 'This week taught me the importance of design consistency and user experience. Next week, I plan to develop demo websites for local businesses to practice real-world client projects.',
-        ctaLink: 'https://github.com/Aicodebyprince'
-    }
-];
+export const rmcJourney = {
+    period: '2019 - 2022',
+    highlights: [
+        {
+            type: 'academic',
+            title: 'Graduated with First Class Honors',
+            description: 'Completed my BSc in Information Technology with a strong academic record, focusing on foundational computer science principles and software development.',
+        },
+        {
+            type: 'project',
+            title: 'Library Management System',
+            description: 'Developed a comprehensive library management system as a final year project. This application streamlined book-keeping, member management, and lending processes.',
+            details: [
+                'Built with Java and MySQL.',
+                'Featured a user-friendly interface for both librarians and members.',
+                'Included search, tracking, and reporting functionalities.'
+            ],
+        },
+        {
+            type: 'event',
+            title: 'Coding Club Activities',
+            description: 'As an active member of the college coding club, I participated in and helped organize multiple events, fostering a culture of collaborative learning and competition.',
+            details: [
+                'Organized two intra-college hackathons.',
+                'Conducted workshops on introductory Python and web development.',
+                'Mentored junior students in competitive programming.'
+            ],
+        }
+    ]
+};
+
+export const mithibaiJourney = {
+    period: '2022 - 2024',
+    highlights: [
+        {
+            type: 'academic',
+            title: 'Specialization in Mobile Development',
+            description: 'Focused my MSc on advanced algorithms and mobile application development, gaining deep expertise in building cross-platform applications with Flutter.',
+        },
+        {
+            type: 'project',
+            title: 'Campus Event Management App',
+            description: 'Led a team to develop a campus-wide event management application. The app served as a central hub for all college events, announcements, and student registrations.',
+            details: [
+                'Developed using Flutter and Firebase for real-time data synchronization.',
+                'Features included event calendars, push notifications, and a user feedback system.',
+                'Successfully managed a team of four developers, following Agile methodologies.'
+            ],
+            ctaLink: 'https://github.com/Aicodebyprince/College-Management-App'
+        },
+        {
+            type: 'academic',
+            title: 'Published Research Paper',
+            description: 'Co-authored and published a research paper on the applications of AI in data analysis, exploring new models for predictive analytics.',
+            details: [
+                'Paper focused on AI-driven data analysis techniques.',
+                'Presented at a national-level computer science conference.',
+            ],
+        }
+    ]
+};
