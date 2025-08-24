@@ -1,13 +1,11 @@
-"use client";
+'use client';
 
 import React from 'react';
-import SectionWrapper from '../section-wrapper';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { GraduationCap, Briefcase } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
-const JourneyContent = ({ isVisible }: { isVisible?: boolean }) => {
-    if (!isVisible) return null;
+const JourneySectionExplore = () => {
 
     const journeyData = [
         {
@@ -29,17 +27,15 @@ const JourneyContent = ({ isVisible }: { isVisible?: boolean }) => {
     ];
 
     return (
-        <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
-                <h2 className="text-5xl md:text-6xl font-black mb-8">
-                    My Academic <span className="gradient-text">Journey</span>
-                </h2>
-                <p className="text-xl text-gray-300 font-light max-w-4xl mx-auto">
+        <section id="journey-explore">
+             <div className="text-center mb-16">
+                <h1 className="text-5xl font-bold tracking-tighter mb-4">Academic Journey</h1>
+                <p className="text-lg text-gray-400 max-w-2xl mx-auto">
                     A timeline of my educational background, key projects, and milestones. Each step has been a building block in my development career.
                 </p>
             </div>
 
-            <div className="relative">
+            <div className="relative max-w-4xl mx-auto">
                 {/* Vertical Line */}
                 <div className="absolute left-1/2 -ml-px w-0.5 h-full bg-white/10" aria-hidden="true"></div>
 
@@ -50,7 +46,7 @@ const JourneyContent = ({ isVisible }: { isVisible?: boolean }) => {
                                 {/* Content for one side */}
                             </div>
                             <div className="relative z-10">
-                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg ring-8 ring-gray-900">
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg ring-8 ring-black">
                                     {React.cloneElement(item.icon, { size: 32 })}
                                 </div>
                             </div>
@@ -77,14 +73,8 @@ const JourneyContent = ({ isVisible }: { isVisible?: boolean }) => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
 
-const JourneySection = () => (
-    <SectionWrapper id="journey" className="py-32 px-6">
-        <JourneyContent />
-    </SectionWrapper>
-);
-
-export default JourneySection;
+export default JourneySectionExplore;

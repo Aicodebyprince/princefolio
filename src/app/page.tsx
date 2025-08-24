@@ -8,7 +8,6 @@ import ExperienceSection from "@/components/sections/experience";
 import HeroSection from "@/components/sections/hero";
 import ProjectsSection from "@/components/sections/projects";
 import SkillsSection from "@/components/sections/skills";
-import JourneySection from "@/components/sections/journey";
 import Footer from "@/components/footer";
 import TransitionScreen from '@/components/transition-screen';
 import ExploreView from '@/components/explore-view';
@@ -55,7 +54,6 @@ export default function Home() {
             <SkillsSection />
             <ProjectsSection />
             <ExperienceSection />
-            <JourneySection />
             <ContactSection />
           </main>
           <Footer />
