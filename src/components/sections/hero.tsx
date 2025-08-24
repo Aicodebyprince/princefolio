@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Card3D from '../card-3d';
+import { Button } from '../ui/button';
 
 const TYPING_TEXTS = ['Developer', '& App Innovator', '& Problem Solver'];
 const STATS = [
-    { label: 'Projects Built', count: 5 },
+    { label: 'Projects Built', count: 10 },
     { label: 'Years Experience', count: 2 },
     { label: 'Lines of Code', count: 50000 },
     { label: 'Problems Solved', count: 100 },
@@ -40,7 +41,7 @@ clearInterval(counter);
     return <div ref={ref} className="text-3xl font-black gradient-text mb-3">{count.toLocaleString()}+</div>;
 };
 
-const HeroSection = () => {
+const HeroSection = ({ onExploreClick }: { onExploreClick: () => void }) => {
     const [typingText, setTypingText] = useState('');
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef<HTMLElement>(null);
@@ -121,16 +122,13 @@ const HeroSection = () => {
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-                    MSc Computer Science student with a passion for building beautiful and functional mobile applications using Flutter.
+                    MSc Computer Science student with a passion for building beautiful and functional applications.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
-                    <a href="#projects" className="btn-solve px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden">
-                        <span className="relative z-10">View My Work 🚀</span>
-                    </a>
-                    <a href="#contact" className="btn-primary px-8 py-4 rounded-xl font-bold text-base">
-                        Contact Me
-                    </a>
+                    <Button onClick={onExploreClick} className="btn-solve px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden">
+                        <span className="relative z-10">Explore More 🚀</span>
+                    </Button>
                     <a href="/resume.pdf" download="PrinceSherathiya_Resume.pdf" className="border-2 border-white/20 hover:border-white/40 px-8 py-4 rounded-xl font-bold text-base transition-all hover:bg-white/5">
                         Download Resume
                     </a>

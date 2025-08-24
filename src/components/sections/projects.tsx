@@ -13,6 +13,8 @@ const iconMap: { [key: string]: React.ElementType } = {
 
 const ProjectsContent: React.FC<{ isVisible?: boolean }> = ({ isVisible }) => {
     if (!isVisible) return null;
+    const featuredProjects = projects.slice(0, 3);
+
     return (
         <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
@@ -23,7 +25,7 @@ const ProjectsContent: React.FC<{ isVisible?: boolean }> = ({ isVisible }) => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((project, index) => {
+                {featuredProjects.map((project, index) => {
                     const ProjectIcon = iconMap[project.icon];
                     return (
                         <div key={index} className="project-showcase project-card rounded-2xl overflow-hidden">

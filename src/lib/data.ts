@@ -17,7 +17,7 @@ export const skills = {
 };
 
 export const technologies = [
-    'Flutter', 'Dart', 'Firebase', 'Python', 'Django', 'REST APIs', 'JSON', 'Git', 'GitHub', 'Figma', 'Canva', 'Agile'
+    'Flutter', 'Dart', 'Firebase', 'Python', 'Django', 'REST APIs', 'JSON', 'Git', 'GitHub', 'Figma', 'Canva', 'Agile', 'Next.js', 'React', 'TypeScript'
 ];
 
 export const projects = [
@@ -57,6 +57,82 @@ export const projects = [
         tags: ['AI', 'Automation', 'Internal Tool'],
         stat: 'Reduced manual work by 8 hours',
     },
+    {
+        icon: 'code',
+        title: 'Personal Portfolio Website',
+        description: 'A dynamic, responsive portfolio website built with Next.js, React, and Tailwind CSS to showcase my projects, skills, and journey.',
+        category: 'Web App',
+        shortTitle: 'Portfolio',
+        shortDescription: 'This website!',
+        githubUrl: 'https://github.com/Aicodebyprince',
+        liveUrl: '#',
+        tags: ['Next.js', 'React', 'TailwindCSS'],
+        stat: 'Interactive & Responsive Design',
+    },
+    {
+        icon: 'chart-bar',
+        title: 'E-commerce Dashboard UI',
+        description: 'A UI concept for an e-commerce dashboard, designed to provide sellers with at-a-glance analytics on sales, inventory, and customer engagement.',
+        category: 'UI/UX Design',
+        shortTitle: 'E-commerce UI',
+        shortDescription: 'Analytics dashboard concept',
+        githubUrl: 'https://github.com/Aicodebyprince',
+        liveUrl: '',
+        tags: ['Figma', 'UI/UX', 'Data Visualization'],
+        stat: 'Design-driven development',
+    },
+];
+
+
+export const blogs = [
+  {
+    title: "Why I'm betting on Flutter for the Future of Mobile",
+    date: "2024-07-15",
+    description: "An exploration of the Flutter framework, its advantages over native development, and why I believe it's the future for building beautiful, high-performance mobile apps.",
+    tags: ["Flutter", "Mobile Development", "Opinion"],
+    link: "#"
+  },
+  {
+    title: "Integrating Firebase in a Weekend Project",
+    date: "2024-06-28",
+    description: "A step-by-step guide on how to quickly integrate Firebase Authentication and Firestore into a new Flutter application, based on my experience building a prototype.",
+    tags: ["Firebase", "Tutorial", "Flutter"],
+    link: "#"
+  },
+  {
+    title: "The Power of AI in Everyday Tools",
+    date: "2024-06-10",
+    description: "Reflections on building the Helpful Vault app and the potential for large language models to revolutionize personal productivity software.",
+    tags: ["AI", "GenAI", "Productivity"],
+    link: "#"
+  }
+];
+
+export const designTemplates = [
+  {
+    title: "Modern SaaS Landing Page",
+    description: "A clean and professional landing page template designed in Figma for a Software-as-a-Service product. Includes sections for features, pricing, and testimonials.",
+    tags: ["Figma", "Web Design", "SaaS"],
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "website interface",
+    link: "#"
+  },
+  {
+    title: "Mobile Banking App UI Kit",
+    description: "A comprehensive UI kit for a mobile banking application. Includes screens for login, dashboard, transfers, and transaction history.",
+    tags: ["Figma", "Mobile UI", "Fintech"],
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "mobile app",
+    link: "#"
+  },
+  {
+    title: "Project Management Dashboard",
+    description: "A dashboard template for a project management tool, focusing on clear data visualization for tasks, timelines, and team collaboration.",
+    tags: ["Figma", "Dashboard", "UI/UX"],
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "dashboard analytics",
+    link: "#"
+  }
 ];
 
 export const experiences = [
