@@ -4,7 +4,7 @@
 import React from 'react';
 import type { Project } from '@/lib/data';
 import Image from 'next/image';
-import { Target, Zap, Users, GraduationCap, Briefcase, UserShield } from 'lucide-react';
+import { Target, Zap, Users, GraduationCap, Briefcase, UserCog } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Github } from 'lucide-react';
 import {
@@ -19,7 +19,7 @@ const roleIcons: { [key: string]: React.ReactNode } = {
     visitors: <Users className="w-8 h-8" />,
     students: <GraduationCap className="w-8 h-8" />,
     teachers: <Briefcase className="w-8 h-8" />,
-    admins: <UserShield className="w-8 h-8" />,
+    admins: <UserCog className="w-8 h-8" />,
 };
 
 const ProjectDetails = ({ project }: { project: Project }) => {
