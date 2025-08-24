@@ -14,6 +14,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const roleIcons: { [key: string]: React.ReactNode } = {
     visitors: <Users className="w-8 h-8" />,
@@ -57,7 +58,7 @@ const ProjectDetails = ({ project }: { project: Project }) => {
 
             {/* User Role Screenshot Carousels */}
             <div className="space-y-16">
-                {project.screenshotsByRole?.map(role => (
+                {project.screenshotsByRole?.map((role, roleIndex) => (
                     <div key={role.title} className="space-y-6">
                         <div className="flex flex-col items-center text-center">
                             <div className="w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
@@ -71,6 +72,14 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                                 align: "start",
                                 loop: true,
                             }}
+                            plugins={[
+                                Autoplay({
+                                    delay: 2000,
+                                    stopOnInteraction: true,
+                                    stopOnMouseEnter: true,
+                                    direction: roleIndex % 2 === 0 ? 'forward' : 'backward',
+                                })
+                            ]}
                             className="w-full"
                         >
                             <CarouselContent className="-ml-4">
