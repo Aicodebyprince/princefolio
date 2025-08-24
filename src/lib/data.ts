@@ -123,6 +123,7 @@ export const projects: Project[] = [
                 title: 'For the Students',
                 description: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.',
                 screenshots: [
+                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Screenshot%202025-01-27%20135532.png?alt=media&token=0099cb45-d057-4ebe-bcb5-8fbb6b7ea79c', dataAiHint: 'student dashboard' },
                     { url: 'https://placehold.co/250x500.png', dataAiHint: 'student dashboard' },
                     { url: 'https://placehold.co/250x500.png', dataAiHint: 'attendance tracker' },
                     { url: 'https://placehold.co/250x500.png', dataAiHint: 'exam results' },
