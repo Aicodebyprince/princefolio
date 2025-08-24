@@ -3,11 +3,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Card3D from '../card-3d';
 
-const TYPING_TEXTS = ['& Problem Solver', '& System Architect', '& Code Optimizer', '& Tech Innovator'];
+const TYPING_TEXTS = ['Flutter Developer', '& App Innovator', '& Problem Solver'];
 const STATS = [
-    { label: 'Projects Built', count: 50 },
-    { label: 'Years Experience', count: 3 },
-    { label: 'Happy Clients', count: 25 },
+    { label: 'Projects Built', count: 5 },
+    { label: 'Years Experience', count: 2 },
+    { label: 'Lines of Code', count: 50000 },
     { label: 'Problems Solved', count: 100 },
 ];
 
@@ -28,7 +28,7 @@ const AnimatedCounter = ({ target, isVisible }: { target: number, isVisible: boo
             start += increment;
             if (start >= target) {
                 setCount(target);
-                clearInterval(counter);
+clearInterval(counter);
             } else {
                 setCount(Math.ceil(start));
             }
@@ -37,7 +37,7 @@ const AnimatedCounter = ({ target, isVisible }: { target: number, isVisible: boo
         return () => clearInterval(counter);
     }, [isVisible, target]);
 
-    return <div ref={ref} className="text-3xl font-black gradient-text mb-3">{count}</div>;
+    return <div ref={ref} className="text-3xl font-black gradient-text mb-3">{count.toLocaleString()}+</div>;
 };
 
 const HeroSection = () => {
@@ -116,13 +116,12 @@ const HeroSection = () => {
             <div className="max-w-6xl mx-auto text-center relative z-10">
 
                 <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight pt-16">
-                    <span className="gradient-text">Full-Stack Developer</span><br />
+                    <span className="gradient-text">Prince Sherathiya</span><br />
                     <span className="solution-text typing-cursor">{typingText}</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-                    I build scalable web applications and solve complex technical challenges.
-                    From React frontends to Node.js backends, I turn ideas into powerful digital solutions.
+                    MSc Computer Science student with a passion for building beautiful and functional mobile applications using Flutter.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
@@ -130,9 +129,9 @@ const HeroSection = () => {
                         <span className="relative z-10">View My Work 🚀</span>
                     </a>
                     <a href="#contact" className="btn-primary px-8 py-4 rounded-xl font-bold text-base">
-                        Hire Me
+                        Contact Me
                     </a>
-                    <a href="#" className="border-2 border-white/20 hover:border-white/40 px-8 py-4 rounded-xl font-bold text-base transition-all hover:bg-white/5">
+                    <a href="/resume.pdf" download="PrinceSherathiya_Resume.pdf" className="border-2 border-white/20 hover:border-white/40 px-8 py-4 rounded-xl font-bold text-base transition-all hover:bg-white/5">
                         Download Resume
                     </a>
                 </div>

@@ -28,6 +28,8 @@ const ContactContent = ({ isVisible }: { isVisible?: boolean }) => {
         setTimeout(() => setStatus('idle'), 4000);
     };
 
+    if (!isVisible) return null;
+
     return (
         <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
@@ -48,7 +50,7 @@ const ContactContent = ({ isVisible }: { isVisible?: boolean }) => {
                                     </div>
                                     <div>
                                         <div className="font-bold text-lg">{item.label}</div>
-                                        <div className="text-gray-300">{item.value}</div>
+                                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">{item.value}</a>
                                         <div className={`text-sm ${item.color}`}>{item.detail}</div>
                                     </div>
                                 </div>

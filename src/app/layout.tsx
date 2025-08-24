@@ -5,8 +5,8 @@ import AnimatedBackground from '@/components/animated-background';
 import ScrollProgress from '@/components/scroll-progress';
 
 export const metadata: Metadata = {
-  title: 'Alex Chen - Full-Stack Developer & Problem Solver',
-  description: 'Portfolio of Alex Chen, a full-stack developer specializing in React, Node.js, and solving complex technical challenges.',
+  title: 'Prince Sherathiya - Flutter Developer',
+  description: 'Portfolio of Prince Sherathiya, a Flutter developer and Computer Science student.',
 };
 
 export default function RootLayout({

@@ -37,11 +37,11 @@ const Header = () => {
                 <div className="flex items-center justify-between">
                     <a href="#home" className="flex items-center space-x-4">
                         <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                            <span className="font-bold text-white text-lg">AC</span>
+                            <span className="font-bold text-white text-lg">PS</span>
                         </div>
                         <div>
-                            <div className="font-bold text-xl gradient-text">Alex Chen</div>
-                            <div className="text-xs text-gray-400 mono">Full-Stack Developer & Problem Solver</div>
+                            <div className="font-bold text-xl gradient-text">Prince Sherathiya</div>
+                            <div className="text-xs text-gray-400 mono">Flutter Developer</div>
                         </div>
                     </a>
 
