@@ -10,7 +10,7 @@ import { journeyData } from '@/lib/data';
 const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void }> = ({ isVisible, onExploreClick }) => {
     if (!isVisible) return null;
 
-    const displayJourneyData = [...journeyData].reverse().slice(0, 2);
+    const displayJourneyData = [...journeyData].reverse();
 
     return (
         <div className="max-w-6xl mx-auto">
