@@ -143,26 +143,56 @@ export const experiences = [
         role: 'Intern - Process Automation & Quality Documentation',
         company: 'Cunix Infotech Pvt. Ltd.',
         slug: 'cunix-infotech',
-        period: 'Nov 2024 - June 2025',
+        period: 'Nov 2023 - Jun 2024',
         path: '/experience/cunix-infotech',
         achievements: [
-            'Contributed to CMMI documentation.',
-            'Gained hands-on exposure to SDLC processes in a corporate environment.',
+            'Contributed to CMMI Level 3 documentation, enhancing process standards.',
+            'Developed Python scripts to automate documentation tasks, saving manual hours.',
+            'Gained hands-on exposure to the full SDLC in an Agile environment.',
         ],
         details: [
             {
                 title: 'CMMI Level 3 Documentation',
-                description: 'Assisted the quality assurance team in preparing and organizing documentation required for CMMI Level 3 appraisal. This involved understanding and documenting existing development processes.',
+                description: 'Assisted the quality assurance team in preparing and organizing documentation required for CMMI Level 3 appraisal. This involved understanding, documenting, and refining existing development processes to meet international standards.',
                 icon: 'document'
             },
             {
                 title: 'Process Automation Scripting',
-                description: 'Developed small Python scripts to automate repetitive tasks for the documentation team, such as file renaming, data extraction, and report generation, which helped reduce manual effort.',
+                description: 'Developed Python scripts to automate repetitive tasks for the documentation team, such as file renaming, data extraction from documents, and generating summary reports. This helped reduce manual effort and minimize human error.',
                 icon: 'code'
             },
             {
-                title: 'Shadowed Development Teams',
-                description: 'Actively participated in daily stand-ups and sprint planning meetings for two different project teams. Gained firsthand insight into the Agile development lifecycle, from requirements gathering to deployment.',
+                title: 'Agile Team Collaboration',
+                description: 'Actively participated in daily stand-ups and sprint planning meetings for two different project teams. Gained firsthand insight into the Agile development lifecycle, from requirements gathering to deployment and retrospective.',
+                icon: 'users'
+            },
+        ]
+    },
+    {
+        role: 'Web Development & Designing Intern',
+        company: 'The Sparks Foundation',
+        slug: 'the-sparks-foundation',
+        period: 'Jun 2021 - Jul 2021',
+        path: '/experience/the-sparks-foundation',
+        achievements: [
+            'Completed tasks using HTML, CSS, and JavaScript.',
+            'Developed a Basic Banking System website as part of the internship.',
+            'Gained practical experience in web design principles and front-end development.',
+        ],
+        details: [
+            {
+                title: 'Front-End Development Tasks',
+                description: 'Worked on various front-end tasks, building responsive web components and layouts using HTML, CSS, and JavaScript. Focused on creating user-friendly and visually appealing interfaces.',
+                icon: 'layout'
+            },
+            {
+                title: 'Basic Banking System Project',
+                description: 'Designed and developed a functional website for a basic banking system. The project included features for viewing customer data and simulating money transfers between users, demonstrating skills in dynamic web content.',
+                icon: 'bank'
+            },
+            {
+                title: 'Collaborative Learning',
+                description: 'Participated in a remote team environment, collaborating with fellow interns and receiving mentorship on web development best practices and industry standards.',
                 icon: 'users'
             },
         ]

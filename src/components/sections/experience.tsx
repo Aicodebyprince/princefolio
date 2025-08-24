@@ -26,7 +26,7 @@ const ExperienceContent = ({ isVisible }: { isVisible?: boolean }) => {
             </div>
 
             <div className="space-y-12">
-                {experiences.map((exp, index) => (
+                {experiences.slice(0, 1).map((exp, index) => (
                     <Card3D key={index} className="glass-card rounded-3xl p-10">
                         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
                             <div>
