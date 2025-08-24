@@ -23,15 +23,15 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                 </div>
             </header>
 
-            <div className="max-w-lg mx-auto">
+            <div className="max-w-sm mx-auto">
                 <div className="grid grid-cols-1 gap-4">
                     {project.screenshots?.map((ss, index) => (
                          <div key={index} className="glass-card rounded-lg overflow-hidden p-2">
                             <Image
                                 src={ss.url}
                                 alt={`${project.title} Screenshot ${index + 1}`}
-                                width={1280}
-                                height={720}
+                                width={640}
+                                height={360}
                                 className="rounded-md"
                                 data-ai-hint={ss.dataAiHint}
                             />
