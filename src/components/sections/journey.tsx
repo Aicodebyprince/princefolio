@@ -2,25 +2,15 @@
 
 import React from 'react';
 import SectionWrapper from '../section-wrapper';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, School } from 'lucide-react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
-
-const journeyData = [
-    {
-        college: "RMC College",
-        degree: "BSc in Information Technology",
-        period: "2019 - 2022",
-    },
-    {
-        college: "Mithibai College",
-        degree: "MSc in Computer Science",
-        period: "2022 - 2024",
-    }
-];
+import { journeyData } from '@/lib/data';
 
 const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void }> = ({ isVisible, onExploreClick }) => {
     if (!isVisible) return null;
+
+    const displayJourneyData = [...journeyData].reverse().slice(0, 2);
 
     return (
         <div className="max-w-6xl mx-auto">
@@ -35,12 +25,12 @@ const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void
                 {/* Vertical Line */}
                 <div className="absolute left-9 top-0 w-0.5 h-full bg-white/10 md:left-1/2 md:-ml-px" aria-hidden="true"></div>
 
-                {journeyData.map((item, index) => (
+                {displayJourneyData.map((item, index) => (
                     <div key={index} className={`relative mb-12 md:flex ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} items-center justify-between`}>
                         {/* Icon */}
                         <div className="absolute md:relative left-0 md:left-auto z-10">
                             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500/20 via-purple-600/20 to-pink-500/20 backdrop-blur-sm flex items-center justify-center text-white shadow-lg ring-8 ring-black">
-                                <GraduationCap size={32} />
+                                {item.icon}
                             </div>
                         </div>
                         

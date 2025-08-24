@@ -1,4 +1,4 @@
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, School } from 'lucide-react';
 import React from 'react';
 
 export const skills = {
@@ -275,5 +275,23 @@ export const journeyData = [
                 ],
             }
         ]
+    },
+    {
+        college: "Shri T.P. Bhatiya College",
+        degree: "HSC - Science",
+        period: "2017 - 2019",
+        icon: React.createElement(School),
+        description: "Completed higher secondary education in Science, developing a keen interest in technology and computing during this period.",
+        path: "",
+        highlights: []
+    },
+    {
+        college: "St. Jerome Convent High School",
+        degree: "SSC",
+        period: "Until 2017",
+        icon: React.createElement(School),
+        description: "Laid the foundational stones of my academic and personal growth, developing leadership and teamwork skills.",
+        path: "",
+        highlights: []
     }
 ];
