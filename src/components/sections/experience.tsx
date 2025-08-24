@@ -4,6 +4,8 @@ import React from 'react';
 import Card3D from '../card-3d';
 import SectionWrapper from '../section-wrapper';
 import { experiences } from '@/lib/data';
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const ExperienceContent = ({ isVisible }: { isVisible?: boolean }) => {
     if (!isVisible) return null;
@@ -29,8 +31,8 @@ const ExperienceContent = ({ isVisible }: { isVisible?: boolean }) => {
                             </div>
                         </div>
                         <div>
-                            <h4 className="text-lg font-bold mb-4 solution-text">Contributions:</h4>
-                            <ul className="space-y-3 text-gray-300">
+                            <h4 className="text-lg font-bold mb-4 solution-text">Summary of Contributions:</h4>
+                            <ul className="space-y-3 text-gray-300 mb-8">
                                 {exp.achievements.map((ach, i) => (
                                     <li key={i} className="flex items-start">
                                         <span className="text-green-400 mr-3 mt-1">✓</span>
@@ -38,6 +40,11 @@ const ExperienceContent = ({ isVisible }: { isVisible?: boolean }) => {
                                     </li>
                                 ))}
                             </ul>
+                            <Link href={exp.path}>
+                                <Button className="btn-primary">
+                                    Explore My Work →
+                                </Button>
+                            </Link>
                         </div>
                     </Card3D>
                 ))}

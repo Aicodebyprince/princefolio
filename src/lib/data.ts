@@ -142,11 +142,30 @@ export const experiences = [
     {
         role: 'Intern - Process Automation & Quality Documentation',
         company: 'Cunix Infotech Pvt. Ltd.',
+        slug: 'cunix-infotech',
         period: 'Nov 2024 - June 2025',
+        path: '/experience/cunix-infotech',
         achievements: [
             'Contributed to CMMI documentation.',
             'Gained hands-on exposure to SDLC processes in a corporate environment.',
         ],
+        details: [
+            {
+                title: 'CMMI Level 3 Documentation',
+                description: 'Assisted the quality assurance team in preparing and organizing documentation required for CMMI Level 3 appraisal. This involved understanding and documenting existing development processes.',
+                icon: 'document'
+            },
+            {
+                title: 'Process Automation Scripting',
+                description: 'Developed small Python scripts to automate repetitive tasks for the documentation team, such as file renaming, data extraction, and report generation, which helped reduce manual effort.',
+                icon: 'code'
+            },
+            {
+                title: 'Shadowed Development Teams',
+                description: 'Actively participated in daily stand-ups and sprint planning meetings for two different project teams. Gained firsthand insight into the Agile development lifecycle, from requirements gathering to deployment.',
+                icon: 'users'
+            },
+        ]
     }
 ];
 
