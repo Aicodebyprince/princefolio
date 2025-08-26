@@ -1,5 +1,5 @@
 
-import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle } from 'lucide-react';
+import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus } from 'lucide-react';
 import React from 'react';
 
 export type Screenshot = {
@@ -8,7 +8,7 @@ export type Screenshot = {
 };
 
 export type ScreenshotsByRole = {
-    role: 'visitors' | 'students' | 'teachers' | 'admins';
+    role: 'visitors' | 'students' | 'teachers' | 'admins' | 'signup';
     title: string;
     description: string;
     screenshots: Screenshot[];
@@ -121,6 +121,19 @@ export const projects: Project[] = [
                 ]
             },
             {
+                role: 'signup',
+                title: 'For the Signup',
+                description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
+                screenshots: [
+                    { url: '/images/Visitor 1.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 2.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 3.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 4.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 5.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 7.png', dataAiHint: 'mobile app screen' },
+                ]
+            },
+            {
                 role: 'students',
                 title: 'For the Students',
                 description: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.',
@@ -132,6 +145,7 @@ export const projects: Project[] = [
                     { url: '/images/student-5.png', dataAiHint: 'class schedule' },
                     { url: '/images/student-6.png', dataAiHint: 'chat interface' },
                     { url: '/images/student-7.png', dataAiHint: 'student profile' },
+                    { url: '/images/Screenshot 2025-01-27 135532.png', dataAiHint: 'student profile' },
                 ]
             },
             {
