@@ -18,8 +18,8 @@ const AboutContent = ({ isVisible }: { isVisible?: boolean }) => {
                 <div className="lg:col-span-2">
                     <Card3D className="glass-card rounded-3xl aspect-square">
                         <Image
-                            src="/images/profile.png"
-                            alt="Profile Picture"
+                            src="/images/Prince sherathiya.png"
+                            alt="Profile Picture of Prince Sherathiya"
                             width={400}
                             height={400}
                             className="rounded-3xl object-cover w-full h-full"
