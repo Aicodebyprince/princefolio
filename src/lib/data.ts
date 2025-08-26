@@ -131,7 +131,7 @@ export const projects: Project[] = [
                     { url: '/images/student-4.png', dataAiHint: 'exam results' },
                     { url: '/images/student-5.png', dataAiHint: 'class schedule' },
                     { url: '/images/student-6.png', dataAiHint: 'chat interface' },
-                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Screenshot%202025-01-27%20135532.png?alt=media&token=0099cb45-d057-4ebe-bcb5-8fbb6b7ea79c', dataAiHint: 'student profile' },
+                    { url: '/images/student-7.png', dataAiHint: 'student profile' },
                 ]
             },
             {
@@ -418,5 +418,7 @@ export const problemSolving = [
     }
 ];
 
+
+    
 
     
