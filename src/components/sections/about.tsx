@@ -20,7 +20,7 @@ const AboutContent = ({ isVisible }: { isVisible?: boolean }) => {
                 {/* Image Section */}
                 <div className="lg:col-span-1 flex justify-center">
                     <Card3D className="w-full max-w-sm">
-                        <div className="glass-card rounded-3xl p-2 aspect-square relative border-2 border-white/20">
+                        <div className="bg-white rounded-3xl p-2 aspect-square relative shadow-lg">
                             <Image
                                 src="/images/Prince sherathiya.png"
                                 alt="Profile Picture of Prince Sherathiya"
