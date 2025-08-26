@@ -125,10 +125,10 @@ export const projects: Project[] = [
                 title: 'For the Signup',
                 description: 'A simple and secure signup process to onboard new users to the platform.',
                 screenshots: [
-                    { url: '/images/Sign-1.png', dataAiHint: 'signup screen' },
-                    { url: '/images/Sign-2.png', dataAiHint: 'signup form' },
-                    { url: '/images/Sign-3.png', dataAiHint: 'verification screen' },
-                    { url: '/images/Sign-4.png', dataAiHint: 'profile setup' },
+                    { url: '/images/Sign-1.jpg', dataAiHint: 'signup screen' },
+                    { url: '/images/Sign-2.jpg', dataAiHint: 'signup form' },
+                    { url: '/images/Sign-3.jpg', dataAiHint: 'verification screen' },
+                    { url: '/images/Sign-4.jpg', dataAiHint: 'profile setup' },
                 ]
             },
             {
@@ -434,4 +434,5 @@ export const problemSolving = [
     
 
     
+
 
