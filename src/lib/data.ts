@@ -112,12 +112,12 @@ export const projects: Project[] = [
                 title: 'For the Visitors',
                 description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
                 screenshots: [
-                    { url: '/images/Visitor 1.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor 2.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor 3.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor 4.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor 5.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor 7.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-1.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-2.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-3.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-4.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-5.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-7.png', dataAiHint: 'mobile app screen' },
                 ]
             },
             {
@@ -125,10 +125,10 @@ export const projects: Project[] = [
                 title: 'For the Signup',
                 description: 'A simple and secure signup process to onboard new users to the platform.',
                 screenshots: [
-                    { url: '/images/Sign 1.png', dataAiHint: 'signup screen' },
-                    { url: '/images/Sign 2.png', dataAiHint: 'signup form' },
-                    { url: '/images/Sign 3.png', dataAiHint: 'verification screen' },
-                    { url: '/images/Sign 4.png', dataAiHint: 'profile setup' },
+                    { url: '/images/Sign-1.png', dataAiHint: 'signup screen' },
+                    { url: '/images/Sign-2.png', dataAiHint: 'signup form' },
+                    { url: '/images/Sign-3.png', dataAiHint: 'verification screen' },
+                    { url: '/images/Sign-4.png', dataAiHint: 'profile setup' },
                 ]
             },
             {
@@ -143,7 +143,7 @@ export const projects: Project[] = [
                     { url: '/images/student-5.png', dataAiHint: 'class schedule' },
                     { url: '/images/student-6.png', dataAiHint: 'chat interface' },
                     { url: '/images/student-7.png', dataAiHint: 'student profile' },
-                    { url: '/images/Screenshot 2025-01-27 135532.png', dataAiHint: 'student profile' },
+                    { url: '/images/Screenshot-2025-01-27-135532.png', dataAiHint: 'student profile' },
                 ]
             },
             {
@@ -151,7 +151,7 @@ export const projects: Project[] = [
                 title: 'For the Teachers',
                 description: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.',
                 screenshots: [
-                    { url: '/images/Teacher 1.png', dataAiHint: 'teacher dashboard' },
+                    { url: '/images/Teacher-1.png', dataAiHint: 'teacher dashboard' },
                     { url: '/images/teacher-2.png', dataAiHint: 'take attendance' },
                     { url: '/images/teacher-3.png', dataAiHint: 'upload marks' },
                     { url: '/images/teacher-4.png', dataAiHint: 'send notification' },
@@ -434,3 +434,4 @@ export const problemSolving = [
     
 
     
+
