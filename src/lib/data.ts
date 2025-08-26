@@ -112,12 +112,12 @@ export const projects: Project[] = [
                 title: 'For the Visitors',
                 description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
                 screenshots: [
-                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%201.png?alt=media&token=164b63ad-32e1-445b-b739-772a8401db27', dataAiHint: 'mobile app screen' },
-                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%202.png?alt=media&token=b6e2f256-7e02-4d68-9d82-92a90802eb57', dataAiHint: 'mobile app screen' },
-                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%203.png?alt=media&token=9dfc15b6-0f86-413e-b2c1-dc7da79ca855', dataAiHint: 'mobile app screen' },
-                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%204.png?alt=media&token=e0300cde-fa07-4846-be00-6178f2e1f984', dataAiHint: 'mobile app screen' },
-                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%205.png?alt=media&token=ac9dc7dc-255a-47dd-bd1c-de7a5263d27f', dataAiHint: 'mobile app screen' },
-                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Visitor%207.png?alt=media&token=f2beaec9-77b0-42f2-9d8a-590f25e86af2', dataAiHint: 'mobile app screen' },
+                    { url: '/images/visitor-1.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/visitor-2.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/visitor-3.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/visitor-4.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/visitor-5.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/visitor-7.png', dataAiHint: 'mobile app screen' },
                 ]
             },
             {
@@ -125,12 +125,12 @@ export const projects: Project[] = [
                 title: 'For the Students',
                 description: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.',
                 screenshots: [
-                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Screenshot%202025-01-27%20135532.png?alt=media&token=0099cb45-d057-4ebe-bcb5-8fbb6b7ea79c', dataAiHint: 'student dashboard' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'student dashboard' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'attendance tracker' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'exam results' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'class schedule' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'chat interface' },
+                    { url: '/images/student-1.png', dataAiHint: 'student dashboard' },
+                    { url: '/images/student-2.png', dataAiHint: 'student dashboard' },
+                    { url: '/images/student-3.png', dataAiHint: 'attendance tracker' },
+                    { url: '/images/student-4.png', dataAiHint: 'exam results' },
+                    { url: '/images/student-5.png', dataAiHint: 'class schedule' },
+                    { url: '/images/student-6.png', dataAiHint: 'chat interface' },
                 ]
             },
             {
@@ -138,10 +138,10 @@ export const projects: Project[] = [
                 title: 'For the Teachers',
                 description: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.',
                 screenshots: [
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'teacher dashboard' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'take attendance' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'upload marks' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'send notification' },
+                    { url: '/images/teacher-1.png', dataAiHint: 'teacher dashboard' },
+                    { url: '/images/teacher-2.png', dataAiHint: 'take attendance' },
+                    { url: '/images/teacher-3.png', dataAiHint: 'upload marks' },
+                    { url: '/images/teacher-4.png', dataAiHint: 'send notification' },
                 ]
             },
             {
@@ -149,10 +149,10 @@ export const projects: Project[] = [
                 title: 'For the Admins',
                 description: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.',
                 screenshots: [
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'admin dashboard' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'user management' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'analytics charts' },
-                    { url: 'https://placehold.co/250x500.png', dataAiHint: 'broadcast message' },
+                    { url: '/images/admin-1.png', dataAiHint: 'admin dashboard' },
+                    { url: '/images/admin-2.png', dataAiHint: 'user management' },
+                    { url: '/images/admin-3.png', dataAiHint: 'analytics charts' },
+                    { url: '/images/admin-4.png', dataAiHint: 'broadcast message' },
                 ]
             }
         ]
@@ -212,7 +212,7 @@ export const designTemplates = [
     title: "Modern SaaS Landing Page",
     description: "A clean and professional landing page template designed in Figma for a Software-as-a-Service product. Includes sections for features, pricing, and testimonials.",
     tags: ["Figma", "Web Design", "SaaS"],
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "/images/template-saas.png",
     dataAiHint: "website interface",
     link: "#"
   },
@@ -220,7 +220,7 @@ export const designTemplates = [
     title: "Mobile Banking App UI Kit",
     description: "A comprehensive UI kit for a mobile banking application. Includes screens for login, dashboard, transfers, and transaction history.",
     tags: ["Figma", "Mobile UI", "Fintech"],
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "/images/template-banking.png",
     dataAiHint: "mobile app",
     link: "#"
   },
@@ -228,7 +228,7 @@ export const designTemplates = [
     title: "Project Management Dashboard",
     description: "A dashboard template for a project management tool, focusing on clear data visualization for tasks, timelines, and team collaboration.",
     tags: ["Figma", "Dashboard", "UI/UX"],
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "/images/template-dashboard.png",
     dataAiHint: "dashboard analytics",
     link: "#"
   }
