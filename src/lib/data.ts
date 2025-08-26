@@ -112,12 +112,12 @@ export const projects: Project[] = [
                 title: 'For the Visitors',
                 description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
                 screenshots: [
-                    { url: '/images/visitor-1.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/visitor-2.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/visitor-3.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/visitor-4.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/visitor-5.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/visitor-7.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 1.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 2.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 3.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 4.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 5.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 7.png', dataAiHint: 'mobile app screen' },
                 ]
             },
             {
@@ -131,6 +131,7 @@ export const projects: Project[] = [
                     { url: '/images/student-4.png', dataAiHint: 'exam results' },
                     { url: '/images/student-5.png', dataAiHint: 'class schedule' },
                     { url: '/images/student-6.png', dataAiHint: 'chat interface' },
+                    { url: 'https://firebasestorage.googleapis.com/v0/b/student-318e7.appspot.com/o/Screenshot%202025-01-27%20135532.png?alt=media&token=0099cb45-d057-4ebe-bcb5-8fbb6b7ea79c', dataAiHint: 'student profile' },
                 ]
             },
             {
@@ -416,3 +417,6 @@ export const problemSolving = [
         tags: ["Competitive Programming", "Math", "Algorithms"]
     }
 ];
+
+
+    
