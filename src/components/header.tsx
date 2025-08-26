@@ -4,6 +4,8 @@
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect } from 'react';
 import { Button } from "./ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Menu } from "lucide-react";
 
 type HeaderProps = {
   onNavigate: (path: string) => void;
@@ -11,6 +13,7 @@ type HeaderProps = {
 
 const Header = ({ onNavigate }: HeaderProps) => {
     const [scrolled, setScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -39,8 +42,14 @@ const Header = ({ onNavigate }: HeaderProps) => {
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
+        setIsMobileMenuOpen(false); // Close mobile menu on navigation
         onNavigate(href);
     };
+
+    const handleContactClick = () => {
+        setIsMobileMenuOpen(false); // Close mobile menu on navigation
+        onNavigate('/#contact');
+    }
 
     return (
         <nav className={cn("nav-bar fixed top-0 left-0 right-0 z-50", { scrolled })}>
@@ -56,6 +65,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
                         </div>
                     </a>
 
+                    {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-8">
                         {navLinks.map(link => (
                              <a 
@@ -69,9 +79,39 @@ const Header = ({ onNavigate }: HeaderProps) => {
                         ))}
                     </div>
                     
-                    <Button onClick={() => onNavigate('/#contact')} className="btn-primary rounded-xl hidden md:block cursor-pointer">
+                    <Button onClick={handleContactClick} className="btn-primary rounded-xl hidden md:block cursor-pointer">
                         Contact Me
                     </Button>
+
+                    {/* Mobile Navigation Trigger */}
+                    <div className="md:hidden">
+                        <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                            <SheetTrigger asChild>
+                                <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                                    <Menu className="h-6 w-6" />
+                                </Button>
+                            </SheetTrigger>
+                            <SheetContent side="right" className="bg-gray-900/80 backdrop-blur-lg border-l-white/10 text-white p-6">
+                                <div className="flex flex-col h-full">
+                                    <div className="flex-grow flex flex-col items-center justify-center space-y-6">
+                                         {navLinks.map(link => (
+                                            <a 
+                                                key={link.href} 
+                                                href={link.href} 
+                                                onClick={(e) => handleClick(e, link.href)}
+                                                className="text-2xl font-semibold hover:gradient-text transition-colors"
+                                            >
+                                                {link.label}
+                                            </a>
+                                        ))}
+                                    </div>
+                                    <Button onClick={handleContactClick} className="btn-primary rounded-xl text-lg py-6 mt-8">
+                                        Contact Me
+                                    </Button>
+                                </div>
+                            </SheetContent>
+                        </Sheet>
+                    </div>
                 </div>
             </div>
         </nav>

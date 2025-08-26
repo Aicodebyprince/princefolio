@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -31,7 +32,7 @@ const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => voi
                     const ProjectIcon = iconMap[project.icon];
                     return (
                         <div key={index} className="project-card rounded-2xl flex flex-col h-full">
-                            <div className="p-6 flex-grow">
+                            <div className="p-6 flex-grow flex flex-col">
                                 <div className="flex items-center gap-4 mb-4">
                                      <div className="bg-white/10 p-3 rounded-lg">
                                         {ProjectIcon && <ProjectIcon className="w-6 h-6 text-accent" />}
@@ -41,7 +42,7 @@ const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => voi
                                         <p className="text-sm text-gray-400">{project.category}</p>
                                     </div>
                                 </div>
-                                <p className="text-gray-400 text-sm mb-4">
+                                <p className="text-gray-400 text-sm mb-4 flex-grow">
                                     {project.description}
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
@@ -49,7 +50,7 @@ const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => voi
                                         <span key={tag} className="tech-tag px-2.5 py-1 rounded-full text-xs font-semibold">{tag}</span>
                                     ))}
                                 </div>
-                                {project.stat && <div className="flex items-center text-xs text-green-400">
+                                {project.stat && <div className="flex items-center text-xs text-green-400 mt-auto">
                                     <GitBranch className="w-4 h-4 mr-2" />
                                     {project.stat}
                                 </div>}

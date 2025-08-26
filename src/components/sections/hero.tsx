@@ -104,7 +104,7 @@ const HeroSection = ({ onExploreClick, onNavigate }: { onExploreClick: (tab: str
     }, []);
 
     return (
-        <section id="home" ref={sectionRef} className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 relative overflow-hidden section-fade" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(50px)' }}>
+        <section id="home" ref={sectionRef} className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 relative overflow-hidden section-fade" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(50px)' }}>
             <div className="absolute top-20 left-10 floating-element">
                 <div className="w-20 h-20 bg-gradient-to-br from-red-500/20 to-orange-600/20 rounded-full blur-xl"></div>
             </div>
@@ -126,7 +126,7 @@ const HeroSection = ({ onExploreClick, onNavigate }: { onExploreClick: (tab: str
                     MSc Computer Science student with a passion for building beautiful and functional applications.
                 </p>
 
-                <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-16 md:mb-20">
+                <div className="flex flex-wrap gap-4 justify-center mb-16 md:mb-20">
                     <Button onClick={() => onExploreClick('projects')} className="btn-primary px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
                         <span className="relative z-10">Explore More</span>
                     </Button>
