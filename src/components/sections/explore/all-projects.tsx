@@ -49,8 +49,8 @@ const AllProjectsSection = () => {
                             <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
                                 {project.slug ? (
                                     <Link href={`/project/${project.slug}`} passHref>
-                                        <Button variant="link" className="text-accent p-0">
-                                            View Case Study <ArrowRight className="w-4 h-4 ml-2" />
+                                        <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white transition-all group-hover:shadow-accent">
+                                            View Case Study <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                                         </Button>
                                     </Link>
                                 ) : (
