@@ -375,12 +375,48 @@ export const journeyData = [
 
 export const hackathons = [
     {
+        name: "AI for Good Hackathon",
+        date: "Jun - Aug 2025",
+        project: "Harnessing the power of AI for Positive Social Impact",
+        description: "Participated in the AI for Good Hackathon, developing innovative AI solutions to address pressing social challenges.",
+        outcome: "Completed",
+        tags: ["AI", "Social Impact", "Python", "TensorFlow"],
+        link: "#"
+    },
+    {
         name: "Bolt.new",
-        date: "Ongoing",
+        date: "Completed",
         project: "AI-Powered E-commerce Solutions",
-        description: "Participating in the Bolt.new hackathon to build innovative AI tools for e-commerce, focusing on personalization and automation.",
-        outcome: "In Progress",
+        description: "Participated in the Bolt.new hackathon to build innovative AI tools for e-commerce, focusing on personalization and automation.",
+        outcome: "Completed",
         tags: ["AI", "E-commerce", "Personalization", "Automation"],
+        link: "#"
+    },
+    {
+        name: "Tech 4 Social Good",
+        date: "Ongoing",
+        project: "Build a solution that empowers learners",
+        description: "Currently developing a solution to empower learners through technology.",
+        outcome: "Draft Submission",
+        tags: ["EdTech", "Social Good", "Flutter"],
+        link: "#"
+    },
+    {
+        name: "Code with Kiro Hackathon",
+        date: "Ongoing",
+        project: "Explore Kiro, an AI IDE",
+        description: "A challenge for developers to explore Kiro, an AI IDE that works alongside you to turn ideas into production code with spec-driven development.",
+        outcome: "In Progress",
+        tags: ["AI", "Developer Tools", "IDE"],
+        link: "#"
+    },
+    {
+        name: "Hack 4 Humanity 2025",
+        date: "Ongoing",
+        project: "Shaping tomorrow with todays tech",
+        description: "Working on innovative solutions to shape a better future using modern technology.",
+        outcome: "In Progress",
+        tags: ["Innovation", "Future Tech", "Web3"],
         link: "#"
     },
     {
