@@ -21,9 +21,19 @@ export default function Home() {
 
   const handleNavigation = (path: string) => {
     if (path.startsWith('/#')) {
-      const element = document.getElementById(path.substring(2));
+      const id = path.substring(2);
+      const element = document.getElementById(id);
+      
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Fallback for initial load if the element isn't ready
+        setTimeout(() => {
+          const fallbackElement = document.getElementById(id);
+          if (fallbackElement) {
+            fallbackElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
       }
     } else {
       handleTransition(path);
