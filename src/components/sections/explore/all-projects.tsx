@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { projects } from '@/lib/data';
-import { GitBranch, HelpingHand, BookOpen, Code as CodeIcon, BarChart, ArrowRight } from 'lucide-react';
+import { GitBranch, HelpingHand, BookOpen, Code as CodeIcon, BarChart, ArrowRight, Bot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -13,6 +13,7 @@ const iconMap: { [key: string]: React.ElementType } = {
     library: BookOpen,
     code: CodeIcon,
     'chart-bar': BarChart,
+    chatbot: Bot
 };
 
 const AllProjectsSection = () => {
