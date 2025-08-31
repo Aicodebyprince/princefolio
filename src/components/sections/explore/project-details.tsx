@@ -33,7 +33,7 @@ const renderBlock = (block: CaseStudyBlock, index: number) => {
             );
         case 'image':
             return (
-                 <div key={index} className="my-8 max-w-4xl mx-auto">
+                 <div key={index} className="my-8 max-w-2xl mx-auto">
                     <div className="glass-card rounded-2xl p-4">
                         <Image 
                             src={block.url}
