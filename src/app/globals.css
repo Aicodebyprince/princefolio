@@ -456,6 +456,20 @@ body {
     margin: 0 auto;
 }
 
+@media (max-width: 1023px) {
+    .journey-timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 44px; /* Center the line on the icon */
+        width: 2px;
+        background: linear-gradient(to bottom, transparent 0%, #667eea 20%, #764ba2 50%, #f093fb 80%, transparent 100%);
+        z-index: 0;
+    }
+}
+
+
 .timeline-line {
     position: absolute;
     top: 50%;
@@ -500,12 +514,14 @@ body {
 @media (min-width: 768px) {
   .journey-card {
     padding: 30px;
+    text-align: left;
   }
 }
 
 @media (min-width: 1024px) {
   .journey-card {
     padding: 40px 30px;
+    text-align: center;
   }
 }
 
@@ -562,9 +578,31 @@ body {
     opacity: 1;
 }
 
+.card-icon-wrapper {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .card-icon-wrapper {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-icon-wrapper {
+    float: none;
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+}
+
 .card-icon {
-    width: 70px;
-    height: 70px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
     display: flex;
@@ -577,12 +615,6 @@ body {
     transition: all 0.4s ease;
 }
 
-@media (min-width: 1024px) {
-  .card-icon {
-    width: 90px;
-    height: 90px;
-  }
-}
 
 .card-icon::before {
     content: '';

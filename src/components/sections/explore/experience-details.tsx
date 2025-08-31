@@ -2,8 +2,10 @@
 'use client';
 
 import React from 'react';
-import { Code, Users, FileText, Layout, Landmark, Banknote, Target, CheckCircle, Sparkles } from 'lucide-react';
+import { Code, Users, FileText, Banknote } from 'lucide-react';
 import Image from 'next/image';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay"
 
 type DetailBlock = 
     | { type: 'heading'; level: 2 | 3 | 4; icon: React.ElementType; text: string; }
@@ -40,20 +42,39 @@ const renderBlock = (block: DetailBlock, index: number) => {
             );
         case 'image_grid':
             return (
-                <div key={index} className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {block.images.map((image, imgIndex) => (
-                        <div key={imgIndex} className="glass-card rounded-2xl p-2">
-                             <Image 
-                                src={image.url}
-                                alt={image.caption || `Experience screenshot ${imgIndex}`}
-                                width={800}
-                                height={600}
-                                className="rounded-lg object-contain w-full h-full"
-                                data-ai-hint={image.dataAiHint}
-                            />
-                            {image.caption && <p className="text-xs text-center text-gray-400 mt-2">{image.caption}</p>}
-                        </div>
-                    ))}
+                 <div key={index} className="my-8 max-w-md mx-auto">
+                    <Carousel
+                        opts={{
+                            align: "start",
+                            loop: true,
+                        }}
+                        plugins={[
+                            Autoplay({
+                                delay: 3000,
+                            }),
+                        ]}
+                        className="w-full"
+                    >
+                        <CarouselContent>
+                            {block.images.map((image, imgIndex) => (
+                                <CarouselItem key={imgIndex}>
+                                     <div className="glass-card rounded-2xl p-2">
+                                         <Image 
+                                            src={image.url}
+                                            alt={image.caption || `Experience screenshot ${imgIndex}`}
+                                            width={800}
+                                            height={600}
+                                            className="rounded-lg object-contain w-full h-full"
+                                            data-ai-hint={image.dataAiHint}
+                                        />
+                                        {image.caption && <p className="text-xs text-center text-gray-400 mt-2">{image.caption}</p>}
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="text-white hover:bg-white/10 hover:text-white left-2" />
+                        <CarouselNext className="text-white hover:bg-white/10 hover:text-white right-2" />
+                    </Carousel>
                 </div>
             );
         default:

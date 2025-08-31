@@ -148,12 +148,15 @@ const ExploreView = ({ initialTab = 'projects' }: ExploreViewProps) => {
                        variant="ghost"
                        onClick={() => handleTabChange(item.id)}
                        className={cn(
-                           'flex flex-col items-center justify-center h-16 w-16 rounded-lg transition-colors text-xs p-1',
-                           activeTab === item.id ? 'text-accent bg-accent/10' : 'text-gray-400'
+                           'flex flex-col items-center justify-center h-16 w-16 rounded-lg transition-colors text-xs p-1 relative',
+                           activeTab === item.id ? 'text-accent' : 'text-gray-400'
                        )}
                    >
                        {item.icon}
                        <span className="mt-1">{item.label}</span>
+                        {activeTab === item.id && (
+                           <div className="absolute bottom-1 w-8 h-1 bg-accent rounded-full"></div>
+                       )}
                    </Button>
                ))}
            </div>

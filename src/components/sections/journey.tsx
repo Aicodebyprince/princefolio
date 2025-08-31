@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -26,7 +27,7 @@ const JourneyContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void
                     <div className="timeline-progress"></div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative z-[2]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0 lg:space-x-10 relative z-[2]">
                     {journeyData.map((item, index) => (
                         <div 
                             key={index}
