@@ -25,21 +25,6 @@ const roleIcons: { [key: string]: React.ReactNode } = {
     signup: <UserPlus className="w-8 h-8" />,
 };
 
-const blockIcons: { [key: string]: React.ElementType } = {
-    overview: Target,
-    goal: Zap,
-    tech: Settings,
-    workflow: GitBranch,
-    conclusion: CheckCircle,
-    improvements: Rocket,
-    h2: Pilcrow,
-    h3: CaseSensitive,
-    h4: CaseSensitive,
-    p: Pilcrow,
-    li: List
-};
-
-
 const renderBlock = (block: CaseStudyBlock, index: number) => {
     switch (block.type) {
         case 'heading':
@@ -76,7 +61,25 @@ const renderBlock = (block: CaseStudyBlock, index: number) => {
                     />
                     {block.caption && <p className="text-xs text-center text-gray-400 mt-3">{block.caption}</p>}
                 </div>
-            )
+            );
+        case 'image_grid':
+            return (
+                <div key={index} className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {block.images.map((image, imgIndex) => (
+                        <div key={imgIndex} className="glass-card rounded-2xl p-2">
+                             <Image 
+                                src={image.url}
+                                alt={image.caption || `Project screenshot ${imgIndex}`}
+                                width={800}
+                                height={600}
+                                className="rounded-lg object-contain w-full h-full"
+                                data-ai-hint={image.dataAiHint}
+                            />
+                            {image.caption && <p className="text-xs text-center text-gray-400 mt-2">{image.caption}</p>}
+                        </div>
+                    ))}
+                </div>
+            );
         default:
             return null;
     }

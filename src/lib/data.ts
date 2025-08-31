@@ -13,7 +13,8 @@ export type CaseStudyBlock =
     | { type: 'heading'; level: 2 | 3 | 4; icon?: React.ElementType; iconColor?: string; text: string; }
     | { type: 'paragraph'; text: string; }
     | { type: 'list'; items: string[]; }
-    | { type: 'image'; url: string; dataAiHint: string; caption?: string; };
+    | { type: 'image'; url: string; dataAiHint: string; caption?: string; }
+    | { type: 'image_grid'; images: Screenshot[] };
 
 
 export type ScreenshotsByRole = {
@@ -202,8 +203,10 @@ export const projects: Project[] = [
         caseStudy: [
             { type: 'heading', level: 2, text: 'Project Overview' },
             { type: 'paragraph', text: "This project is an AI-driven chatbot designed to automate customer interactions for a small business via WhatsApp. The bot handles customer inquiries, manages orders, and answers frequently asked questions in real-time. By leveraging the power of n8n for workflow automation and Google's Gemini AI for natural language processing, this solution helps businesses improve efficiency, reduce response times, and prevent missed sales opportunities, especially those that rely heavily on WhatsApp for customer communication." },
-            { type: 'image', url: '/images/Chat Bot Project/SS 1.png', dataAiHint: 'chatbot conversation', caption: 'Live chat example with the AI bot.' },
-            { type: 'image', url: '/images/Chat Bot Project/SS 2.png', dataAiHint: 'chatbot conversation', caption: 'The bot handling an order request.' },
+            { type: 'image_grid', images: [
+                { url: '/images/Chat Bot Project/SS 1.png', dataAiHint: 'chatbot conversation', caption: 'Live chat example with the AI bot.' },
+                { url: '/images/Chat Bot Project/SS 2.png', dataAiHint: 'chatbot conversation', caption: 'The bot handling an order request.' }
+            ]},
             { type: 'heading', level: 2, text: 'The Goal' },
             { type: 'paragraph', text: "For many small businesses, especially in the restaurant or retail sector, WhatsApp is a primary channel for taking orders and answering customer questions. Managing this manually can be overwhelming, leading to slow responses and lost orders. The primary goal of this project was to build an intelligent, automated system that can:" },
             { type: 'list', items: [
