@@ -3,11 +3,11 @@
 'use client';
 
 import React from 'react';
-import type { Project } from '@/lib/data';
+import type { Project, CaseStudyBlock } from '@/lib/data';
 import Image from 'next/image';
-import { Target, Zap, Users, GraduationCap, Briefcase, UserCog, UserPlus, Bot, Code, Database, Settings, GitBranch, ChevronsRight, CheckCircle, Lightbulb, Rocket } from 'lucide-react';
+import { Target, Zap, Users, GraduationCap, Briefcase, UserCog, UserPlus, Bot, Code, Database, Settings, GitBranch, ChevronsRight, CheckCircle, Lightbulb, Rocket, Github, Pilcrow, List, CaseSensitive } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Github } from 'lucide-react';
+
 import {
     Carousel,
     CarouselContent,
@@ -25,137 +25,71 @@ const roleIcons: { [key: string]: React.ReactNode } = {
     signup: <UserPlus className="w-8 h-8" />,
 };
 
-const techIcons: { [key: string]: React.ReactNode } = {
-    "Workflow Automation": <Bot className="w-8 h-8 text-blue-400" />,
-    "AI & Language Model": <Zap className="w-8 h-8 text-purple-400" />,
-    "Communication Channel": <Users className="w-8 h-8 text-green-400" />,
-    "API Configuration": <Settings className="w-8 h-8 text-yellow-400" />,
-    "Database": <Database className="w-8 h-8 text-red-400" />,
-}
+const blockIcons: { [key: string]: React.ElementType } = {
+    overview: Target,
+    goal: Zap,
+    tech: Settings,
+    workflow: GitBranch,
+    conclusion: CheckCircle,
+    improvements: Rocket,
+    h2: Pilcrow,
+    h3: CaseSensitive,
+    h4: CaseSensitive,
+    p: Pilcrow,
+    li: List
+};
 
-const ProjectDetails = ({ project }: { project: Project }) => {
-    const renderContent = () => {
-        if (project.slug === 'whatsapp-chatbot') {
+
+const renderBlock = (block: CaseStudyBlock, index: number) => {
+    switch (block.type) {
+        case 'heading':
+            const Icon = block.icon;
+            const headingClasses = {
+                2: 'text-2xl font-bold solution-text mb-6 flex items-center gap-3',
+                3: 'text-xl font-bold gradient-text mb-4 mt-8',
+                4: 'text-lg font-semibold text-gray-200 mb-3 mt-6',
+            };
+            const Tag = `h${block.level}` as keyof JSX.IntrinsicElements;
             return (
-                <div className="space-y-16">
-                     <header className="text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-2 gradient-text">{project.title}</h1>
-                        <p className="text-lg md:text-xl text-gray-300 font-semibold">{project.category}</p>
-                        <div className="mt-6">
-                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                <Button className="btn-primary">
-                                    <Github className="w-5 h-5 mr-2" />
-                                    View on GitHub
-                                </Button>
-                            </a>
-                        </div>
-                    </header>
-
-                    <div className="glass-card rounded-2xl p-6 md:p-8">
-                        <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
-                            <Target className="w-5 h-5" />
-                            Project Overview
-                        </h3>
-                        <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.projectOverview}</p>
-                    </div>
-
-                    <div className="w-full max-w-4xl mx-auto">
-                        <Carousel
-                            opts={{ align: "start", loop: true }}
-                            plugins={[Autoplay({ delay: 2500, stopOnInteraction: true })]}
-                        >
-                            <CarouselContent>
-                                {project.screenshots?.map((ss, index) => (
-                                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-                                        <div className="p-1">
-                                            <div className="glass-card rounded-lg overflow-hidden p-1 aspect-video">
-                                                 <Image
-                                                    src={ss.url}
-                                                    alt={`Chatbot Screenshot ${index + 1}`}
-                                                    width={1280}
-                                                    height={720}
-                                                    className="rounded-md object-contain w-full h-full"
-                                                    data-ai-hint={ss.dataAiHint}
-                                                />
-                                            </div>
-                                        </div>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                             <CarouselPrevious className="hidden sm:flex" />
-                             <CarouselNext className="hidden sm:flex" />
-                        </Carousel>
-                    </div>
-
-
-                    <div className="glass-card rounded-2xl p-6 md:p-8">
-                        <h3 className="text-2xl font-bold problem-text mb-6 flex items-center gap-3">
-                            <Zap className="w-5 h-5" />
-                            The Goal
-                        </h3>
-                         <ul className="space-y-3 text-gray-300">
-                             {project.goal?.map((g, i) => (
-                                <li key={i} className="flex items-start">
-                                    <ChevronsRight className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                                    {g}
-                                </li>
-                             ))}
-                         </ul>
-                    </div>
-
-                    <div>
-                        <h2 className="text-3xl font-bold text-center mb-10 gradient-text">Technologies & Tools</h2>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {project.techStack?.map((tech, index) => (
-                                <div key={index} className="glass-card rounded-xl p-6 flex items-start gap-4 h-full">
-                                    <div className="bg-white/5 p-3 rounded-lg mt-1">{techIcons[tech.name]}</div>
-                                    <div>
-                                        <h4 className="font-bold text-white mb-1">{tech.name}</h4>
-                                        <p className="text-sm text-gray-400">{tech.description}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                    
-                    <div className="glass-card rounded-2xl p-6 md:p-8">
-                         <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
-                            <GitBranch className="w-5 h-5" />
-                            System Architecture & Workflow
-                        </h3>
-                        <p className="text-gray-300 leading-relaxed text-sm md:text-base mb-6">{project.workflow?.description}</p>
-                        <h4 className="font-bold text-gray-200 mb-3">Workflow Breakdown:</h4>
-                        <ul className="space-y-3 text-gray-300 list-disc list-inside">
-                             {project.workflow?.breakdown?.map((step, i) => <li key={i}>{step}</li>)}
-                        </ul>
-                    </div>
-                    
-                    <div className="glass-card rounded-2xl p-6 md:p-8">
-                         <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
-                            <CheckCircle className="w-5 h-5" />
-                            Conclusion
-                        </h3>
-                        <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.conclusion}</p>
-                    </div>
-                    
-                     <div className="glass-card rounded-2xl p-6 md:p-8">
-                         <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
-                            <Rocket className="w-5 h-5" />
-                            Future Improvements
-                        </h3>
-                        <ul className="space-y-3 text-gray-300 list-disc list-inside">
-                            {project.futureImprovements?.map((imp, i) => <li key={i}>{imp}</li>)}
-                        </ul>
-                    </div>
-
+                <Tag key={index} className={headingClasses[block.level]}>
+                   {Icon && <Icon className="w-5 h-5" />} {block.text}
+                </Tag>
+            );
+        case 'paragraph':
+            return <p key={index} className="text-gray-300 leading-relaxed text-sm md:text-base mb-4">{block.text}</p>;
+        case 'list':
+            return (
+                <ul key={index} className="space-y-3 text-gray-300 list-disc list-inside mb-6">
+                    {block.items.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+            );
+        case 'image':
+            return (
+                 <div key={index} className="my-8 glass-card rounded-2xl p-4">
+                    <Image 
+                        src={block.url}
+                        alt={block.caption || `Project screenshot ${index}`}
+                        width={1280}
+                        height={720}
+                        className="rounded-lg object-contain w-full h-full"
+                        data-ai-hint={block.dataAiHint}
+                    />
+                    {block.caption && <p className="text-xs text-center text-gray-400 mt-3">{block.caption}</p>}
                 </div>
             )
-        }
-        
-        // Default project details layout
+        default:
+            return null;
+    }
+}
+
+
+const ProjectDetails = ({ project }: { project: Project }) => {
+    
+    // Renders the new case study format if available
+    if (project.caseStudy) {
         return (
-            <div className="space-y-16">
-                <header className="text-center">
+            <div className="space-y-4">
+                 <header className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-2 gradient-text">{project.title}</h1>
                     <p className="text-lg md:text-xl text-gray-300 font-semibold">{project.category}</p>
                     <div className="mt-6">
@@ -168,88 +102,108 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                     </div>
                 </header>
 
-                <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-                    <div className="glass-card rounded-2xl p-6 md:p-8">
-                         <h3 className="text-2xl font-bold problem-text mb-6 flex items-center gap-3">
-                            <Target className="w-5 h-5" />
-                            The Problem
-                        </h3>
-                        <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.problem}</p>
-                    </div>
-                    <div className="glass-card rounded-2xl p-6 md:p-8">
-                         <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
-                            <Zap className="w-5 h-5" />
-                            The Solution
-                        </h3>
-                        <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.solution}</p>
-                    </div>
-                </div>
-
-                {/* User Role Screenshot Carousels */}
-                <div className="space-y-16">
-                    {project.screenshotsByRole?.map((role, roleIndex) => (
-                        <div key={role.title} className="space-y-6">
-                            <div className="flex flex-col items-center text-center">
-                                <div className="w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
-                                    <span className="text-4xl text-accent">{roleIcons[role.role]}</span>
-                                </div>
-                                <h3 className="text-3xl font-bold gradient-text">{role.title}</h3>
-                                <p className="text-gray-400 max-w-2xl px-4">{role.description}</p>
-                            </div>
-                            <Carousel
-                                opts={{
-                                    align: "start",
-                                    loop: true,
-                                }}
-                                plugins={[
-                                    Autoplay({
-                                        delay: 2000,
-                                        stopOnInteraction: false,
-                                        stopOnMouseEnter: false,
-                                        direction: role.role === 'visitors' || role.role === 'teachers' ? 'backward' : 'forward',
-                                    })
-                                ]}
-                                className="w-full"
-                            >
-                                <CarouselContent className="-ml-2 md:-ml-4">
-                                    {role.screenshots.map((ss, index) => (
-                                        <CarouselItem key={index} className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 pl-2 md:pl-4">
-                                            <div className="p-1">
-                                                <div className="glass-card rounded-lg overflow-hidden p-1.5 aspect-[9/18]">
-                                                    <Image
-                                                        src={ss.url}
-                                                        alt={`${role.title} Screenshot ${index + 1}`}
-                                                        width={250}
-                                                        height={500}
-                                                        className="rounded-md object-cover w-full h-full"
-                                                        data-ai-hint={ss.dataAiHint}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </CarouselItem>
-                                    ))}
-                                </CarouselContent>
-                                <CarouselPrevious className="hidden sm:flex" />
-                                <CarouselNext className="hidden sm:flex" />
-                            </Carousel>
-                        </div>
-                    ))}
-                </div>
-
-
-                <div className="glass-card rounded-2xl p-6 md:p-8">
-                    <h3 className="text-2xl font-bold gradient-text mb-6 text-center">Tech Stack</h3>
-                     <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-                        {project.tags.map(tag => (
-                            <span key={tag} className="tech-tag px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold">{tag}</span>
-                        ))}
-                    </div>
+                <div className="glass-card rounded-2xl p-6 md:p-10">
+                    {project.caseStudy.map((block, index) => renderBlock(block, index))}
                 </div>
             </div>
         )
     }
+        
+    // Default project details layout for projects without the new format
+    return (
+        <div className="space-y-16">
+            <header className="text-center">
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-2 gradient-text">{project.title}</h1>
+                <p className="text-lg md:text-xl text-gray-300 font-semibold">{project.category}</p>
+                <div className="mt-6">
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Button className="btn-primary">
+                            <Github className="w-5 h-5 mr-2" />
+                            View on GitHub
+                        </Button>
+                    </a>
+                </div>
+            </header>
 
-    return renderContent();
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+                <div className="glass-card rounded-2xl p-6 md:p-8">
+                        <h3 className="text-2xl font-bold problem-text mb-6 flex items-center gap-3">
+                        <Target className="w-5 h-5" />
+                        The Problem
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.problem}</p>
+                </div>
+                <div className="glass-card rounded-2xl p-6 md:p-8">
+                        <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
+                        <Zap className="w-5 h-5" />
+                        The Solution
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.solution}</p>
+                </div>
+            </div>
+
+            {/* User Role Screenshot Carousels */}
+            <div className="space-y-16">
+                {project.screenshotsByRole?.map((role, roleIndex) => (
+                    <div key={role.title} className="space-y-6">
+                        <div className="flex flex-col items-center text-center">
+                            <div className="w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
+                                <span className="text-4xl text-accent">{roleIcons[role.role]}</span>
+                            </div>
+                            <h3 className="text-3xl font-bold gradient-text">{role.title}</h3>
+                            <p className="text-gray-400 max-w-2xl px-4">{role.description}</p>
+                        </div>
+                        <Carousel
+                            opts={{
+                                align: "start",
+                                loop: true,
+                            }}
+                            plugins={[
+                                Autoplay({
+                                    delay: 2000,
+                                    stopOnInteraction: false,
+                                    stopOnMouseEnter: false,
+                                    direction: role.role === 'visitors' || role.role === 'teachers' ? 'backward' : 'forward',
+                                })
+                            ]}
+                            className="w-full"
+                        >
+                            <CarouselContent className="-ml-2 md:-ml-4">
+                                {role.screenshots.map((ss, index) => (
+                                    <CarouselItem key={index} className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 pl-2 md:pl-4">
+                                        <div className="p-1">
+                                            <div className="glass-card rounded-lg overflow-hidden p-1.5 aspect-[9/18]">
+                                                <Image
+                                                    src={ss.url}
+                                                    alt={`${role.title} Screenshot ${index + 1}`}
+                                                    width={250}
+                                                    height={500}
+                                                    className="rounded-md object-cover w-full h-full"
+                                                    data-ai-hint={ss.dataAiHint}
+                                                />
+                                            </div>
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious className="hidden sm:flex" />
+                            <CarouselNext className="hidden sm:flex" />
+                        </Carousel>
+                    </div>
+                ))}
+            </div>
+
+
+            <div className="glass-card rounded-2xl p-6 md:p-8">
+                <h3 className="text-2xl font-bold gradient-text mb-6 text-center">Tech Stack</h3>
+                    <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+                    {project.tags.map(tag => (
+                        <span key={tag} className="tech-tag px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold">{tag}</span>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
 };
 
 export default ProjectDetails;
