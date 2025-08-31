@@ -139,9 +139,6 @@ const HeroSection = ({ onExploreClick }: { onExploreClick: (tab: string) => void
                      <Button onClick={() => onExploreClick('problem-solving')} className="btn-primary px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
                         <span className="relative z-10">Problem Solving</span>
                     </Button>
-                    <a href="/resume.pdf" download="PrinceSherathiya_Resume.pdf" className="inline-flex items-center justify-center border-2 border-white/20 hover:border-white/40 px-8 py-4 rounded-xl font-bold text-base transition-all hover:bg-white/5">
-                        Download Resume
-                    </a>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
