@@ -3,10 +3,62 @@
 'use client';
 
 import React from 'react';
-import type { Project, CaseStudyBlock } from '@/lib/data';
+import type { Project, ScreenshotsByRole, CaseStudyBlock } from '@/lib/data';
 import Image from 'next/image';
-import { Github } from 'lucide-react';
+import { Github, AlertTriangle, Lightbulb, Eye, UserPlus, User, Users, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+
+const roleIcons: { [key: string]: React.ElementType } = {
+    visitors: Eye,
+    signup: UserPlus,
+    students: User,
+    teachers: Users,
+    admins: Shield,
+};
+
+const ScreenshotCarousel = ({ screenshotsByRole }: { screenshotsByRole: ScreenshotsByRole }) => {
+    const Icon = roleIcons[screenshotsByRole.role];
+    return (
+        <div className="w-full my-16">
+            <div className="text-center mb-10 max-w-2xl mx-auto">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    {Icon && <Icon className="w-8 h-8 text-accent" />}
+                </div>
+                <h3 className="text-3xl font-bold solution-text mb-2">{screenshotsByRole.title}</h3>
+                <p className="text-gray-300">{screenshotsByRole.description}</p>
+            </div>
+            <Carousel
+                opts={{
+                    align: "start",
+                    loop: true,
+                }}
+                className="w-full"
+            >
+                <CarouselContent>
+                    {screenshotsByRole.screenshots.map((ss, index) => (
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
+                            <div className="p-1">
+                                 <div className="bg-slate-800/20 p-2 md:p-3 rounded-2xl border border-white/10 aspect-[9/19] flex items-center justify-center">
+                                    <Image
+                                        src={ss.url}
+                                        alt={`${screenshotsByRole.title} screenshot ${index + 1}`}
+                                        width={300}
+                                        height={600}
+                                        className="rounded-lg object-contain w-full h-full"
+                                        data-ai-hint={ss.dataAiHint}
+                                    />
+                                </div>
+                            </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious className="text-white hover:bg-white/10 hover:text-white" />
+                <CarouselNext className="text-white hover:bg-white/10 hover:text-white" />
+            </Carousel>
+        </div>
+    );
+}
 
 const renderBlock = (block: CaseStudyBlock, index: number) => {
     switch (block.type) {
@@ -32,7 +84,7 @@ const renderBlock = (block: CaseStudyBlock, index: number) => {
                 </ul>
             );
         case 'image':
-            return (
+             return (
                  <div key={index} className="my-8 max-w-2xl mx-auto">
                     <div className="glass-card rounded-2xl p-4">
                         <Image 
@@ -74,9 +126,9 @@ const renderBlock = (block: CaseStudyBlock, index: number) => {
 const ProjectDetails = ({ project }: { project: Project }) => {
     
     // Renders the new case study format if available
-    if (project.caseStudy) {
+    if (project.caseStudy && project.caseStudy.length > 0) {
         return (
-            <div className="space-y-4">
+            <div>
                  <header className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-2 gradient-text">{project.title}</h1>
                     <p className="text-lg md:text-xl text-gray-300 font-semibold">{project.category}</p>
@@ -98,9 +150,46 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             </div>
         )
     }
+
+    if (project.problem && project.solution && project.screenshotsByRole) {
+        return (
+            <div>
+                <header className="text-center mb-16">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-2 gradient-text">{project.title}</h1>
+                    <p className="text-lg md:text-xl text-gray-300 font-semibold">{project.category}</p>
+                    {project.githubUrl && project.githubUrl !== '#' && (
+                        <div className="mt-8">
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Button className="btn-primary">
+                                    <Github className="w-5 h-5 mr-2" />
+                                    View on GitHub
+                                </Button>
+                            </a>
+                        </div>
+                    )}
+                </header>
+
+                <div className="grid md:grid-cols-2 gap-8 mb-16">
+                    <div className="glass-card rounded-2xl p-8">
+                         <h2 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6" /> The Problem</h2>
+                         <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.problem}</p>
+                    </div>
+                     <div className="glass-card rounded-2xl p-8">
+                         <h2 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3"><Lightbulb className="w-6 h-6" /> The Solution</h2>
+                         <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.solution}</p>
+                    </div>
+                </div>
+                
+                {project.screenshotsByRole.map((roleData, index) => (
+                    <ScreenshotCarousel key={index} screenshotsByRole={roleData} />
+                ))}
+
+            </div>
+        )
+    }
         
     // Fallback for old project structure (should not be needed for new projects)
-    return <div>Project case study not found.</div>
+    return <div className="text-center text-xl text-gray-400">Project case study content is not available.</div>
 };
 
 export default ProjectDetails;

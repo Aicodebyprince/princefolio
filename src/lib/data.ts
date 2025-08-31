@@ -125,54 +125,67 @@ export const projects: Project[] = [
         liveUrl: '',
         tags: ['Flutter', 'Firebase', 'State Management', 'UX/UI', 'Real-time DB'],
         stat: 'Full-Stack Campus Platform',
-        caseStudy: [
-            { type: 'heading', level: 2, text: 'The Problem', icon: AlertTriangle },
-            { type: 'paragraph', text: 'Traditional colleges often suffer from scattered information, poor communication between departments, and manual, time-consuming processes. Students and faculty struggle to keep track of schedules, announcements, and academic progress in one unified place.'},
-            { type: 'heading', level: 2, text: 'The Solution', icon: Lightbulb },
-            { type: 'paragraph', text: 'I developed a centralized mobile application using Flutter and Firebase that serves as a single source of truth for the entire campus. The app provides role-based access for students, teachers, visitors and admins, offering tailored dashboards with real-time information and interactive features.'},
-            { type: 'heading', level: 2, text: 'Features for Visitors', icon: Eye },
-            { type: 'paragraph', text: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.'},
-            { type: 'image_grid', images: [
-                { url: '/images/Visitor 1.png', dataAiHint: 'mobile app screen' },
-                { url: '/images/Visitor 2.png', dataAiHint: 'mobile app screen' },
-                { url: '/images/Visitor 3.png', dataAiHint: 'mobile app screen' },
-                { url: '/images/Visitor 4.png', dataAiHint: 'mobile app screen' },
-            ]},
-            { type: 'heading', level: 2, text: 'Seamless Signup', icon: UserPlus },
-            { type: 'paragraph', text: 'A simple and secure signup process to onboard new users to the platform.'},
-            { type: 'image_grid', images: [
-                { url: '/images/Sign 1.jpg', dataAiHint: 'signup screen' },
-                { url: '/images/Sign 2.jpg', dataAiHint: 'signup form' },
-                { url: '/images/Sign 3.jpg', dataAiHint: 'verification screen' },
-                { url: '/images/Sign 4.jpg', dataAiHint: 'profile setup' },
-            ]},
-            { type: 'heading', level: 2, text: 'Student Dashboard', icon: User },
-            { type: 'paragraph', text: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.'},
-            { type: 'image_grid', images: [
-                { url: '/images/Student 1.png', dataAiHint: 'student dashboard' },
-                { url: '/images/Student 2.png', dataAiHint: 'student dashboard' },
-                { url: '/images/Student 3.png', dataAiHint: 'attendance tracker' },
-                { url: '/images/Stundet 4.png', dataAiHint: 'exam results' },
-                { url: '/images/Student 5.png', dataAiHint: 'class schedule' },
-                { url: '/images/Student 6.jpg', dataAiHint: 'chat interface' },
-                { url: '/images/Student 7.jpg', dataAiHint: 'student profile' },
-                { url: '/images/Student 8.jpg', dataAiHint: 'student profile' },
-            ]},
-            { type: 'heading', level: 2, text: 'Tools for Teachers', icon: Users },
-            { type: 'paragraph', text: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.'},
-            { type: 'image_grid', images: [
-                { url: '/images/Teacher 1.jpg', dataAiHint: 'teacher dashboard' },
-                { url: '/images/Teacher 2.jpg', dataAiHint: 'take attendance' },
-                { url: '/images/Teacher 3.jpg', dataAiHint: 'upload marks' },
-                { url: '/images/Teacher 4.jpg', dataAiHint: 'send notification' },
-            ]},
-            { type: 'heading', level: 2, text: 'Admin Controls', icon: Shield },
-            { type: 'paragraph', text: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.'},
-            { type: 'image_grid', images: [
-                { url: '/images/Admin 2.jpg', dataAiHint: 'admin dashboard' },
-                { url: '/images/Admin 3.jpg', dataAiHint: 'user management' },
-                { url: '/images/Admin 4.jpg', dataAiHint: 'analytics charts' },
-            ]}
+        problem: 'Traditional colleges often suffer from scattered information, poor communication between departments, and manual, time-consuming processes. Students and faculty struggle to keep track of schedules, announcements, and academic progress in one unified place.',
+        solution: 'I developed a centralized mobile application using Flutter and Firebase that serves as a single source of truth for the entire campus. The app provides role-based access for students, teachers, visitors and admins, offering tailored dashboards with real-time information and interactive features.',
+        screenshotsByRole: [
+            {
+                role: 'visitors',
+                title: 'For the Visitors',
+                description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
+                screenshots: [
+                    { url: '/images/Visitor 1.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 2.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 3.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 4.png', dataAiHint: 'mobile app screen' },
+                ]
+            },
+            {
+                role: 'signup',
+                title: 'For the Signup',
+                description: 'A simple and secure signup process to onboard new users to the platform.',
+                screenshots: [
+                    { url: '/images/Sign 1.jpg', dataAiHint: 'signup screen' },
+                    { url: '/images/Sign 2.jpg', dataAiHint: 'signup form' },
+                    { url: '/images/Sign 3.jpg', dataAiHint: 'verification screen' },
+                    { url: '/images/Sign 4.jpg', dataAiHint: 'profile setup' },
+                ]
+            },
+            {
+                role: 'students',
+                title: 'For the Students',
+                description: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.',
+                screenshots: [
+                    { url: '/images/Student 1.png', dataAiHint: 'student dashboard' },
+                    { url: '/images/Student 2.png', dataAiHint: 'student dashboard' },
+                    { url: '/images/Student 3.png', dataAiHint: 'attendance tracker' },
+                    { url: '/images/Stundet 4.png', dataAiHint: 'exam results' },
+                    { url: '/images/Student 5.png', dataAiHint: 'class schedule' },
+                    { url: '/images/Student 6.jpg', dataAiHint: 'chat interface' },
+                    { url: '/images/Student 7.jpg', dataAiHint: 'student profile' },
+                    { url: '/images/Student 8.jpg', dataAiHint: 'student profile' },
+                ]
+            },
+            {
+                role: 'teachers',
+                title: 'For the Teachers',
+                description: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.',
+                screenshots: [
+                    { url: '/images/Teacher 1.jpg', dataAiHint: 'teacher dashboard' },
+                    { url: '/images/Teacher 2.jpg', dataAiHint: 'take attendance' },
+                    { url: '/images/Teacher 3.jpg', dataAiHint: 'upload marks' },
+                    { url: '/images/Teacher 4.jpg', dataAiHint: 'send notification' },
+                ]
+            },
+            {
+                role: 'admins',
+                title: 'For the Admins',
+                description: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.',
+                screenshots: [
+                    { url: '/images/Admin 2.jpg', dataAiHint: 'admin dashboard' },
+                    { url: '/images/Admin 3.jpg', dataAiHint: 'user management' },
+                    { url: '/images/Admin 4.jpg', dataAiHint: 'analytics charts' },
+                ]
+            }
         ]
     },
     {
@@ -259,6 +272,7 @@ export const projects: Project[] = [
         liveUrl: '',
         tags: ['Flutter', 'OpenAI', 'Secure Storage'],
         stat: 'Conceptualized and deployed',
+        slug: 'helpful-vault',
     },
     {
         icon: 'library',
@@ -271,6 +285,7 @@ export const projects: Project[] = [
         liveUrl: '',
         tags: ['AI', 'Automation', 'Internal Tool'],
         stat: 'Reduced manual work by 8 hours',
+        slug: 'library-recommender',
     },
     {
         icon: 'code',
@@ -283,6 +298,7 @@ export const projects: Project[] = [
         liveUrl: '#',
         tags: ['Next.js', 'React', 'TailwindCSS'],
         stat: 'Interactive & Responsive Design',
+        slug: 'portfolio-website',
     },
     {
         icon: 'chart-bar',
@@ -295,6 +311,7 @@ export const projects: Project[] = [
         liveUrl: '',
         tags: ['Figma', 'UI/UX', 'Data Visualization'],
         stat: 'Design-driven development',
+        slug: 'ecommerce-dashboard',
     },
 ];
 
