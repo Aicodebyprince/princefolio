@@ -1,40 +1,70 @@
+
 'use client';
 
 import React from 'react';
-import { Code, Users, FileText, Layout, Landmark } from 'lucide-react';
+import { Code, Users, FileText, Layout, Landmark, Banknote, Target, CheckCircle, Sparkles } from 'lucide-react';
+import Image from 'next/image';
 
-type Detail = {
-    title: string;
-    description: string;
-    icon: string;
-};
+type DetailBlock = 
+    | { type: 'heading'; level: 2 | 3 | 4; icon: React.ElementType; text: string; }
+    | { type: 'paragraph'; text: string; }
+    | { type: 'list'; items: string[]; }
+    | { type: 'image_grid'; images: { url: string; dataAiHint: string; caption?: string; }[] };
 
 type ExperienceDetailsProps = {
-    details: Detail[];
+    details: DetailBlock[];
 };
 
-const iconMap: { [key: string]: React.ReactNode } = {
-    document: <FileText className="w-8 h-8 text-blue-400" />,
-    code: <Code className="w-8 h-8 text-green-400" />,
-    users: <Users className="w-8 h-8 text-purple-400" />,
-    layout: <Layout className="w-8 h-8 text-yellow-400" />,
-    bank: <Landmark className="w-8 h-8 text-red-400" />,
-};
+const renderBlock = (block: DetailBlock, index: number) => {
+    switch (block.type) {
+        case 'heading':
+            const Icon = block.icon;
+            const headingClasses = {
+                2: 'text-2xl font-bold solution-text mb-6 flex items-center gap-3',
+                3: 'text-xl font-bold gradient-text mb-4 mt-8',
+                4: 'text-lg font-semibold text-gray-200 mb-3 mt-6',
+            };
+            const Tag = `h${block.level}` as keyof JSX.IntrinsicElements;
+            return (
+                <Tag key={index} className={headingClasses[block.level]}>
+                   <Icon className="w-5 h-5" /> {block.text}
+                </Tag>
+            );
+        case 'paragraph':
+            return <p key={index} className="text-gray-300 leading-relaxed text-sm md:text-base mb-4">{block.text}</p>;
+        case 'list':
+            return (
+                <ul key={index} className="space-y-3 text-gray-300 list-disc list-inside mb-6">
+                    {block.items.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+            );
+        case 'image_grid':
+            return (
+                <div key={index} className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {block.images.map((image, imgIndex) => (
+                        <div key={imgIndex} className="glass-card rounded-2xl p-2">
+                             <Image 
+                                src={image.url}
+                                alt={image.caption || `Experience screenshot ${imgIndex}`}
+                                width={800}
+                                height={600}
+                                className="rounded-lg object-contain w-full h-full"
+                                data-ai-hint={image.dataAiHint}
+                            />
+                            {image.caption && <p className="text-xs text-center text-gray-400 mt-2">{image.caption}</p>}
+                        </div>
+                    ))}
+                </div>
+            );
+        default:
+            return null;
+    }
+}
 
 const ExperienceDetails = ({ details }: ExperienceDetailsProps) => {
     return (
-        <div className="space-y-8">
-            {details.map((detail, index) => (
-                <div key={index} className="glass-card rounded-2xl p-8 flex items-start gap-6">
-                    <div className="bg-white/5 p-4 rounded-xl">
-                        {iconMap[detail.icon] || <FileText className="w-8 h-8 text-gray-400" />}
-                    </div>
-                    <div>
-                        <h3 className="text-xl font-bold solution-text mb-2">{detail.title}</h3>
-                        <p className="text-gray-300 text-sm leading-relaxed">{detail.description}</p>
-                    </div>
-                </div>
-            ))}
+        <div className="static-glass-card rounded-2xl p-6 md:p-10">
+            {details.map((block, index) => renderBlock(block, index))}
         </div>
     );
 };
