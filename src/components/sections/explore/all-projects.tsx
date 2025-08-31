@@ -57,7 +57,7 @@ const AllProjectsSection = () => {
                                     </Link>
                                 ) : (
                                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                        <Button variant="link" className="text-gray-300 hover:text-white p-0">
+                                        <Button variant="link" size="sm" className="text-gray-300 hover:text-white p-0">
                                             View on GitHub
                                         </Button>
                                     </a>
