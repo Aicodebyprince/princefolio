@@ -4,6 +4,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Card3D from '../card-3d';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const TYPING_TEXTS = ['Developer', '& App Innovator', '& Problem Solver'];
 const STATS = [
@@ -42,7 +43,7 @@ clearInterval(counter);
     return <div ref={ref} className="text-3xl font-black gradient-text mb-3">{count.toLocaleString()}+</div>;
 };
 
-const HeroSection = ({ onExploreClick, onNavigate }: { onExploreClick: (tab: string) => void; onNavigate: (path: string) => void; }) => {
+const HeroSection = ({ onExploreClick }: { onExploreClick: (tab: string) => void; }) => {
     const [typingText, setTypingText] = useState('');
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef<HTMLElement>(null);
@@ -130,9 +131,11 @@ const HeroSection = ({ onExploreClick, onNavigate }: { onExploreClick: (tab: str
                     <Button onClick={() => onExploreClick('projects')} className="btn-primary px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
                         <span className="relative z-10">Explore More</span>
                     </Button>
-                    <Button onClick={() => onNavigate('/resume')} className="btn-solve px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
-                        <span className="relative z-10">Live Resume 🚀</span>
-                    </Button>
+                    <Link href="/resume" passHref>
+                        <Button className="btn-solve px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
+                            <span className="relative z-10">Live Resume 🚀</span>
+                        </Button>
+                    </Link>
                      <Button onClick={() => onExploreClick('problem-solving')} className="btn-primary px-8 py-4 rounded-xl font-bold text-base relative overflow-hidden h-full">
                         <span className="relative z-10">Problem Solving</span>
                     </Button>

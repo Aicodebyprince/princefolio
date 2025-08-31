@@ -17,15 +17,6 @@ const metadata: Metadata = {
   description: 'Portfolio of Prince Sherathiya, a developer and Computer Science student.',
 };
 
-const AppContent = ({ children }: { children: React.ReactNode }) => {
-  const { transitionFinished } = useContext(TransitionContext);
-  return (
-    <div className={cn(!transitionFinished && 'opacity-0')}>
-      {children}
-    </div>
-  )
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,7 +34,7 @@ export default function RootLayout({
           <AnimatedBackground />
           <ScrollProgress />
           <TransitionScreen />
-          <AppContent>{children}</AppContent>
+          <main>{children}</main>
           <Toaster />
         </TransitionProvider>
       </body>

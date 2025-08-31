@@ -13,20 +13,19 @@ import Footer from "@/components/footer";
 import JourneySection from '@/components/sections/journey';
 import ServicesSection from '@/components/sections/services';
 import { useRouter } from 'next/navigation';
-import { TransitionContext } from '@/context/transition-context';
 
 export default function Home() {
-  const { handleTransition } = useContext(TransitionContext);
+  const router = useRouter();
 
   const handleExploreClick = (tab: string = 'projects') => {
-    handleTransition(`/explore?tab=${tab}`);
+    router.push(`/explore?tab=${tab}`);
   };
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header onNavigate={handleTransition} />
+      <Header />
       <main className="flex-grow relative z-10">
-        <HeroSection onExploreClick={handleExploreClick} onNavigate={handleTransition} />
+        <HeroSection onExploreClick={handleExploreClick} />
         <AboutSection />
         <SkillsSection />
         <ServicesSection onExploreClick={() => handleExploreClick('services')} />

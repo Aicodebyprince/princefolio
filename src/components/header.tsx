@@ -6,12 +6,9 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 
-type HeaderProps = {
-  onNavigate: (path: string) => void;
-};
-
-const Header = ({ onNavigate }: HeaderProps) => {
+const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -39,23 +36,16 @@ const Header = ({ onNavigate }: HeaderProps) => {
         { href: "/#experience", label: "Experience" },
         { href: "/#journey", label: "Journey" },
     ];
-
-    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-        e.preventDefault();
-        setIsMobileMenuOpen(false); // Close mobile menu on navigation
-        onNavigate(href);
-    };
-
-    const handleContactClick = () => {
-        setIsMobileMenuOpen(false); // Close mobile menu on navigation
-        onNavigate('/#contact');
+    
+    const handleCloseMenu = () => {
+        setIsMobileMenuOpen(false);
     }
 
     return (
         <nav className={cn("nav-bar fixed top-0 left-0 right-0 z-50", { scrolled })}>
             <div className="max-w-7xl mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
-                    <a href="/#home" onClick={(e) => handleClick(e, '/#home')} className="flex items-center space-x-4 cursor-pointer">
+                    <a href="/#home" className="flex items-center space-x-4 cursor-pointer">
                         <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
                             <span className="font-bold text-white text-lg">PS</span>
                         </div>
@@ -71,7 +61,6 @@ const Header = ({ onNavigate }: HeaderProps) => {
                              <a 
                                 key={link.href} 
                                 href={link.href} 
-                                onClick={(e) => handleClick(e, link.href)}
                                 className="nav-link text-sm font-medium hover:text-blue-400 transition-colors cursor-pointer"
                              >
                                 {link.label}
@@ -79,9 +68,11 @@ const Header = ({ onNavigate }: HeaderProps) => {
                         ))}
                     </div>
                     
-                    <Button onClick={handleContactClick} className="btn-primary rounded-xl hidden md:block cursor-pointer">
-                        Contact Me
-                    </Button>
+                    <a href="/#contact">
+                        <Button className="btn-primary rounded-xl hidden md:block cursor-pointer">
+                            Contact Me
+                        </Button>
+                    </a>
 
                     {/* Mobile Navigation Trigger */}
                     <div className="md:hidden">
@@ -98,16 +89,18 @@ const Header = ({ onNavigate }: HeaderProps) => {
                                             <a 
                                                 key={link.href} 
                                                 href={link.href} 
-                                                onClick={(e) => handleClick(e, link.href)}
+                                                onClick={handleCloseMenu}
                                                 className="text-2xl font-semibold hover:gradient-text transition-colors"
                                             >
                                                 {link.label}
                                             </a>
                                         ))}
                                     </div>
-                                    <Button onClick={handleContactClick} className="btn-primary rounded-xl text-lg py-6 mt-8">
-                                        Contact Me
-                                    </Button>
+                                    <a href="/#contact" onClick={handleCloseMenu}>
+                                        <Button className="btn-primary rounded-xl text-lg py-6 mt-8 w-full">
+                                            Contact Me
+                                        </Button>
+                                    </a>
                                 </div>
                             </SheetContent>
                         </Sheet>
