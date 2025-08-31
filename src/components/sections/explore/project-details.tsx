@@ -104,7 +104,7 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                     )}
                 </header>
 
-                <div className="glass-card rounded-2xl p-6 md:p-10">
+                <div className="static-glass-card rounded-2xl p-6 md:p-10">
                     {project.caseStudy.map((block, index) => renderBlock(block, index))}
                 </div>
             </div>
@@ -117,14 +117,16 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             <header className="text-center">
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-2 gradient-text">{project.title}</h1>
                 <p className="text-lg md:text-xl text-gray-300 font-semibold">{project.category}</p>
-                <div className="mt-6">
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Button className="btn-primary">
-                            <Github className="w-5 h-5 mr-2" />
-                            View on GitHub
-                        </Button>
-                    </a>
-                </div>
+                {project.githubUrl && project.githubUrl !== '#' && (
+                    <div className="mt-6">
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <Button className="btn-primary">
+                                <Github className="w-5 h-5 mr-2" />
+                                View on GitHub
+                            </Button>
+                        </a>
+                    </div>
+                )}
             </header>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
