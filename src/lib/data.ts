@@ -195,7 +195,7 @@ export const projects: Project[] = [
         category: 'AI / Automation',
         shortTitle: 'WhatsApp Chatbot',
         shortDescription: 'AI-powered business automation',
-        githubUrl: 'https://github.com/Aicodebyprince',
+        githubUrl: '#',
         liveUrl: '',
         tags: ['AI', 'Gemini', 'n8n', 'WhatsApp API', 'Automation'],
         stat: 'Real-time Business Automation',
