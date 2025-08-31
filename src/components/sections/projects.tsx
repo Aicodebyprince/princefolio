@@ -4,7 +4,7 @@
 import React from 'react';
 import SectionWrapper from '../section-wrapper';
 import { projects } from '@/lib/data';
-import { GitBranch, HelpingHand, BookOpen, ArrowRight, ExternalLink, Bot } from 'lucide-react';
+import { GitBranch, HelpingHand, BookOpen, ArrowRight, ExternalLink, Bot, FileQuestion } from 'lucide-react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 
@@ -12,7 +12,8 @@ const iconMap: { [key: string]: React.ElementType } = {
     college: GitBranch,
     vault: HelpingHand,
     library: BookOpen,
-    chatbot: Bot
+    chatbot: Bot,
+    automation: FileQuestion
 };
 
 const ProjectsContent: React.FC<{ isVisible?: boolean, onExploreClick: () => void }> = ({ isVisible, onExploreClick }) => {

@@ -4,7 +4,7 @@
 import React from 'react';
 import type { Project, ScreenshotsByRole, CaseStudyBlock } from '@/lib/data';
 import Image from 'next/image';
-import { Github, AlertTriangle, Lightbulb, Eye, UserPlus, User, Users, Shield } from 'lucide-react';
+import { Github, AlertTriangle, Lightbulb, Eye, UserPlus, User, Users, Shield, FileQuestion } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay"
@@ -16,6 +16,7 @@ const roleIcons: { [key: string]: React.ElementType } = {
     students: User,
     teachers: Users,
     admins: Shield,
+    automation: FileQuestion,
 };
 
 const ScreenshotCarousel = ({ screenshotsByRole }: { screenshotsByRole: ScreenshotsByRole }) => {
@@ -43,7 +44,7 @@ const ScreenshotCarousel = ({ screenshotsByRole }: { screenshotsByRole: Screensh
             >
                 <CarouselContent>
                     {screenshotsByRole.screenshots.map((ss, index) => (
-                        <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
                             <div className="p-1">
                                  <div className="bg-slate-800/20 p-2 rounded-2xl border border-white/10 aspect-[9/19] flex items-center justify-center">
                                     <Image
@@ -175,16 +176,26 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                  <header className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-2 gradient-text">{project.title}</h1>
                     <p className="text-lg md:text-xl text-gray-300 font-semibold">{project.category}</p>
-                    {project.githubUrl && project.githubUrl !== '#' && (
-                        <div className="mt-6">
-                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                <Button className="btn-primary">
-                                    <Github className="w-5 h-5 mr-2" />
-                                    View on GitHub
-                                </Button>
-                            </a>
+                    {(project.githubUrl && project.githubUrl !== '#') || project.liveUrl ? (
+                        <div className="mt-6 flex justify-center gap-4">
+                            {project.liveUrl && (
+                                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                    <Button className="btn-solve">
+                                        Live Demo
+                                    </Button>
+                                </a>
+                            )}
+                            {project.githubUrl && project.githubUrl !== '#' &&(
+                                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                    <Button className="btn-primary">
+                                        <Github className="w-5 h-5 mr-2" />
+                                        View on GitHub
+                                    </Button>
+                                </a>
+                            )}
+                           
                         </div>
-                    )}
+                    ) : null}
                 </header>
 
                 <div className="static-glass-card rounded-2xl p-6 md:p-10">

@@ -1,6 +1,6 @@
 
 
-import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus, MessageSquare, Bot, Eye, Users, Shield, User, Workflow, CheckCircle, Target, Lightbulb, Package, AlertTriangle, Image as ImageIcon, Sparkles, FileQuestion, BadgeCheck, BookOpen } from 'lucide-react';
+import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus, MessageSquare, Bot, Eye, Users, Shield, User, Workflow, CheckCircle, Target, Lightbulb, Package, AlertTriangle, Image as ImageIcon, Sparkles, FileQuestion, BadgeCheck, BookOpen, GitBranch } from 'lucide-react';
 import React from 'react';
 
 export type Screenshot = {
@@ -186,6 +186,69 @@ export const projects: Project[] = [
                     { url: '/images/Admin 4.jpg', dataAiHint: 'analytics charts' },
                 ]
             }
+        ]
+    },
+    {
+        icon: 'automation',
+        title: 'PPT Automation for CMMI Kickoff',
+        slug: 'ppt-automation',
+        description: 'A web-based automated presentation generator that creates structured, professional CMMI kickoff decks.',
+        category: 'Web App / Automation',
+        shortTitle: 'PPT Automation',
+        shortDescription: 'Automated CMMI Kickoff Decks',
+        githubUrl: '#',
+        liveUrl: 'https://pptautomation-rho.vercel.app',
+        tags: ['Next.js', 'Vercel', 'Automation', 'Productivity'],
+        stat: 'Reduced prep time by 75%',
+        caseStudy: [
+            { type: 'heading', level: 2, icon: FileQuestion, text: 'Background' },
+            { type: 'paragraph', text: 'CMMI (Capability Maturity Model Integration) is widely used by organizations to improve processes and achieve higher maturity levels. The kickoff meeting is the most critical step—it sets direction, defines roles, aligns teams, and builds confidence with stakeholders.' },
+            { type: 'paragraph', text: 'Traditionally, preparing kickoff presentations is:' },
+            { type: 'list', items: [
+                'Time-consuming – Teams create slides manually for every project.',
+                'Inconsistent – Different formats lead to missing agenda points.',
+                'Error-prone – Last-minute edits reduce professionalism.'
+            ]},
+            { type: 'paragraph', text: 'There was a clear need for a standardized, automated solution to ensure every kickoff is structured, professional, and efficient.'},
+            { type: 'heading', level: 2, icon: Target, text: 'The Challenge' },
+            { type: 'list', items: [
+                'Manual slide preparation wasted 3–4 hours per project.',
+                'Teams often forgot critical sections like Roles, Next Steps, or Communication.',
+                'Lack of consistency created confusion across different projects.',
+                'Clients perceived unprofessional and misaligned presentations.'
+            ]},
+            { type: 'heading', level: 2, icon: Lightbulb, text: 'The Solution – PPT Automation Web App' },
+            { type: 'paragraph', text: 'I designed and built a web-based automated presentation generator that creates structured, professional CMMI kickoff decks.' },
+            { type: 'heading', level: 3, icon: Sparkles, text: 'Key Features:' },
+            { type: 'list', items: [
+                'Pre-defined agenda structure: Scope, Practice Areas, Roles, Communication, Next Steps, Q&A.',
+                'Reusable template for multiple clients/projects.',
+                'One-click generation of slides—no need to start from scratch.',
+                'Clean, professional design with consistency in formatting and flow.',
+                'Scalable – adaptable to Agile, Standard, or Consulting approaches.'
+            ]},
+            { type: 'heading', level: 2, icon: User, text: 'My Role & Skills Used' },
+            { type: 'list', items: [
+                'Problem Analysis → Identified inefficiencies in kickoff preparation.',
+                'UI/UX Design → Created a minimal, structured layout for clarity.',
+                'Full-Stack Development → Built on Next.js & Vercel for fast, accessible deployment.',
+                'Automation & Productivity → Reduced repetitive manual work with automation logic.'
+            ]},
+            { type: 'heading', level: 2, icon: BadgeCheck, text: 'Impact & Results' },
+            { type: 'list', items: [
+                '⏱ 75% time saved: From 3–4 hours of slide creation to under 1 hour.',
+                '✅ 100% consistency: Every kickoff covers all critical sections.',
+                '🎨 Professional client experience: Cleaner, standardized decks improved trust.',
+                '🔄 Scalable adoption: Can be reused across multiple companies and projects.'
+            ]},
+             { type: 'heading', level: 2, icon: CheckCircle, text: 'Why It Matters' },
+            { type: 'paragraph', text: 'This project shows my ability to:' },
+            { type: 'list', items: [
+                'Identify real-world inefficiencies in corporate workflows.',
+                'Design and build practical automation tools.',
+                'Deliver solutions that combine technical excellence with business impact.'
+            ]},
+            { type: 'paragraph', text: 'It’s not just a template—it’s a strategic enabler for organizations running CMMI or structured consulting programs.'}
         ]
     },
     {
@@ -551,5 +614,3 @@ export const problemSolving = [
         tags: ["Competitive Programming", "Math", "Algorithms"]
     }
 ];
-
-    
