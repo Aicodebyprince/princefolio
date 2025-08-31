@@ -24,27 +24,31 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
     const pathname = usePathname();
 
     useEffect(() => {
-        // This effect runs on the client after hydration and on route changes.
-        // It ensures that when the user navigates, we reset the state to show content.
         setTransitionFinished(true);
     }, [pathname]);
 
     const handleTransition = (path: string) => {
         if (pathname === path || isTransitioning) return;
 
+        // For anchor links on the same page, just scroll
+        if (path.startsWith('/#')) {
+            const id = path.substring(2);
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+            return;
+        }
+
         setTransitionFinished(false);
         setIsTransitioning(true);
 
-        // Delay navigation to allow the initial part of the animation to play
         setTimeout(() => {
             router.push(path);
         }, 500);
 
-        // Corresponds to the total animation time before it fades out
-        // and we want to stop rendering the transition screen
         setTimeout(() => {
             setIsTransitioning(false);
-            // The useEffect for pathname will set transitionFinished to true
         }, 1400); 
     };
 

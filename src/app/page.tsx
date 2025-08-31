@@ -16,39 +16,17 @@ import { useRouter } from 'next/navigation';
 import { TransitionContext } from '@/context/transition-context';
 
 export default function Home() {
-  const router = useRouter();
   const { handleTransition } = useContext(TransitionContext);
 
-  const handleNavigation = (path: string) => {
-    if (path.startsWith('/#')) {
-      const id = path.substring(2);
-      const element = document.getElementById(id);
-      
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        // Fallback for initial load if the element isn't ready
-        setTimeout(() => {
-          const fallbackElement = document.getElementById(id);
-          if (fallbackElement) {
-            fallbackElement.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
-      }
-    } else {
-      handleTransition(path);
-    }
-  };
-
   const handleExploreClick = (tab: string = 'projects') => {
-    handleNavigation(`/explore?tab=${tab}`);
+    handleTransition(`/explore?tab=${tab}`);
   };
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header onNavigate={handleNavigation} />
+      <Header onNavigate={handleTransition} />
       <main className="flex-grow relative z-10">
-        <HeroSection onExploreClick={() => handleExploreClick('projects')} onNavigate={handleNavigation} />
+        <HeroSection onExploreClick={handleExploreClick} onNavigate={handleTransition} />
         <AboutSection />
         <SkillsSection />
         <ServicesSection onExploreClick={() => handleExploreClick('services')} />
