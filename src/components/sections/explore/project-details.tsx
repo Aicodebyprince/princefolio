@@ -5,7 +5,7 @@
 import React from 'react';
 import type { Project } from '@/lib/data';
 import Image from 'next/image';
-import { Target, Zap, Users, GraduationCap, Briefcase, UserCog, UserPlus, Bot, Code, Database, Settings } from 'lucide-react';
+import { Target, Zap, Users, GraduationCap, Briefcase, UserCog, UserPlus, Bot, Code, Database, Settings, GitBranch, ChevronsRight, CheckCircle, Lightbulb, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Github } from 'lucide-react';
 import {
@@ -52,26 +52,62 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                     </header>
 
                     <div className="glass-card rounded-2xl p-6 md:p-8">
-                         <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
+                        <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
                             <Target className="w-5 h-5" />
                             Project Overview
                         </h3>
                         <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.projectOverview}</p>
                     </div>
 
+                    <div className="w-full max-w-4xl mx-auto">
+                        <Carousel
+                            opts={{ align: "start", loop: true }}
+                            plugins={[Autoplay({ delay: 2500, stopOnInteraction: true })]}
+                        >
+                            <CarouselContent>
+                                {project.screenshots?.map((ss, index) => (
+                                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+                                        <div className="p-1">
+                                            <div className="glass-card rounded-lg overflow-hidden p-1 aspect-video">
+                                                 <Image
+                                                    src={ss.url}
+                                                    alt={`Chatbot Screenshot ${index + 1}`}
+                                                    width={1280}
+                                                    height={720}
+                                                    className="rounded-md object-contain w-full h-full"
+                                                    data-ai-hint={ss.dataAiHint}
+                                                />
+                                            </div>
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                             <CarouselPrevious className="hidden sm:flex" />
+                             <CarouselNext className="hidden sm:flex" />
+                        </Carousel>
+                    </div>
+
+
                     <div className="glass-card rounded-2xl p-6 md:p-8">
-                         <h3 className="text-2xl font-bold problem-text mb-6 flex items-center gap-3">
+                        <h3 className="text-2xl font-bold problem-text mb-6 flex items-center gap-3">
                             <Zap className="w-5 h-5" />
                             The Goal
                         </h3>
-                        <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.goal}</p>
+                         <ul className="space-y-3 text-gray-300">
+                             {project.goal?.map((g, i) => (
+                                <li key={i} className="flex items-start">
+                                    <ChevronsRight className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                                    {g}
+                                </li>
+                             ))}
+                         </ul>
                     </div>
 
                     <div>
                         <h2 className="text-3xl font-bold text-center mb-10 gradient-text">Technologies & Tools</h2>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {project.techStack?.map((tech, index) => (
-                                <div key={index} className="glass-card rounded-xl p-6 flex items-start gap-4">
+                                <div key={index} className="glass-card rounded-xl p-6 flex items-start gap-4 h-full">
                                     <div className="bg-white/5 p-3 rounded-lg mt-1">{techIcons[tech.name]}</div>
                                     <div>
                                         <h4 className="font-bold text-white mb-1">{tech.name}</h4>
@@ -81,31 +117,33 @@ const ProjectDetails = ({ project }: { project: Project }) => {
                             ))}
                         </div>
                     </div>
-
-                    <div>
-                        <h2 className="text-3xl font-bold text-center mb-10 gradient-text">System Architecture & Workflow</h2>
-                        <div className="grid md:grid-cols-2 gap-8 items-stretch">
-                            {project.workflow?.map((step, index) => (
-                                <div key={index} className="glass-card rounded-xl overflow-hidden flex flex-col">
-                                    <div className="relative h-48 w-full">
-                                        <Image src={step.imageUrl} alt={step.title} layout="fill" objectFit="cover" data-ai-hint={step.dataAiHint} />
-                                    </div>
-                                    <div className="p-6 flex-grow">
-                                        <h4 className="font-bold text-xl solution-text mb-3">{step.title}</h4>
-                                        <p className="text-sm text-gray-300">{step.description}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                    
+                    <div className="glass-card rounded-2xl p-6 md:p-8">
+                         <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
+                            <GitBranch className="w-5 h-5" />
+                            System Architecture & Workflow
+                        </h3>
+                        <p className="text-gray-300 leading-relaxed text-sm md:text-base mb-6">{project.workflow?.description}</p>
+                        <h4 className="font-bold text-gray-200 mb-3">Workflow Breakdown:</h4>
+                        <ul className="space-y-3 text-gray-300 list-disc list-inside">
+                             {project.workflow?.breakdown?.map((step, i) => <li key={i}>{step}</li>)}
+                        </ul>
                     </div>
                     
                     <div className="glass-card rounded-2xl p-6 md:p-8">
                          <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
-                            Conclusion & Future Improvements
+                            <CheckCircle className="w-5 h-5" />
+                            Conclusion
                         </h3>
-                        <p className="text-gray-300 leading-relaxed text-sm md:text-base mb-6">{project.conclusion}</p>
-                        <h4 className="font-bold text-gray-200 mb-3">Future Improvements:</h4>
-                        <ul className="space-y-2 text-gray-300 list-disc list-inside">
+                        <p className="text-gray-300 leading-relaxed text-sm md:text-base">{project.conclusion}</p>
+                    </div>
+                    
+                     <div className="glass-card rounded-2xl p-6 md:p-8">
+                         <h3 className="text-2xl font-bold solution-text mb-6 flex items-center gap-3">
+                            <Rocket className="w-5 h-5" />
+                            Future Improvements
+                        </h3>
+                        <ul className="space-y-3 text-gray-300 list-disc list-inside">
                             {project.futureImprovements?.map((imp, i) => <li key={i}>{imp}</li>)}
                         </ul>
                     </div>

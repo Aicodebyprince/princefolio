@@ -33,9 +33,13 @@ export type Project = {
     solution?: string;
     challenges?: string[];
     projectOverview?: string;
-    goal?: string;
+    goal?: string[];
     techStack?: { name: string; description: string }[];
-    workflow?: { title: string; description: string; imageUrl: string, dataAiHint: string }[];
+    workflow?: { 
+        description: string,
+        breakdown: string[]
+    };
+    screenshots?: Screenshot[];
     conclusion?: string;
     futureImprovements?: string[];
 };
@@ -187,7 +191,12 @@ export const projects: Project[] = [
         tags: ['AI', 'Gemini', 'n8n', 'WhatsApp API', 'Automation'],
         stat: 'Real-time Business Automation',
         projectOverview: "This project is an AI-driven chatbot designed to automate customer interactions for a small business via WhatsApp. The bot handles customer inquiries, manages orders, and answers frequently asked questions in real-time. By leveraging the power of n8n for workflow automation and Google's Gemini AI for natural language processing, this solution helps businesses improve efficiency, reduce response times, and prevent missed sales opportunities, especially those that rely heavily on WhatsApp for customer communication.",
-        goal: "For many small businesses, especially in the restaurant or retail sector, WhatsApp is a primary channel for taking orders and answering customer questions. Managing this manually can be overwhelming, leading to slow responses and lost orders. The primary goal of this project was to build an intelligent, automated system that can: Provide instant, 24/7 responses to customer messages. Intelligently answer questions about product inventory and FAQs. Accurately take customer orders and record them in a database. Maintain the context of a conversation to provide a natural, human-like interaction.",
+        goal: [
+            "Provide instant, 24/7 responses to customer messages.",
+            "Intelligently answer questions about product inventory and FAQs.",
+            "Accurately take customer orders and record them in a database.",
+            "Maintain the context of a conversation to provide a natural, human-like interaction."
+        ],
         techStack: [
             { name: "Workflow Automation", description: "n8n.io (The core engine for connecting services and defining the bot's logic)." },
             { name: "AI & Language Model", description: "Google Gemini (The \"brain\" of the bot, responsible for understanding and generating responses)." },
@@ -195,31 +204,25 @@ export const projects: Project[] = [
             { name: "API Configuration", description: "Meta for Developers (To configure the WhatsApp Business App and get API credentials)." },
             { name: "Database", description: "Google Sheets (Used to store and manage inventory, FAQs, and incoming orders)." }
         ],
-        workflow: [
-            { 
-                title: "Live Chat Example", 
-                description: "A demonstration of the chatbot in action, handling a customer query in real-time on WhatsApp.",
-                imageUrl: "/images/Chat Bot Project/SS 1.png",
-                dataAiHint: "live chat"
-            },
-            {
-                title: "n8n Workflow Automation",
-                description: "The complete n8n workflow, showing how different nodes (WhatsApp, Gemini, Google Sheets) are connected to automate the entire process from message reception to response.",
-                imageUrl: "/images/Chat Bot Project/SS 3.png",
-                dataAiHint: "n8n workflow"
-            },
-            {
-                title: "Google Sheets as a Database",
-                description: "The Google Sheet setup used as a simple database to store inventory, frequently asked questions, and log new customer orders as they come in.",
-                imageUrl: "/images/Chat Bot Project/SS 4.png",
-                dataAiHint: "database spreadsheet"
-            },
-            {
-                title: "AI Agent Configuration",
-                description: "Configuration of the Gemini AI agent within n8n, including the system prompt and the integration of tools for inventory, FAQs, and order placement.",
-                imageUrl: "/images/Chat Bot Project/SS 5.png",
-                dataAiHint: "ai agent config"
-            }
+        workflow: {
+            description: "The entire process is orchestrated within an n8n workflow. The workflow is triggered by an incoming message on WhatsApp and follows a logical sequence to process the message and send a reply.",
+            breakdown: [
+                "WhatsApp Trigger: The workflow starts when a user sends a message to the business's WhatsApp number. The WhatsApp Trigger node in n8n securely listens for these incoming messages.",
+                "AI Agent (Gemini): The message content is passed to the AI Agent node. This node is the core of the bot's intelligence, using the Gemini model to understand intent, remember conversation context, and use tools.",
+                "Tool Execution: The AI uses tools to interact with a Google Sheets database for getting inventory, retrieving FAQs, and posting new orders.",
+                "Send Message (WhatsApp): The final response generated by the AI Agent is passed to the Send Message node, which sends the text back to the user on WhatsApp, completing the loop."
+            ]
+        },
+        screenshots: [
+            { url: "/images/Chat Bot Project/SS 1.png", dataAiHint: "live chat example" },
+            { url: "/images/Chat Bot Project/SS 2.png", dataAiHint: "live chat example" },
+            { url: "/images/Chat Bot Project/SS 3.png", dataAiHint: "n8n workflow" },
+            { url: "/images/Chat Bot Project/SS 4.png", dataAiHint: "database spreadsheet" },
+            { url: "/images/Chat Bot Project/SS 5.png", dataAiHint: "ai agent config" },
+            { url: "/images/Chat Bot Project/SS 6.png", dataAiHint: "ai agent tool" },
+            { url: "/images/Chat Bot Project/SS 7.png", dataAiHint: "ai agent tool" },
+            { url: "/images/Chat Bot Project/SS 8.png", dataAiHint: "order sheet" },
+            { url: "/images/Chat Bot Project/SS 9.png", dataAiHint: "meta api setup" }
         ],
         conclusion: "This project successfully demonstrates how modern AI and automation tools can be combined to create a practical and powerful solution for small businesses. The resulting WhatsApp chatbot is not only functional but also scalable. By simply updating the Google Sheet, a business owner can change menu items, update FAQs, and manage the bot's knowledge base without touching the core workflow.",
         futureImprovements: [
