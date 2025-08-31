@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import React from 'react';
@@ -8,6 +7,8 @@ import Image from 'next/image';
 import { Github, AlertTriangle, Lightbulb, Eye, UserPlus, User, Users, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay"
+
 
 const roleIcons: { [key: string]: React.ElementType } = {
     visitors: Eye,
@@ -33,18 +34,23 @@ const ScreenshotCarousel = ({ screenshotsByRole }: { screenshotsByRole: Screensh
                     align: "start",
                     loop: true,
                 }}
+                 plugins={[
+                    Autoplay({
+                        delay: 2000,
+                    }),
+                ]}
                 className="w-full"
             >
                 <CarouselContent>
                     {screenshotsByRole.screenshots.map((ss, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
+                        <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
                             <div className="p-1">
-                                 <div className="bg-slate-800/20 p-2 md:p-3 rounded-2xl border border-white/10 aspect-[9/19] flex items-center justify-center">
+                                 <div className="bg-slate-800/20 p-2 rounded-2xl border border-white/10 aspect-[9/19] flex items-center justify-center">
                                     <Image
                                         src={ss.url}
                                         alt={`${screenshotsByRole.title} screenshot ${index + 1}`}
-                                        width={300}
-                                        height={600}
+                                        width={250}
+                                        height={500}
                                         className="rounded-lg object-contain w-full h-full"
                                         data-ai-hint={ss.dataAiHint}
                                     />
@@ -124,32 +130,6 @@ const renderBlock = (block: CaseStudyBlock, index: number) => {
 
 
 const ProjectDetails = ({ project }: { project: Project }) => {
-    
-    // Renders the new case study format if available
-    if (project.caseStudy && project.caseStudy.length > 0) {
-        return (
-            <div>
-                 <header className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-2 gradient-text">{project.title}</h1>
-                    <p className="text-lg md:text-xl text-gray-300 font-semibold">{project.category}</p>
-                    {project.githubUrl && project.githubUrl !== '#' && (
-                        <div className="mt-6">
-                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                <Button className="btn-primary">
-                                    <Github className="w-5 h-5 mr-2" />
-                                    View on GitHub
-                                </Button>
-                            </a>
-                        </div>
-                    )}
-                </header>
-
-                <div className="static-glass-card rounded-2xl p-6 md:p-10">
-                    {project.caseStudy.map((block, index) => renderBlock(block, index))}
-                </div>
-            </div>
-        )
-    }
 
     if (project.problem && project.solution && project.screenshotsByRole) {
         return (
@@ -187,9 +167,37 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             </div>
         )
     }
+    
+    // Renders the new case study format if available
+    if (project.caseStudy && project.caseStudy.length > 0) {
+        return (
+            <div>
+                 <header className="text-center mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-2 gradient-text">{project.title}</h1>
+                    <p className="text-lg md:text-xl text-gray-300 font-semibold">{project.category}</p>
+                    {project.githubUrl && project.githubUrl !== '#' && (
+                        <div className="mt-6">
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Button className="btn-primary">
+                                    <Github className="w-5 h-5 mr-2" />
+                                    View on GitHub
+                                </Button>
+                            </a>
+                        </div>
+                    )}
+                </header>
+
+                <div className="static-glass-card rounded-2xl p-6 md:p-10">
+                    {project.caseStudy.map((block, index) => renderBlock(block, index))}
+                </div>
+            </div>
+        )
+    }
         
     // Fallback for old project structure (should not be needed for new projects)
     return <div className="text-center text-xl text-gray-400">Project case study content is not available.</div>
 };
 
 export default ProjectDetails;
+
+    
