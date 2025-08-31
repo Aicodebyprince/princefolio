@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { projects } from '@/lib/data';
-import { GitBranch, HelpingHand, BookOpen, Code as CodeIcon, BarChart, ArrowRight, Bot } from 'lucide-react';
+import { GitBranch, HelpingHand, BookOpen, Code as CodeIcon, BarChart, ArrowRight, Bot, FileQuestion } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -13,7 +13,8 @@ const iconMap: { [key: string]: React.ElementType } = {
     library: BookOpen,
     code: CodeIcon,
     'chart-bar': BarChart,
-    chatbot: Bot
+    chatbot: Bot,
+    automation: FileQuestion
 };
 
 const AllProjectsSection = () => {
@@ -50,7 +51,7 @@ const AllProjectsSection = () => {
                             <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
                                 {project.slug ? (
                                     <Link href={`/project/${project.slug}`} passHref>
-                                        <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white transition-all group-hover:shadow-accent">
+                                        <Button variant="outline" size="sm" className="border-accent text-accent hover:bg-accent hover:text-white transition-all group-hover:shadow-accent">
                                             View Case Study <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                                         </Button>
                                     </Link>
@@ -63,7 +64,7 @@ const AllProjectsSection = () => {
                                 )}
                                 {project.liveUrl && (
                                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                        <Button variant="secondary" className="bg-accent/80 hover:bg-accent text-white">
+                                        <Button variant="secondary" size="sm" className="bg-accent/80 hover:bg-accent text-white">
                                             Live Demo
                                         </Button>
                                     </a>
