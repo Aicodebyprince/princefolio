@@ -1,6 +1,6 @@
 
 
-import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus, MessageSquare, Bot } from 'lucide-react';
+import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus, MessageSquare, Bot, Eye, Users, Shield, User, Workflow, CheckCircle, Target, Lightbulb, Package, AlertTriangle, Image as ImageIcon, Sparkles } from 'lucide-react';
 import React from 'react';
 
 export type Screenshot = {
@@ -125,68 +125,55 @@ export const projects: Project[] = [
         liveUrl: '',
         tags: ['Flutter', 'Firebase', 'State Management', 'UX/UI', 'Real-time DB'],
         stat: 'Full-Stack Campus Platform',
-        problem: 'Traditional colleges often suffer from scattered information, poor communication between departments, and manual, time-consuming processes. Students and faculty struggle to keep track of schedules, announcements, and academic progress in one unified place.',
-        solution: 'I developed a centralized mobile application using Flutter and Firebase that serves as a single source of truth for the entire campus. The app provides role-based access for students, teachers, visitors and admins, offering tailored dashboards with real-time information and interactive features.',
-        screenshotsByRole: [
-            {
-                role: 'visitors',
-                title: 'For the Visitors',
-                description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
-                screenshots: [
-                    { url: '/images/Visitor-1.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-2.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-3.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-4.png', dataAiHint: 'mobile app screen' },
-                ]
-            },
-            {
-                role: 'signup',
-                title: 'For the Signup',
-                description: 'A simple and secure signup process to onboard new users to the platform.',
-                screenshots: [
-                    { url: '/images/Sign-1.jpg', dataAiHint: 'signup screen' },
-                    { url: '/images/Sign-2.jpg', dataAiHint: 'signup form' },
-                    { url: '/images/Sign-3.jpg', dataAiHint: 'verification screen' },
-                    { url: '/images/Sign-4.jpg', dataAiHint: 'profile setup' },
-                ]
-            },
-            {
-                role: 'students',
-                title: 'For the Students',
-                description: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.',
-                screenshots: [
-                    { url: '/images/student-1.png', dataAiHint: 'student dashboard' },
-                    { url: '/images/student-2.png', dataAiHint: 'student dashboard' },
-                    { url: '/images/student-3.png', dataAiHint: 'attendance tracker' },
-                    { url: '/images/Stundet 4.png', dataAiHint: 'exam results' },
-                    { url: '/images/student-5.png', dataAiHint: 'class schedule' },
-                    { url: '/images/student-6.jpg', dataAiHint: 'chat interface' },
-                    { url: '/images/student-7.jpg', dataAiHint: 'student profile' },
-                    { url: '/images/student-8.jpg', dataAiHint: 'student profile' },
-                ]
-            },
-            {
-                role: 'teachers',
-                title: 'For the Teachers',
-                description: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.',
-                screenshots: [
-                    { url: '/images/teacher-1.jpg', dataAiHint: 'teacher dashboard' },
-                    { url: '/images/teacher-2.jpg', dataAiHint: 'take attendance' },
-                    { url: '/images/teacher-3.jpg', dataAiHint: 'upload marks' },
-                    { url: '/images/teacher-4.jpg', dataAiHint: 'send notification' },
-                ]
-            },
-            {
-                role: 'admins',
-                title: 'For the Admins',
-                description: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.',
-                screenshots: [
-                    { url: '/images/admin-2.jpg', dataAiHint: 'admin dashboard' },
-                    { url: '/images/admin-3.jpg', dataAiHint: 'user management' },
-                    { url: '/images/admin-4.jpg', dataAiHint: 'analytics charts' },
-                ]
-            }
-        ]
+        caseStudy: [
+            { type: 'heading', level: 2, icon: AlertTriangle, text: 'The Problem' },
+            { type: 'paragraph', text: 'Traditional colleges often suffer from scattered information, poor communication between departments, and manual, time-consuming processes. Students and faculty struggle to keep track of schedules, announcements, and academic progress in one unified place.' },
+            { type: 'heading', level: 2, icon: Lightbulb, text: 'The Solution' },
+            { type: 'paragraph', text: 'I developed a centralized mobile application using Flutter and Firebase that serves as a single source of truth for the entire campus. The app provides role-based access for students, teachers, visitors and admins, offering tailored dashboards with real-time information and interactive features.' },
+            { type: 'heading', level: 2, icon: Eye, text: 'Features for Visitors' },
+            { type: 'paragraph', text: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.' },
+            { type: 'image_grid', images: [
+                { url: '/images/Visitor-1.png', dataAiHint: 'mobile app screen' },
+                { url: '/images/Visitor-2.png', dataAiHint: 'mobile app screen' },
+                { url: '/images/Visitor-3.png', dataAiHint: 'mobile app screen' },
+                { url: '/images/Visitor-4.png', dataAiHint: 'mobile app screen' },
+            ]},
+            { type: 'heading', level: 2, icon: UserPlus, text: 'Simple & Secure Signup' },
+            { type: 'paragraph', text: 'A simple and secure signup process to onboard new users to the platform.' },
+            { type: 'image_grid', images: [
+                 { url: '/images/Sign-1.jpg', dataAiHint: 'signup screen' },
+                 { url: '/images/Sign-2.jpg', dataAiHint: 'signup form' },
+                 { url: '/images/Sign-3.jpg', dataAiHint: 'verification screen' },
+                 { url: '/images/Sign-4.jpg', dataAiHint: 'profile setup' },
+            ]},
+            { type: 'heading', level: 2, icon: GraduationCap, text: 'Empowering Students' },
+            { type: 'paragraph', text: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.' },
+            { type: 'image_grid', images: [
+                 { url: '/images/student-1.png', dataAiHint: 'student dashboard' },
+                 { url: '/images/student-2.png', dataAiHint: 'student dashboard' },
+                 { url: '/images/student-3.png', dataAiHint: 'attendance tracker' },
+                 { url: '/images/Stundet 4.png', dataAiHint: 'exam results' },
+                 { url: '/images/student-5.png', dataAiHint: 'class schedule' },
+                 { url: '/images/student-6.jpg', dataAiHint: 'chat interface' },
+                 { url: '/images/student-7.jpg', dataAiHint: 'student profile' },
+                 { url: '/images/student-8.jpg', dataAiHint: 'student profile' },
+            ]},
+            { type: 'heading', level: 2, icon: Users, text: 'Tools for Teachers' },
+            { type: 'paragraph', text: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.' },
+            { type: 'image_grid', images: [
+                { url: '/images/teacher-1.jpg', dataAiHint: 'teacher dashboard' },
+                { url: '/images/teacher-2.jpg', dataAiHint: 'take attendance' },
+                { url: '/images/teacher-3.jpg', dataAiHint: 'upload marks' },
+                { url: '/images/teacher-4.jpg', dataAiHint: 'send notification' },
+            ]},
+            { type: 'heading', level: 2, icon: Shield, text: 'Admin Controls' },
+            { type: 'paragraph', text: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.' },
+            { type: 'image_grid', images: [
+                { url: '/images/admin-2.jpg', dataAiHint: 'admin dashboard' },
+                { url: '/images/admin-3.jpg', dataAiHint: 'user management' },
+                { url: '/images/admin-4.jpg', dataAiHint: 'analytics charts' },
+            ]},
+        ],
     },
     {
         icon: 'chatbot',
@@ -201,13 +188,13 @@ export const projects: Project[] = [
         tags: ['AI', 'Gemini', 'n8n', 'WhatsApp API', 'Automation'],
         stat: 'Real-time Business Automation',
         caseStudy: [
-            { type: 'heading', level: 2, text: 'Project Overview' },
+            { type: 'heading', level: 2, text: 'Project Overview', icon: Package },
             { type: 'paragraph', text: "This project is an AI-driven chatbot designed to automate customer interactions for a small business via WhatsApp. The bot handles customer inquiries, manages orders, and answers frequently asked questions in real-time. By leveraging the power of n8n for workflow automation and Google's Gemini AI for natural language processing, this solution helps businesses improve efficiency, reduce response times, and prevent missed sales opportunities, especially those that rely heavily on WhatsApp for customer communication." },
             { type: 'image_grid', images: [
                 { url: '/images/Chat Bot Project/SS 1.png', dataAiHint: 'chatbot conversation', caption: 'Live chat example with the AI bot.' },
                 { url: '/images/Chat Bot Project/SS 2.png', dataAiHint: 'chatbot conversation', caption: 'The bot handling an order request.' }
             ]},
-            { type: 'heading', level: 2, text: 'The Goal' },
+            { type: 'heading', level: 2, text: 'The Goal', icon: Target },
             { type: 'paragraph', text: "For many small businesses, especially in the restaurant or retail sector, WhatsApp is a primary channel for taking orders and answering customer questions. Managing this manually can be overwhelming, leading to slow responses and lost orders. The primary goal of this project was to build an intelligent, automated system that can:" },
             { type: 'list', items: [
                 "Provide instant, 24/7 responses to customer messages.",
@@ -215,7 +202,7 @@ export const projects: Project[] = [
                 "Accurately take customer orders and record them in a database.",
                 "Maintain the context of a conversation to provide a natural, human-like interaction."
             ]},
-            { type: 'heading', level: 2, text: 'Technologies & Tools' },
+            { type: 'heading', level: 2, text: 'Technologies & Tools', icon: Code },
             { type: 'paragraph', text: 'This project integrates several powerful tools to create a seamless automated workflow:' },
             { type: 'list', items: [
                 "Workflow Automation: n8n.io (The core engine for connecting services and defining the bot's logic).",
@@ -224,7 +211,7 @@ export const projects: Project[] = [
                 "API Configuration: Meta for Developers (To configure the WhatsApp Business App and get API credentials).",
                 "Database: Google Sheets (Used to store and manage inventory, FAQs, and incoming orders)."
             ]},
-            { type: 'heading', level: 2, text: 'System Architecture & Workflow' },
+            { type: 'heading', level: 2, text: 'System Architecture & Workflow', icon: Workflow },
             { type: 'paragraph', text: "The entire process is orchestrated within an n8n workflow. The workflow is triggered by an incoming message on WhatsApp and follows a logical sequence to process the message and send a reply." },
             { type: 'image', url: '/images/Chat Bot Project/SS 3.png', dataAiHint: 'n8n workflow diagram', caption: 'The complete n8n workflow for the chatbot.' },
             { type: 'heading', level: 3, text: 'Workflow Breakdown' },
@@ -251,9 +238,9 @@ export const projects: Project[] = [
             { type: 'image', url: '/images/Chat Bot Project/SS 8.png', dataAiHint: 'order spreadsheet', caption: 'Orders are automatically recorded in this sheet.' },
             { type: 'heading', level: 4, text: '4. Send Message (WhatsApp)' },
             { type: 'paragraph', text: "The final response generated by the AI Agent is passed to the Send Message node. This node sends the text back to the user on WhatsApp, completing the loop." },
-            { type: 'heading', level: 2, text: 'Conclusion' },
+            { type: 'heading', level: 2, text: 'Conclusion', icon: CheckCircle },
             { type: 'paragraph', text: "This project successfully demonstrates how modern AI and automation tools can be combined to create a practical and powerful solution for small businesses. The resulting WhatsApp chatbot is not only functional but also scalable. By simply updating the Google Sheet, a business owner can change menu items, update FAQs, and manage the bot's knowledge base without touching the core workflow." },
-            { type: 'heading', level: 2, text: 'Future Improvements' },
+            { type: 'heading', level: 2, text: 'Future Improvements', icon: Sparkles },
             { type: 'list', items: [
                 "Payment Integration: Connect the workflow to a payment gateway like Stripe to accept payments directly in the chat.",
                 "Advanced Memory: Integrate a more persistent memory solution (like a database) to remember customer preferences across different conversations.",
