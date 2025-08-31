@@ -1,6 +1,6 @@
 
 
-import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus, MessageSquare, Bot, Eye, Users, Shield, User, Workflow, CheckCircle, Target, Lightbulb, Package, AlertTriangle, Image as ImageIcon, Sparkles } from 'lucide-react';
+import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus, MessageSquare, Bot, Eye, Users, Shield, User, Workflow, CheckCircle, Target, Lightbulb, Package, AlertTriangle, Image as ImageIcon, Sparkles, FileQuestion, BadgeCheck, BookOpen } from 'lucide-react';
 import React from 'react';
 
 export type Screenshot = {
@@ -126,54 +126,54 @@ export const projects: Project[] = [
         tags: ['Flutter', 'Firebase', 'State Management', 'UX/UI', 'Real-time DB'],
         stat: 'Full-Stack Campus Platform',
         caseStudy: [
-            { type: 'heading', level: 2, icon: AlertTriangle, text: 'The Problem' },
-            { type: 'paragraph', text: 'Traditional colleges often suffer from scattered information, poor communication between departments, and manual, time-consuming processes. Students and faculty struggle to keep track of schedules, announcements, and academic progress in one unified place.' },
-            { type: 'heading', level: 2, icon: Lightbulb, text: 'The Solution' },
-            { type: 'paragraph', text: 'I developed a centralized mobile application using Flutter and Firebase that serves as a single source of truth for the entire campus. The app provides role-based access for students, teachers, visitors and admins, offering tailored dashboards with real-time information and interactive features.' },
-            { type: 'heading', level: 2, icon: Eye, text: 'Features for Visitors' },
-            { type: 'paragraph', text: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.' },
+            { type: 'heading', level: 2, text: 'The Problem', icon: AlertTriangle },
+            { type: 'paragraph', text: 'Traditional colleges often suffer from scattered information, poor communication between departments, and manual, time-consuming processes. Students and faculty struggle to keep track of schedules, announcements, and academic progress in one unified place.'},
+            { type: 'heading', level: 2, text: 'The Solution', icon: Lightbulb },
+            { type: 'paragraph', text: 'I developed a centralized mobile application using Flutter and Firebase that serves as a single source of truth for the entire campus. The app provides role-based access for students, teachers, visitors and admins, offering tailored dashboards with real-time information and interactive features.'},
+            { type: 'heading', level: 2, text: 'Features for Visitors', icon: Eye },
+            { type: 'paragraph', text: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.'},
             { type: 'image_grid', images: [
-                { url: '/images/Visitor-1.png', dataAiHint: 'mobile app screen' },
-                { url: '/images/Visitor-2.png', dataAiHint: 'mobile app screen' },
-                { url: '/images/Visitor-3.png', dataAiHint: 'mobile app screen' },
-                { url: '/images/Visitor-4.png', dataAiHint: 'mobile app screen' },
+                { url: '/images/Visitor 1.png', dataAiHint: 'mobile app screen' },
+                { url: '/images/Visitor 2.png', dataAiHint: 'mobile app screen' },
+                { url: '/images/Visitor 3.png', dataAiHint: 'mobile app screen' },
+                { url: '/images/Visitor 4.png', dataAiHint: 'mobile app screen' },
             ]},
-            { type: 'heading', level: 2, icon: UserPlus, text: 'Simple & Secure Signup' },
-            { type: 'paragraph', text: 'A simple and secure signup process to onboard new users to the platform.' },
+            { type: 'heading', level: 2, text: 'Seamless Signup', icon: UserPlus },
+            { type: 'paragraph', text: 'A simple and secure signup process to onboard new users to the platform.'},
             { type: 'image_grid', images: [
-                 { url: '/images/Sign-1.jpg', dataAiHint: 'signup screen' },
-                 { url: '/images/Sign-2.jpg', dataAiHint: 'signup form' },
-                 { url: '/images/Sign-3.jpg', dataAiHint: 'verification screen' },
-                 { url: '/images/Sign-4.jpg', dataAiHint: 'profile setup' },
+                { url: '/images/Sign 1.jpg', dataAiHint: 'signup screen' },
+                { url: '/images/Sign 2.jpg', dataAiHint: 'signup form' },
+                { url: '/images/Sign 3.jpg', dataAiHint: 'verification screen' },
+                { url: '/images/Sign 4.jpg', dataAiHint: 'profile setup' },
             ]},
-            { type: 'heading', level: 2, icon: GraduationCap, text: 'Empowering Students' },
-            { type: 'paragraph', text: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.' },
+            { type: 'heading', level: 2, text: 'Student Dashboard', icon: User },
+            { type: 'paragraph', text: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.'},
             { type: 'image_grid', images: [
-                 { url: '/images/student-1.png', dataAiHint: 'student dashboard' },
-                 { url: '/images/student-2.png', dataAiHint: 'student dashboard' },
-                 { url: '/images/student-3.png', dataAiHint: 'attendance tracker' },
-                 { url: '/images/Stundet 4.png', dataAiHint: 'exam results' },
-                 { url: '/images/student-5.png', dataAiHint: 'class schedule' },
-                 { url: '/images/student-6.jpg', dataAiHint: 'chat interface' },
-                 { url: '/images/student-7.jpg', dataAiHint: 'student profile' },
-                 { url: '/images/student-8.jpg', dataAiHint: 'student profile' },
+                { url: '/images/Student 1.png', dataAiHint: 'student dashboard' },
+                { url: '/images/Student 2.png', dataAiHint: 'student dashboard' },
+                { url: '/images/Student 3.png', dataAiHint: 'attendance tracker' },
+                { url: '/images/Stundet 4.png', dataAiHint: 'exam results' },
+                { url: '/images/Student 5.png', dataAiHint: 'class schedule' },
+                { url: '/images/Student 6.jpg', dataAiHint: 'chat interface' },
+                { url: '/images/Student 7.jpg', dataAiHint: 'student profile' },
+                { url: '/images/Student 8.jpg', dataAiHint: 'student profile' },
             ]},
-            { type: 'heading', level: 2, icon: Users, text: 'Tools for Teachers' },
-            { type: 'paragraph', text: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.' },
+            { type: 'heading', level: 2, text: 'Tools for Teachers', icon: Users },
+            { type: 'paragraph', text: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.'},
             { type: 'image_grid', images: [
-                { url: '/images/teacher-1.jpg', dataAiHint: 'teacher dashboard' },
-                { url: '/images/teacher-2.jpg', dataAiHint: 'take attendance' },
-                { url: '/images/teacher-3.jpg', dataAiHint: 'upload marks' },
-                { url: '/images/teacher-4.jpg', dataAiHint: 'send notification' },
+                { url: '/images/Teacher 1.jpg', dataAiHint: 'teacher dashboard' },
+                { url: '/images/Teacher 2.jpg', dataAiHint: 'take attendance' },
+                { url: '/images/Teacher 3.jpg', dataAiHint: 'upload marks' },
+                { url: '/images/Teacher 4.jpg', dataAiHint: 'send notification' },
             ]},
-            { type: 'heading', level: 2, icon: Shield, text: 'Admin Controls' },
-            { type: 'paragraph', text: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.' },
+            { type: 'heading', level: 2, text: 'Admin Controls', icon: Shield },
+            { type: 'paragraph', text: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.'},
             { type: 'image_grid', images: [
-                { url: '/images/admin-2.jpg', dataAiHint: 'admin dashboard' },
-                { url: '/images/admin-3.jpg', dataAiHint: 'user management' },
-                { url: '/images/admin-4.jpg', dataAiHint: 'analytics charts' },
-            ]},
-        ],
+                { url: '/images/Admin 2.jpg', dataAiHint: 'admin dashboard' },
+                { url: '/images/Admin 3.jpg', dataAiHint: 'user management' },
+                { url: '/images/Admin 4.jpg', dataAiHint: 'analytics charts' },
+            ]}
+        ]
     },
     {
         icon: 'chatbot',
@@ -534,3 +534,5 @@ export const problemSolving = [
         tags: ["Competitive Programming", "Math", "Algorithms"]
     }
 ];
+
+    
