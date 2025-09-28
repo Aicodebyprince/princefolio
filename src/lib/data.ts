@@ -14,8 +14,7 @@ export type CaseStudyBlock =
     | { type: 'paragraph'; text: string; }
     | { type: 'list'; items: string[]; }
     | { type: 'image'; url: string; dataAiHint: string; caption?: string; }
-    | { type: 'image_grid'; images: Screenshot[] }
-    | { type: 'circular_carousel'; images: { url: string; dataAiHint: string; }[] };
+    | { type: 'image_grid'; images: Screenshot[] };
 
 
 export type ScreenshotsByRole = {
@@ -338,19 +337,16 @@ export const projects: Project[] = [
         caseStudy: [
             { type: 'heading', level: 2, icon: Lightbulb, text: 'Inspiration' },
             { type: 'paragraph', text: "Our inspiration for EcoReward came from a shared sense of urgency about the climate crisis and a common feeling of helplessness. Many people want to contribute to a more sustainable future but feel that their individual actions are just a drop in the ocean. We wanted to build a platform that directly challenges this notion by making the impact of individual eco-friendly actions visible, tangible, and rewarding. By gamifying sustainability and leveraging the transparency of blockchain, we aim to transform eco-consciousness into a powerful, collective movement where every action counts." },
-            { 
-                type: 'circular_carousel',
-                images: [
-                    { url: '/images/ecoreward/Eco 1.png', dataAiHint: 'dashboard' },
-                    { url: '/images/ecoreward/Eco 2.png', dataAiHint: 'challenges' },
-                    { url: '/images/ecoreward/Eco 3.png', dataAiHint: 'leaderboard' },
-                    { url: '/images/ecoreward/Eco 4.png', dataAiHint: 'submit proof' },
-                    { url: '/images/ecoreward/Eco 5.png', dataAiHint: 'profile page' },
-                    { url: '/images/ecoreward/Eco 6.png', dataAiHint: 'admin verification' },
-                    { url: '/images/ecoreward/Eco 7.png', dataAiHint: 'ai coach' },
-                    { url: '/images/ecoreward/Eco 8.png', dataAiHint: 'wallet connection' },
-                ]
-            },
+            { type: 'image_grid', images: [
+                { url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmR8ZW58MHx8fHwxNzU4OTY4NjkyfDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'dashboard', caption: 'Dashboard' },
+                { url: 'https://images.unsplash.com/photo-1540835296355-c04f7a063cbb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2hhbGxlbmdlc3xlbnwwfHx8fDE3NTkwNjE2MTl8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'challenges', caption: 'Challenges' },
+                { url: 'https://images.unsplash.com/photo-1702401845123-1a4f31d41b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsZWFkZXJib2FyZHxlbnwwfHx8fDE3NTkwNjE2MTl8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'leaderboard', caption: 'Leaderboard' },
+                { url: 'https://images.unsplash.com/photo-1583147986942-2249ecc53aa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdWJtaXQlMjBwcm9vZnxlbnwwfHx8fDE3NTkwNjE2MTl8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'submit proof', caption: 'Submit Proof' },
+                { url: 'https://images.unsplash.com/photo-1723201223411-7a53a744055c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9maWxlJTIwcGFnZXxlbnwwfHx8fDE3NTkwNjE2MTl8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'profile page', caption: 'Profile Page' },
+                { url: 'https://images.unsplash.com/photo-1750816204148-5d02aff367cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhZG1pbiUyMHZlcmlmaWNhdGlvbnxlbnwwfHx8fDE3NTkwNjE2MjB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'admin verification', caption: 'Admin Verification' },
+                { url: 'https://images.unsplash.com/photo-1550378492-4903c3e172a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhaSUyMGNvYWNofGVufDB8fHx8MTc1OTA2MTYxOXww&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'ai coach', caption: 'AI Coach' },
+                { url: 'https://images.unsplash.com/photo-1667240015808-972763a9de21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d2FsbGV0JTIwY29ubmVjdGlvbnxlbnwwfHx8fDE3NTkwNjE2MTl8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'wallet connection', caption: 'Wallet Connection' },
+            ]},
             { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
             { type: 'paragraph', text: 'EcoReward is a comprehensive platform that gamifies sustainable living.' },
             { type: 'heading', level: 3, icon: User, text: 'For Users' },
@@ -802,3 +798,5 @@ export const problemSolving = [
         tags: ["Competitive Programming", "Math", "Algorithms"]
     }
 ];
+
+    
