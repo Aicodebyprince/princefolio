@@ -133,10 +133,12 @@ export const projects: Project[] = [
                 title: 'For the Visitors',
                 description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
                 screenshots: [
-                    { url: '/images/Visitor-1.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-2.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-3.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-4.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 1.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 2.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 3.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 4.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 5.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor 7.png', dataAiHint: 'mobile app screen' },
                 ]
             },
             {
@@ -144,10 +146,10 @@ export const projects: Project[] = [
                 title: 'For the Signup',
                 description: 'A simple and secure signup process to onboard new users to the platform.',
                 screenshots: [
-                    { url: '/images/Sign-1.jpg', dataAiHint: 'signup screen' },
-                    { url: '/images/Sign-2.jpg', dataAiHint: 'signup form' },
-                    { url: '/images/Sign-3.jpg', dataAiHint: 'verification screen' },
-                    { url: '/images/Sign-4.jpg', dataAiHint: 'profile setup' },
+                    { url: '/images/Sign 1.jpg', dataAiHint: 'signup screen' },
+                    { url: '/images/Sign 2.jpg', dataAiHint: 'signup form' },
+                    { url: '/images/Sign 3.jpg', dataAiHint: 'verification screen' },
+                    { url: '/images/Sign 4.jpg', dataAiHint: 'profile setup' },
                 ]
             },
             {
@@ -155,14 +157,14 @@ export const projects: Project[] = [
                 title: 'For the Students',
                 description: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.',
                 screenshots: [
-                    { url: '/images/Student-1.png', dataAiHint: 'student dashboard' },
-                    { url: '/images/Student-2.png', dataAiHint: 'student dashboard' },
-                    { url: '/images/Student-3.png', dataAiHint: 'attendance tracker' },
-                    { url: '/images/Student-4.png', dataAiHint: 'exam results' },
-                    { url: '/images/Student-5.png', dataAiHint: 'class schedule' },
-                    { url: '/images/Student-6.jpg', dataAiHint: 'chat interface' },
-                    { url: '/images/Student-7.jpg', dataAiHint: 'student profile' },
-                    { url: '/images/Student-8.jpg', dataAiHint: 'student profile' },
+                    { url: '/images/Student 1.png', dataAiHint: 'student dashboard' },
+                    { url: '/images/Student 2.png', dataAiHint: 'student dashboard' },
+                    { url: '/images/Student 3.png', dataAiHint: 'attendance tracker' },
+                    { url: '/images/Student 4.png', dataAiHint: 'exam results' },
+                    { url: '/images/Student 5.png', dataAiHint: 'class schedule' },
+                    { url: '/images/Student 6.png', dataAiHint: 'chat interface' },
+                    { url: '/images/Student 7.png', dataAiHint: 'student profile' },
+                    { url: '/images/Student 8.png', dataAiHint: 'student profile' },
                 ]
             },
             {
@@ -170,10 +172,10 @@ export const projects: Project[] = [
                 title: 'For the Teachers',
                 description: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.',
                 screenshots: [
-                    { url: '/images/Teacher-1.jpg', dataAiHint: 'teacher dashboard' },
-                    { url: '/images/Teacher-2.jpg', dataAiHint: 'take attendance' },
-                    { url: '/images/Teacher-3.jpg', dataAiHint: 'upload marks' },
-                    { url: '/images/Teacher-4.jpg', dataAiHint: 'send notification' },
+                    { url: '/images/Teacher 1.jpg', dataAiHint: 'teacher dashboard' },
+                    { url: '/images/Teacher 2.jpg', dataAiHint: 'take attendance' },
+                    { url: '/images/Teacher 3.jpg', dataAiHint: 'upload marks' },
+                    { url: '/images/Teacher 4.jpg', dataAiHint: 'send notification' },
                 ]
             },
             {
@@ -181,9 +183,10 @@ export const projects: Project[] = [
                 title: 'For the Admins',
                 description: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.',
                 screenshots: [
-                    { url: '/images/Admin-2.jpg', dataAiHint: 'admin dashboard' },
-                    { url: '/images/Admin-3.jpg', dataAiHint: 'user management' },
-                    { url: '/images/Admin-4.jpg', dataAiHint: 'analytics charts' },
+                    { url: '/images/Admin 1.jpg', dataAiHint: 'admin dashboard' },
+                    { url: '/images/Admin 2.jpg', dataAiHint: 'admin dashboard' },
+                    { url: '/images/Admin 3.jpg', dataAiHint: 'user management' },
+                    { url: '/images/Admin 4.jpg', dataAiHint: 'analytics charts' },
                 ]
             }
         ]
@@ -267,8 +270,8 @@ export const projects: Project[] = [
             { type: 'heading', level: 2, text: 'Project Overview', icon: Package },
             { type: 'paragraph', text: "This project is an AI-driven chatbot designed to automate customer interactions for a small business via WhatsApp. The bot handles customer inquiries, manages orders, and answers frequently asked questions in real-time. By leveraging the power of n8n for workflow automation and Google's Gemini AI for natural language processing, this solution helps businesses improve efficiency, reduce response times, and prevent missed sales opportunities, especially those that rely heavily on WhatsApp for customer communication." },
             { type: 'image_grid', images: [
-                { url: '/images/Chatbot/SS-1.png', dataAiHint: 'chatbot conversation', caption: 'Live chat example with the AI bot.' },
-                { url: '/images/Chatbot/SS-2.png', dataAiHint: 'chatbot conversation', caption: 'The bot handling an order request.' }
+                { url: '/images/Chatbot/SS 1.png', dataAiHint: 'chatbot conversation', caption: 'Live chat example with the AI bot.' },
+                { url: '/images/Chatbot/SS 2.png', dataAiHint: 'chatbot conversation', caption: 'The bot handling an order request.' }
             ]},
             { type: 'heading', level: 2, text: 'The Goal', icon: Target },
             { type: 'paragraph', text: "For many small businesses, especially in the restaurant or retail sector, WhatsApp is a primary channel for taking orders and answering customer questions. Managing this manually can be overwhelming, leading to slow responses and lost orders. The primary goal of this project was to build an intelligent, automated system that can:" },
@@ -289,11 +292,11 @@ export const projects: Project[] = [
             ]},
             { type: 'heading', level: 2, text: 'System Architecture & Workflow', icon: Workflow },
             { type: 'paragraph', text: "The entire process is orchestrated within an n8n workflow. The workflow is triggered by an incoming message on WhatsApp and follows a logical sequence to process the message and send a reply." },
-            { type: 'image', url: '/images/Chatbot/SS-3.png', dataAiHint: 'n8n workflow diagram', caption: 'The complete n8n workflow for the chatbot.' },
+            { type: 'image', url: '/images/Chatbot/SS 3.png', dataAiHint: 'n8n workflow diagram', caption: 'The complete n8n workflow for the chatbot.' },
             { type: 'heading', level: 3, text: 'Workflow Breakdown' },
             { type: 'heading', level: 4, text: '1. WhatsApp Trigger' },
             { type: 'paragraph', text: 'The workflow starts when a user sends a message to the business\'s WhatsApp number. The WhatsApp Trigger node in n8n securely listens for these incoming messages.' },
-            { type: 'image', url: '/images/Chatbot/SS-9.png', dataAiHint: 'meta api setup', caption: 'WhatsApp API Setup in the Meta for Developers portal.' },
+            { type: 'image', url: '/images/Chatbot/SS 9.png', dataAiHint: 'meta api setup', caption: 'WhatsApp API Setup in the Meta for Developers portal.' },
             { type: 'heading', level: 4, text: '2. AI Agent (Gemini)' },
             { type: 'paragraph', text: "The message content is passed to the AI Agent node. This node is the core of the bot's intelligence." },
             { type: 'list', items: [
@@ -301,17 +304,17 @@ export const projects: Project[] = [
                 "Simple Memory: To ensure conversations are natural, the agent is equipped with memory. It remembers the last 10 messages, allowing it to understand context (e.g., if a user says \"I'll take two,\" it knows what item they are referring to).",
                 "Tools (Google Sheets): The agent is connected to three tools that allow it to interact with our Google Sheets database."
             ]},
-            { type: 'image', url: '/images/Chatbot/SS-5.png', dataAiHint: 'ai agent configuration', caption: 'Configuring the Gemini AI Agent in n8n.' },
-            { type: 'image', url: '/images/Chatbot/SS-6.png', dataAiHint: 'ai agent tool', caption: 'Setting up the \'Get Inventory\' tool.' },
-            { type: 'image', url: '/images/Chatbot/SS-7.png', dataAiHint: 'ai agent tool', caption: 'Setting up the \'Post Order\' tool.' },
+            { type: 'image', url: '/images/Chatbot/SS 5.png', dataAiHint: 'ai agent configuration', caption: 'Configuring the Gemini AI Agent in n8n.' },
+            { type: 'image', url: '/images/Chatbot/SS 6.png', dataAiHint: 'ai agent tool', caption: 'Setting up the \'Get Inventory\' tool.' },
+            { type: 'image', url: '/images/Chatbot/SS 7.png', dataAiHint: 'ai agent tool', caption: 'Setting up the \'Post Order\' tool.' },
             { type: 'heading', level: 4, text: '3. Tool Execution' },
             { type: 'list', items: [
                 "Get Inventory: If a user asks what is available, the AI uses this tool to read directly from the 'Inventory' sheet and provide an accurate list.",
                 "Get FAQ: For questions like \"What are your hours?\" or \"Where are you located?\", this tool retrieves answers from the 'FAQ' sheet.",
                 "Post Orders: When a user wants to place an order, this tool is triggered. The AI, as configured in the tool's prompt, knows to ask for necessary details (name, quantity, address) and then appends this information as a new row in the 'Orders' sheet."
             ]},
-            { type: 'image', url: '/images/Chatbot/SS-4.png', dataAiHint: 'database spreadsheet', caption: 'The Google Sheet used for inventory and FAQs.' },
-            { type: 'image', url: '/images/Chatbot/SS-8.png', dataAiHint: 'order spreadsheet', caption: 'Orders are automatically recorded in this sheet.' },
+            { type: 'image', url: '/images/Chatbot/SS 4.png', dataAiHint: 'database spreadsheet', caption: 'The Google Sheet used for inventory and FAQs.' },
+            { type: 'image', url: '/images/Chatbot/SS 8.png', dataAiHint: 'order spreadsheet', caption: 'Orders are automatically recorded in this sheet.' },
             { type: 'heading', level: 4, text: '4. Send Message (WhatsApp)' },
             { type: 'paragraph', text: "The final response generated by the AI Agent is passed to the Send Message node. This node sends the text back to the user on WhatsApp, completing the loop." },
             { type: 'heading', level: 2, text: 'Conclusion', icon: CheckCircle },
@@ -438,8 +441,8 @@ export const experiences: Experience[] = [
             { type: 'heading', level: 2, icon: Banknote, text: 'Kudos & Recognition' },
             { type: 'paragraph', text: 'Received recognition for my proactive approach and contributions to the team.' },
             { type: 'image_grid', images: [
-                { url: '/images/Experience/Kudos-1.png', dataAiHint: 'certificate award', caption: 'Certificate of Appreciation' },
-                { url: '/images/Experience/Kudos-2.png', dataAiHint: 'certificate award', caption: 'Internship Completion Certificate' }
+                { url: '/images/Experience/Kudos 1.png', dataAiHint: 'certificate award', caption: 'Certificate of Appreciation' },
+                { url: '/images/Experience/Kudos 2.png', dataAiHint: 'certificate award', caption: 'Internship Completion Certificate' }
             ]}
         ]
     }

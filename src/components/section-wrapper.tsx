@@ -1,3 +1,4 @@
+
 "use client";
 
 import { cn } from '@/lib/utils';
@@ -59,3 +60,5 @@ const SectionWrapper = ({ children, id, className, ...props }: SectionWrapperPro
 };
 
 export default SectionWrapper;
+
+  

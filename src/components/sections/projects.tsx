@@ -102,3 +102,5 @@ const ProjectsSection = ({ onExploreClick }: { onExploreClick: () => void }) => 
 
 
 export default ProjectsSection;
+
+  

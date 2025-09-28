@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const TYPING_TEXTS = ['Developer', '& App Innovator', '& Problem Solver'];
 const STATS = [
-    { label: 'Projects Built', count: 10 },
+    { label: 'Projects Built', count: 7 },
     { label: 'Years Experience', count: 2 },
     { label: 'Lines of Code', count: 50000 },
     { label: 'Problems Solved', count: 150 },
@@ -155,3 +155,5 @@ const HeroSection = ({ onExploreClick }: { onExploreClick: (tab: string) => void
 };
 
 export default HeroSection;
+
+  

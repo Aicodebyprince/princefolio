@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -51,3 +52,5 @@ const ServicesSection = ({ onExploreClick }: { onExploreClick: () => void }) => 
 );
 
 export default ServicesSection;
+
+  

@@ -66,3 +66,5 @@ const JourneySection = ({ onExploreClick }: { onExploreClick: () => void }) => (
 );
 
 export default JourneySection;
+
+  

@@ -91,3 +91,5 @@ const ExperienceDetails = ({ details }: ExperienceDetailsProps) => {
 };
 
 export default ExperienceDetails;
+
+  
