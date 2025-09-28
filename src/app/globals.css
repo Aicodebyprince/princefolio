@@ -681,7 +681,7 @@ body {
 .circular-carousel-container {
   position: relative;
   width: 300px; /* Adjust width of the central point */
-  height: 300px; /* Adjust height of the central point */
+  height: 450px; /* Adjust height of the central point */
   transform-style: preserve-3d;
 }
 
@@ -689,9 +689,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 250px; /* Adjust image size */
-  height: 250px; /* Adjust image size */
-  border-radius: 50%;
+  width: 250px;
+  height: 450px;
+  border-radius: 1rem;
   overflow: hidden;
   transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
   border: 4px solid rgba(255, 255, 255, 0.2);

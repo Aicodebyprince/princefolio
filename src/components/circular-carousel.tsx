@@ -54,8 +54,8 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({ images }) => {
               src={image.url}
               alt={`EcoReward screenshot ${index + 1}`}
               width={300}
-              height={300}
-              className="rounded-full object-cover w-full h-full"
+              height={500}
+              className="rounded-2xl object-cover w-full h-full"
               data-ai-hint={image.dataAiHint}
             />
           </div>
