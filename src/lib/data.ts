@@ -129,6 +129,15 @@ export const projects: Project[] = [
             { type: 'heading', level: 2, icon: Lightbulb, text: 'Inspiration' },
             { type: 'paragraph', text: "The modern educational landscape is overwhelming. Students juggle multiple assignments, deadlines, and group projects, often leading to stress and burnout. Teachers, in turn, struggle to track individual student progress and manage collaborative work effectively. We were inspired to build a solution that acts as an intelligent partner for both students and educators, automating the administrative burdens of education so they can focus on what truly matters: learning and teaching, not just management." },
             
+            { type: 'image_grid', images: [
+                { url: '/images/Aura AI/Landing Page.png', dataAiHint: 'landing page', caption: 'The Aura AI Landing Page' },
+                { url: '/images/Aura AI/Dashborad.png', dataAiHint: 'dashboard', caption: 'Main User Dashboard' },
+                { url: '/images/Aura AI/Calendar.png', dataAiHint: 'calendar view', caption: 'Calendar and Scheduling' },
+                { url: '/images/Aura AI/Analytics.png', dataAiHint: 'analytics charts', caption: 'Task Analytics' },
+                { url: '/images/Aura AI/AI Features.png', dataAiHint: 'ai features', caption: 'AI-Powered Feature Showcase' },
+                { url: '/images/Aura AI/landing Page 2.png', dataAiHint: 'landing page section', caption: 'Landing Page Details' }
+            ]},
+
             { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
             { type: 'paragraph', text: 'Aura AI is an intelligent task management application that transforms the student and teacher workflow into a collaborative partnership with AI. At its core is a conversational AI assistant, powered by Google\'s Gemini model.' },
             { type: 'heading', level: 3, icon: User, text: 'For Students' },
