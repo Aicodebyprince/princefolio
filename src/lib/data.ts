@@ -130,12 +130,12 @@ export const projects: Project[] = [
             { type: 'paragraph', text: "The modern educational landscape is overwhelming. Students juggle multiple assignments, deadlines, and group projects, often leading to stress and burnout. Teachers, in turn, struggle to track individual student progress and manage collaborative work effectively. We were inspired to build a solution that acts as an intelligent partner for both students and educators, automating the administrative burdens of education so they can focus on what truly matters: learning and teaching, not just management." },
             
             { type: 'image_grid', images: [
-                { url: '/images/Aura/Landing Page.png', dataAiHint: 'landing page', caption: 'The Aura AI Landing Page' },
+                { url: '/images/Aura/Landing-Page.png', dataAiHint: 'landing page', caption: 'The Aura AI Landing Page' },
                 { url: '/images/Aura/Dashboard.png', dataAiHint: 'dashboard', caption: 'Main User Dashboard' },
                 { url: '/images/Aura/Calendar.png', dataAiHint: 'calendar view', caption: 'Calendar and Scheduling' },
                 { url: '/images/Aura/Analytics.png', dataAiHint: 'analytics charts', caption: 'Task Analytics' },
-                { url: '/images/Aura/AI Features.png', dataAiHint: 'ai features', caption: 'AI-Powered Feature Showcase' },
-                { url: '/images/Aura/Landing Page 2.png', dataAiHint: 'landing page section', caption: 'Landing Page Details' }
+                { url: '/images/Aura/AI-Features.png', dataAiHint: 'ai features', caption: 'AI-Powered Feature Showcase' },
+                { url: '/images/Aura/Landing-Page-2.png', dataAiHint: 'landing page section', caption: 'Landing Page Details' }
             ]},
 
             { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
@@ -171,6 +171,69 @@ export const projects: Project[] = [
                 "**Proactive Notifications**: Sending intelligent reminders and suggestions to students' phones or emails based on their work patterns and upcoming deadlines.",
                 "**Advanced Analytics for Educators**: Building a more robust dashboard for teachers to identify at-risk students based on their productivity trends and assignment completion rates.",
                 "**AI-Powered Study Tools**: Integrating features like AI-generated flashcards, practice quizzes from notes, and resource recommendations to create a complete learning hub."
+            ]}
+        ]
+    },
+    {
+        icon: 'vault',
+        title: 'Helpful Vault',
+        slug: 'helpful-vault',
+        description: 'A personal productivity app designed as a single, reliable, and secure space for all your digital items—passwords, notes, schedules, and more.',
+        category: 'Productivity Tool',
+        shortTitle: 'Helpful Vault',
+        shortDescription: 'AI-powered secure storage',
+        githubUrl: 'https://github.com/Aicodebyprince/helpful_vault',
+        liveUrl: 'https://helpfulvault.vercel.app',
+        tags: ['Kiro', 'React.js', 'Vercel', 'AI-assisted'],
+        stat: 'AI-assisted development',
+        caseStudy: [
+            { type: 'heading', level: 2, icon: Lightbulb, text: 'Inspiration' },
+            { type: 'paragraph', text: 'Every day, students, developers, and professionals juggle dozens of small but important digital items — passwords, exam schedules, sticky notes, meeting reminders, and more. Usually, these get scattered across multiple apps: notes in one app, credentials in another, schedules on calendars, and tasks on sticky notes. This leads to lost time, stress, and inefficiency.' },
+            { type: 'paragraph', text: 'We wanted to create something that acts as a single, reliable, and secure space—a personal "helper vault" that can be used by anyone, whether you’re a student preparing for exams, a developer storing your workflow snippets, or an office worker keeping track of important credentials and tasks. The idea was to design a tool that feels like a digital extension of your memory: always there, organized, and safe.' },
+            
+            { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
+            { type: 'paragraph', text: 'Helpful Vault is a secure digital organizer designed to bring everything important into one place.' },
+            { type: 'list', items: [
+                '**Vault Cards**: Store and categorize essential items such as credentials, notes, and quick references in an easy-to-find card format.',
+                '**Sticky Notes**: Create and manage notes or study reminders directly inside the vault.',
+                '**Schedules**: Add and track upcoming exams, meetings, or tasks with a simple scheduler.',
+                '**Authentication & Security**: Secure login and encrypted storage keep sensitive information safe.'
+            ]},
+            
+            { type: 'heading', level: 2, icon: Code, text: 'How we built it' },
+            { type: 'paragraph', text: 'We used a structured workflow, starting with a clear design and then building features step by step. Kiro played a big role:' },
+            { type: 'list', items: [
+                '**Spec-to-code** gave us the base app quickly.',
+                '**Hooks** automated workflows for notes and vaults.',
+                '**Steering** helped polish the UI to look clean and professional.'
+            ]},
+
+            { type: 'heading', level: 2, icon: AlertTriangle, text: 'Challenges we ran into' },
+            { type: 'list', items: [
+                'Designing a clean UI that feels professional but simple.',
+                'Managing state and making sure the workflows feel seamless.',
+                'Time constraints — building and deploying fast while keeping quality.'
+            ]},
+
+            { type: 'heading', level: 2, icon: BadgeCheck, text: 'Accomplishments that we\'re proud of' },
+            { type: 'list', items: [
+                'Built and deployed a fully working web app in a short time.',
+                'Integrated multiple features into one easy-to-use dashboard.',
+                'Created a polished design that feels professional and secure.'
+            ]},
+
+            { type: 'heading', level: 2, icon: BookOpen, text: 'What we learned' },
+            { type: 'list', items: [
+                'How to turn an idea into a working product quickly.',
+                'The value of using tools like Kiro to save time and focus on experience.',
+                'Balancing simplicity and security in productivity apps.'
+            ]},
+
+            { type: 'heading', level: 2, icon: Target, text: 'What\'s next for Helpful-Vault' },
+            { type: 'list', items: [
+                'Adding user authentication and encrypted storage for more security.',
+                'Mobile-friendly version for quick access anywhere.',
+                'Collaboration features so teams can share notes and vaults securely.'
             ]}
         ]
     },
@@ -385,69 +448,6 @@ export const projects: Project[] = [
                 "Payment Integration: Connect the workflow to a payment gateway like Stripe to accept payments directly in the chat.",
                 "Advanced Memory: Integrate a more persistent memory solution (like a database) to remember customer preferences across different conversations.",
                 "Proactive Notifications: Add a feature to send order status updates (e.g., \"Your order is being prepared,\" \"Your order is out for delivery\")."
-            ]}
-        ]
-    },
-    {
-        icon: 'vault',
-        title: 'Helpful Vault',
-        slug: 'helpful-vault',
-        description: 'A personal productivity app designed as a single, reliable, and secure space for all your digital items—passwords, notes, schedules, and more.',
-        category: 'Productivity Tool',
-        shortTitle: 'Helpful Vault',
-        shortDescription: 'AI-powered secure storage',
-        githubUrl: 'https://github.com/Aicodebyprince/helpful_vault',
-        liveUrl: 'https://helpfulvault.vercel.app',
-        tags: ['Kiro', 'React.js', 'Vercel', 'AI-assisted'],
-        stat: 'AI-assisted development',
-        caseStudy: [
-            { type: 'heading', level: 2, icon: Lightbulb, text: 'Inspiration' },
-            { type: 'paragraph', text: 'Every day, students, developers, and professionals juggle dozens of small but important digital items — passwords, exam schedules, sticky notes, meeting reminders, and more. Usually, these get scattered across multiple apps: notes in one app, credentials in another, schedules on calendars, and tasks on sticky notes. This leads to lost time, stress, and inefficiency.' },
-            { type: 'paragraph', text: 'We wanted to create something that acts as a single, reliable, and secure space—a personal "helper vault" that can be used by anyone, whether you’re a student preparing for exams, a developer storing your workflow snippets, or an office worker keeping track of important credentials and tasks. The idea was to design a tool that feels like a digital extension of your memory: always there, organized, and safe.' },
-            
-            { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
-            { type: 'paragraph', text: 'Helpful Vault is a secure digital organizer designed to bring everything important into one place.' },
-            { type: 'list', items: [
-                '**Vault Cards**: Store and categorize essential items such as credentials, notes, and quick references in an easy-to-find card format.',
-                '**Sticky Notes**: Create and manage notes or study reminders directly inside the vault.',
-                '**Schedules**: Add and track upcoming exams, meetings, or tasks with a simple scheduler.',
-                '**Authentication & Security**: Secure login and encrypted storage keep sensitive information safe.'
-            ]},
-            
-            { type: 'heading', level: 2, icon: Code, text: 'How we built it' },
-            { type: 'paragraph', text: 'We used a structured workflow, starting with a clear design and then building features step by step. Kiro played a big role:' },
-            { type: 'list', items: [
-                '**Spec-to-code** gave us the base app quickly.',
-                '**Hooks** automated workflows for notes and vaults.',
-                '**Steering** helped polish the UI to look clean and professional.'
-            ]},
-
-            { type: 'heading', level: 2, icon: AlertTriangle, text: 'Challenges we ran into' },
-            { type: 'list', items: [
-                'Designing a clean UI that feels professional but simple.',
-                'Managing state and making sure the workflows feel seamless.',
-                'Time constraints — building and deploying fast while keeping quality.'
-            ]},
-
-            { type: 'heading', level: 2, icon: BadgeCheck, text: 'Accomplishments that we\'re proud of' },
-            { type: 'list', items: [
-                'Built and deployed a fully working web app in a short time.',
-                'Integrated multiple features into one easy-to-use dashboard.',
-                'Created a polished design that feels professional and secure.'
-            ]},
-
-            { type: 'heading', level: 2, icon: BookOpen, text: 'What we learned' },
-            { type: 'list', items: [
-                'How to turn an idea into a working product quickly.',
-                'The value of using tools like Kiro to save time and focus on experience.',
-                'Balancing simplicity and security in productivity apps.'
-            ]},
-
-            { type: 'heading', level: 2, icon: Target, text: 'What\'s next for Helpful-Vault' },
-            { type: 'list', items: [
-                'Adding user authentication and encrypted storage for more security.',
-                'Mobile-friendly version for quick access anywhere.',
-                'Collaboration features so teams can share notes and vaults securely.'
             ]}
         ]
     },
