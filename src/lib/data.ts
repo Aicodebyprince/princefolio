@@ -1,6 +1,6 @@
 
 
-import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus, MessageSquare, Bot, Eye, Users, Shield, User, Workflow, CheckCircle, Target, Lightbulb, Package, AlertTriangle, Image as ImageIcon, Sparkles, FileQuestion, BadgeCheck, BookOpen, GitBranch, FileText, Landmark, Banknote } from 'lucide-react';
+import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus, MessageSquare, Bot, Eye, Users, Shield, User, Workflow, CheckCircle, Target, Lightbulb, Package, AlertTriangle, ImageIcon, Sparkles, FileQuestion, BadgeCheck, BookOpen, GitBranch, FileText, Landmark, Banknote } from 'lucide-react';
 import React from 'react';
 
 export type Screenshot = {
@@ -114,6 +114,58 @@ export const technologies = [
 
 export const projects: Project[] = [
     {
+        icon: 'chatbot',
+        title: 'Aura AI - Task Co-Pilot',
+        slug: 'aura-ai',
+        description: 'An intelligent task management application that transforms the student and teacher workflow into a collaborative partnership with AI.',
+        category: 'AI / Full-Stack',
+        shortTitle: 'Aura AI',
+        shortDescription: 'AI-Powered Task Management',
+        githubUrl: '#',
+        liveUrl: 'https://aura-ai-task-manager.vercel.app/',
+        tags: ['Genkit', 'Gemini', 'Next.js', 'Firebase', 'Tailwind'],
+        stat: 'Intelligent Task Automation',
+        caseStudy: [
+            { type: 'heading', level: 2, icon: Lightbulb, text: 'Inspiration' },
+            { type: 'paragraph', text: "The modern educational landscape is overwhelming. Students juggle multiple assignments, deadlines, and group projects, often leading to stress and burnout. Teachers, in turn, struggle to track individual student progress and manage collaborative work effectively. We were inspired to build a solution that acts as an intelligent partner for both students and educators, automating the administrative burdens of education so they can focus on what truly matters: learning and teaching, not just management." },
+            
+            { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
+            { type: 'paragraph', text: 'Aura AI is an intelligent task management application that transforms the student and teacher workflow into a collaborative partnership with AI. At its core is a conversational AI assistant, powered by Google\'s Gemini model.' },
+            { type: 'heading', level: 3, icon: User, text: 'For Students' },
+            { type: 'paragraph', text: 'A student can say, "Add a task to study for my calculus exam this Friday," and Aura AI will intelligently create the task with the correct details. They can ask, "What are my most urgent assignments?" and the AI will analyze their data to provide a prioritized, context-aware summary.' },
+            { type: 'heading', level: 3, icon: Users, text: 'For Teachers' },
+            { type: 'paragraph', text: 'A teacher can create a "Project Group" for their class, invite students, and assign tasks. They can monitor the progress of group projects in real-time, gaining insights into which groups are excelling and which may need support, all without micromanaging.' },
+
+            { type: 'heading', level: 2, icon: Code, text: 'How we built it' },
+            { type: 'paragraph', text: "Aura AI is built on a modern, scalable, and powerful technology stack, chosen for its performance and developer experience." },
+            { type: 'list', items: [
+                "**Frontend**: We used Next.js and React with the App Router and Server Components for optimal performance and a great user experience.",
+                "**AI Framework**: We leveraged Genkit, an open-source AI framework from Google, to structure our AI logic and connect to the Gemini model.",
+                "**AI Model**: The conversational agent is powered by Google AI (Gemini) for its state-of-the-art reasoning and function-calling capabilities.",
+                "**Backend & Database**: We used Firebase for the backend, with Firestore as our real-time NoSQL database and Firebase Authentication for secure user management.",
+                "**Styling**: The UI is styled with Tailwind CSS for a utility-first workflow, and we used ShadCN UI for a beautiful and accessible component library."
+            ]},
+            
+            { type: 'heading', level: 2, icon: AlertTriangle, text: 'Challenges we ran into' },
+            { type: 'paragraph', text: 'One of the biggest challenges was designing the AI conversational agent to be genuinely useful. It required significant prompt engineering to make the AI\'s responses context-aware and its function-calling capabilities reliable. Ensuring the AI could accurately parse natural language queries like "add a task for next Tuesday" into structured data (title, due date, priority) was a complex but rewarding problem to solve. Another challenge was managing real-time data synchronization across different users (students and teachers) in a group, which we solved using Firestore\'s real-time listeners.' },
+            
+            { type: 'heading', level: 2, icon: BadgeCheck, text: 'Accomplishments that we\'re proud of' },
+            { type: 'paragraph', text: 'I am incredibly proud of creating a conversational AI that feels like a true co-pilot. The ability to manage your entire academic schedule through natural language is a powerful and intuitive experience. We\'re also proud of the seamless real-time collaboration features for group projects, which allow students and teachers to stay in sync without any extra effort. Finally, building a full-featured, aesthetically pleasing, and responsive application from the ground up in a short time frame is an accomplishment our entire team is proud of.' },
+            
+            { type: 'heading', level: 2, icon: BookOpen, text: 'What we learned' },
+            { type: 'paragraph', text: 'This project was a deep dive into the practical application of large language models. We learned a great deal about prompt engineering, function calling, and how to structure AI-powered features in a real-world application using Genkit. We also gained valuable experience in building real-time, collaborative applications with Firebase and Next.js, and we honed our skills in creating responsive and accessible user interfaces with Tailwind CSS and ShadCN.' },
+            
+            { type: 'heading', level: 2, icon: Target, text: 'What\'s next for Aura AI' },
+            { type: 'paragraph', text: 'The future for Aura AI is bright. Our next steps are focused on deeper integration with the educational ecosystem:' },
+            { type: 'list', items: [
+                "**Calendar Integration**: Automatically syncing Aura AI tasks with Google Calendar, Outlook, and other calendar platforms.",
+                "**Proactive Notifications**: Sending intelligent reminders and suggestions to students' phones or emails based on their work patterns and upcoming deadlines.",
+                "**Advanced Analytics for Educators**: Building a more robust dashboard for teachers to identify at-risk students based on their productivity trends and assignment completion rates.",
+                "**AI-Powered Study Tools**: Integrating features like AI-generated flashcards, practice quizzes from notes, and resource recommendations to create a complete learning hub."
+            ]}
+        ]
+    },
+    {
         icon: 'college',
         title: 'College Management App',
         slug: 'college-management-app',
@@ -133,12 +185,12 @@ export const projects: Project[] = [
                 title: 'For the Visitors',
                 description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
                 screenshots: [
-                    { url: '/images/Visitor 1.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor 2.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor 3.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor 4.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor 5.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor 7.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-1.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-2.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-3.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-4.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-5.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/Visitor-7.png', dataAiHint: 'mobile app screen' },
                 ]
             },
             {
@@ -146,10 +198,10 @@ export const projects: Project[] = [
                 title: 'For the Signup',
                 description: 'A simple and secure signup process to onboard new users to the platform.',
                 screenshots: [
-                    { url: '/images/Sign 1.jpg', dataAiHint: 'signup screen' },
-                    { url: '/images/Sign 2.jpg', dataAiHint: 'signup form' },
-                    { url: '/images/Sign 3.jpg', dataAiHint: 'verification screen' },
-                    { url: '/images/Sign 4.jpg', dataAiHint: 'profile setup' },
+                    { url: '/images/Sign-1.jpg', dataAiHint: 'signup screen' },
+                    { url: '/images/Sign-2.jpg', dataAiHint: 'signup form' },
+                    { url: '/images/Sign-3.jpg', dataAiHint: 'verification screen' },
+                    { url: '/images/Sign-4.jpg', dataAiHint: 'profile setup' },
                 ]
             },
             {
@@ -157,14 +209,14 @@ export const projects: Project[] = [
                 title: 'For the Students',
                 description: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.',
                 screenshots: [
-                    { url: '/images/Student 1.png', dataAiHint: 'student dashboard' },
-                    { url: '/images/Student 2.png', dataAiHint: 'student dashboard' },
-                    { url: '/images/Student 3.png', dataAiHint: 'attendance tracker' },
-                    { url: '/images/Student 4.png', dataAiHint: 'exam results' },
-                    { url: '/images/Student 5.png', dataAiHint: 'class schedule' },
-                    { url: '/images/Student 6.png', dataAiHint: 'chat interface' },
-                    { url: '/images/Student 7.png', dataAiHint: 'student profile' },
-                    { url: '/images/Student 8.png', dataAiHint: 'student profile' },
+                    { url: '/images/Student-1.png', dataAiHint: 'student dashboard' },
+                    { url: '/images/Student-2.png', dataAiHint: 'student dashboard' },
+                    { url: '/images/Student-3.png', dataAiHint: 'attendance tracker' },
+                    { url: '/images/Student-4.png', dataAiHint: 'exam results' },
+                    { url: '/images/Student-5.png', dataAiHint: 'class schedule' },
+                    { url: '/images/Student-6.png', dataAiHint: 'chat interface' },
+                    { url: '/images/Student-7.png', dataAiHint: 'student profile' },
+                    { url: '/images/Student-8.png', dataAiHint: 'student profile' },
                 ]
             },
             {
@@ -172,10 +224,10 @@ export const projects: Project[] = [
                 title: 'For the Teachers',
                 description: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.',
                 screenshots: [
-                    { url: '/images/Teacher 1.jpg', dataAiHint: 'teacher dashboard' },
-                    { url: '/images/Teacher 2.jpg', dataAiHint: 'take attendance' },
-                    { url: '/images/Teacher 3.jpg', dataAiHint: 'upload marks' },
-                    { url: '/images/Teacher 4.jpg', dataAiHint: 'send notification' },
+                    { url: '/images/Teacher-1.jpg', dataAiHint: 'teacher dashboard' },
+                    { url: '/images/Teacher-2.jpg', dataAiHint: 'take attendance' },
+                    { url: '/images/Teacher-3.jpg', dataAiHint: 'upload marks' },
+                    { url: '/images/Teacher-4.jpg', dataAiHint: 'send notification' },
                 ]
             },
             {
@@ -183,10 +235,10 @@ export const projects: Project[] = [
                 title: 'For the Admins',
                 description: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.',
                 screenshots: [
-                    { url: '/images/Admin 1.jpg', dataAiHint: 'admin dashboard' },
-                    { url: '/images/Admin 2.jpg', dataAiHint: 'admin dashboard' },
-                    { url: '/images/Admin 3.jpg', dataAiHint: 'user management' },
-                    { url: '/images/Admin 4.jpg', dataAiHint: 'analytics charts' },
+                    { url: '/images/Admin-1.jpg', dataAiHint: 'admin dashboard' },
+                    { url: '/images/Admin-2.jpg', dataAiHint: 'admin dashboard' },
+                    { url: '/images/Admin-3.jpg', dataAiHint: 'user management' },
+                    { url: '/images/Admin-4.jpg', dataAiHint: 'analytics charts' },
                 ]
             }
         ]
@@ -270,8 +322,8 @@ export const projects: Project[] = [
             { type: 'heading', level: 2, text: 'Project Overview', icon: Package },
             { type: 'paragraph', text: "This project is an AI-driven chatbot designed to automate customer interactions for a small business via WhatsApp. The bot handles customer inquiries, manages orders, and answers frequently asked questions in real-time. By leveraging the power of n8n for workflow automation and Google's Gemini AI for natural language processing, this solution helps businesses improve efficiency, reduce response times, and prevent missed sales opportunities, especially those that rely heavily on WhatsApp for customer communication." },
             { type: 'image_grid', images: [
-                { url: '/images/Chatbot/SS 1.png', dataAiHint: 'chatbot conversation', caption: 'Live chat example with the AI bot.' },
-                { url: '/images/Chatbot/SS 2.png', dataAiHint: 'chatbot conversation', caption: 'The bot handling an order request.' }
+                { url: '/images/Chatbot/SS-1.png', dataAiHint: 'chatbot conversation', caption: 'Live chat example with the AI bot.' },
+                { url: '/images/Chatbot/SS-2.png', dataAiHint: 'chatbot conversation', caption: 'The bot handling an order request.' }
             ]},
             { type: 'heading', level: 2, text: 'The Goal', icon: Target },
             { type: 'paragraph', text: "For many small businesses, especially in the restaurant or retail sector, WhatsApp is a primary channel for taking orders and answering customer questions. Managing this manually can be overwhelming, leading to slow responses and lost orders. The primary goal of this project was to build an intelligent, automated system that can:" },
@@ -292,11 +344,11 @@ export const projects: Project[] = [
             ]},
             { type: 'heading', level: 2, text: 'System Architecture & Workflow', icon: Workflow },
             { type: 'paragraph', text: "The entire process is orchestrated within an n8n workflow. The workflow is triggered by an incoming message on WhatsApp and follows a logical sequence to process the message and send a reply." },
-            { type: 'image', url: '/images/Chatbot/SS 3.png', dataAiHint: 'n8n workflow diagram', caption: 'The complete n8n workflow for the chatbot.' },
+            { type: 'image', url: '/images/Chatbot/SS-3.png', dataAiHint: 'n8n workflow diagram', caption: 'The complete n8n workflow for the chatbot.' },
             { type: 'heading', level: 3, text: 'Workflow Breakdown' },
             { type: 'heading', level: 4, text: '1. WhatsApp Trigger' },
             { type: 'paragraph', text: 'The workflow starts when a user sends a message to the business\'s WhatsApp number. The WhatsApp Trigger node in n8n securely listens for these incoming messages.' },
-            { type: 'image', url: '/images/Chatbot/SS 9.png', dataAiHint: 'meta api setup', caption: 'WhatsApp API Setup in the Meta for Developers portal.' },
+            { type: 'image', url: '/images/Chatbot/SS-9.png', dataAiHint: 'meta api setup', caption: 'WhatsApp API Setup in the Meta for Developers portal.' },
             { type: 'heading', level: 4, text: '2. AI Agent (Gemini)' },
             { type: 'paragraph', text: "The message content is passed to the AI Agent node. This node is the core of the bot's intelligence." },
             { type: 'list', items: [
@@ -304,17 +356,17 @@ export const projects: Project[] = [
                 "Simple Memory: To ensure conversations are natural, the agent is equipped with memory. It remembers the last 10 messages, allowing it to understand context (e.g., if a user says \"I'll take two,\" it knows what item they are referring to).",
                 "Tools (Google Sheets): The agent is connected to three tools that allow it to interact with our Google Sheets database."
             ]},
-            { type: 'image', url: '/images/Chatbot/SS 5.png', dataAiHint: 'ai agent configuration', caption: 'Configuring the Gemini AI Agent in n8n.' },
-            { type: 'image', url: '/images/Chatbot/SS 6.png', dataAiHint: 'ai agent tool', caption: 'Setting up the \'Get Inventory\' tool.' },
-            { type: 'image', url: '/images/Chatbot/SS 7.png', dataAiHint: 'ai agent tool', caption: 'Setting up the \'Post Order\' tool.' },
+            { type: 'image', url: '/images/Chatbot/SS-5.png', dataAiHint: 'ai agent configuration', caption: 'Configuring the Gemini AI Agent in n8n.' },
+            { type: 'image', url: '/images/Chatbot/SS-6.png', dataAiHint: 'ai agent tool', caption: 'Setting up the \'Get Inventory\' tool.' },
+            { type: 'image', url: '/images/Chatbot/SS-7.png', dataAiHint: 'ai agent tool', caption: 'Setting up the \'Post Order\' tool.' },
             { type: 'heading', level: 4, text: '3. Tool Execution' },
             { type: 'list', items: [
                 "Get Inventory: If a user asks what is available, the AI uses this tool to read directly from the 'Inventory' sheet and provide an accurate list.",
                 "Get FAQ: For questions like \"What are your hours?\" or \"Where are you located?\", this tool retrieves answers from the 'FAQ' sheet.",
                 "Post Orders: When a user wants to place an order, this tool is triggered. The AI, as configured in the tool's prompt, knows to ask for necessary details (name, quantity, address) and then appends this information as a new row in the 'Orders' sheet."
             ]},
-            { type: 'image', url: '/images/Chatbot/SS 4.png', dataAiHint: 'database spreadsheet', caption: 'The Google Sheet used for inventory and FAQs.' },
-            { type: 'image', url: '/images/Chatbot/SS 8.png', dataAiHint: 'order spreadsheet', caption: 'Orders are automatically recorded in this sheet.' },
+            { type: 'image', url: '/images/Chatbot/SS-4.png', dataAiHint: 'database spreadsheet', caption: 'The Google Sheet used for inventory and FAQs.' },
+            { type: 'image', url: '/images/Chatbot/SS-8.png', dataAiHint: 'order spreadsheet', caption: 'Orders are automatically recorded in this sheet.' },
             { type: 'heading', level: 4, text: '4. Send Message (WhatsApp)' },
             { type: 'paragraph', text: "The final response generated by the AI Agent is passed to the Send Message node. This node sends the text back to the user on WhatsApp, completing the loop." },
             { type: 'heading', level: 2, text: 'Conclusion', icon: CheckCircle },
@@ -441,8 +493,8 @@ export const experiences: Experience[] = [
             { type: 'heading', level: 2, icon: Banknote, text: 'Kudos & Recognition' },
             { type: 'paragraph', text: 'Received recognition for my proactive approach and contributions to the team.' },
             { type: 'image_grid', images: [
-                { url: '/images/Experience/Kudos 1.png', dataAiHint: 'certificate award', caption: 'Certificate of Appreciation' },
-                { url: '/images/Experience/Kudos 2.png', dataAiHint: 'certificate award', caption: 'Internship Completion Certificate' }
+                { url: '/images/Experience/Kudos-1.png', dataAiHint: 'certificate award', caption: 'Certificate of Appreciation' },
+                { url: '/images/Experience/Kudos-2.png', dataAiHint: 'certificate award', caption: 'Internship Completion Certificate' }
             ]}
         ]
     }
