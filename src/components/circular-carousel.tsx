@@ -31,13 +31,13 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({ images }) => {
                 transform: `translate(${x}px, ${y}px)`,
               }}
             >
-               <div className="orbiting-item-inner">
+               <div className="orbiting-item-inner rounded-2xl">
                  <Image
                     src={image.url}
                     alt={`EcoReward screenshot ${index + 1}`}
-                    width={150}
-                    height={150}
-                    className="rounded-full object-cover"
+                    width={250}
+                    height={250}
+                    className="object-cover w-full h-full rounded-2xl"
                     data-ai-hint={image.dataAiHint}
                   />
                </div>
@@ -50,3 +50,5 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({ images }) => {
 };
 
 export default CircularCarousel;
+
+    

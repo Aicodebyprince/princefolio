@@ -680,8 +680,8 @@ body {
 
 .orbital-container {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   transform-style: preserve-3d;
   animation: orbit-rotate 30s infinite linear;
 }
@@ -703,7 +703,6 @@ body {
 .orbiting-item-inner {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   overflow: hidden;
   border: 4px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 20px rgba(102, 126, 234, 0.4), inset 0 0 10px rgba(102, 126, 234, 0.2);
@@ -754,6 +753,8 @@ body {
 .form-input {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  padding: 0.6rem 0.8rem;
 }
 .form-input:focus {
   border-color: #667eea;
@@ -878,3 +879,5 @@ body {
         width: 100%;
     }
 }
+
+    
