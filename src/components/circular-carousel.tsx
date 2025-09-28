@@ -17,6 +17,11 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({ images }) => {
   const radius = 350; // Adjust this for circle size
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  const handleImageClick = (e: React.MouseEvent, imageUrl: string) => {
+    e.stopPropagation();
+    setSelectedImage(imageUrl);
+  };
+
   return (
     <>
       <div className="orbital-carousel-wrapper my-16">
@@ -33,7 +38,7 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({ images }) => {
                 style={{
                   transform: `translate(${x}px, ${y}px)`,
                 }}
-                onClick={() => setSelectedImage(image.url)}
+                onClick={(e) => handleImageClick(e, image.url)}
               >
                  <div className="orbiting-item-inner rounded-2xl">
                    <Image
