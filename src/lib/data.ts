@@ -114,51 +114,6 @@ export const technologies = [
 
 export const projects: Project[] = [
     {
-        icon: 'leaf',
-        title: 'EcoReward',
-        slug: 'ecoreward',
-        description: 'A comprehensive platform that gamifies sustainable living by rewarding eco-friendly actions with points and achievements, leveraging AI and blockchain principles.',
-        category: 'AI / Full-Stack / Blockchain',
-        shortTitle: 'EcoReward',
-        shortDescription: 'Gamified Sustainable Living',
-        githubUrl: 'https://github.com/Aicodebyprince/EcoReward',
-        liveUrl: 'https://ecoreward-seven.vercel.app',
-        tags: ['Next.js', 'Supabase', 'Genkit', 'Tailwind', 'Ethers.js'],
-        stat: 'Gamified Eco-Action Platform',
-        caseStudy: [
-            { type: 'heading', level: 2, icon: Lightbulb, text: 'Inspiration' },
-            { type: 'paragraph', text: "Our inspiration for EcoReward came from a shared sense of urgency about the climate crisis and a common feeling of helplessness. Many people want to contribute to a more sustainable future but feel that their individual actions are just a drop in the ocean. We wanted to build a platform that directly challenges this notion by making the impact of individual eco-friendly actions visible, tangible, and rewarding. By gamifying sustainability and leveraging the transparency of blockchain, we aim to transform eco-consciousness into a powerful, collective movement where every action counts." },
-            { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
-            { type: 'paragraph', text: 'EcoReward is a comprehensive platform that gamifies sustainable living.' },
-            { type: 'heading', level: 3, icon: User, text: 'For Users' },
-            { type: 'paragraph', text: 'Users can join a global community, choose from a list of "Eco-Challenges" (like recycling, using public transport, or having a plant-based meal), and submit photo proof of their actions. Our AI-powered system helps guide them with personalized suggestions for their next eco-task. As their submissions are approved, they earn "Green Points" (GP), unlock achievements, and climb a global leaderboard, visualizing their direct impact on CO₂ reduction. The platform also includes a feature to connect a MetaMask wallet, preparing for on-chain rewards.' },
-            { type: 'heading', level: 3, icon: Shield, text: 'For Admins' },
-            { type: 'paragraph', text: 'A secure, password-protected admin dashboard allows for the verification of user submissions. Admins can review photo evidence, approve or reject submissions, and provide direct feedback to users, ensuring the integrity of the points system. They can also manually award special badges to deserving users.' },
-
-            { type: 'heading', level: 2, icon: Code, text: 'How we built it' },
-            { type: 'paragraph', text: "We built EcoReward on a modern, robust, and scalable tech stack:" },
-            { type: 'list', items: [
-                "**Framework**: Next.js (App Router) for a fast, server-rendered React application.",
-                "**Backend & Database**: Supabase for authentication, user data storage, and object storage for image proofs. We utilized both client-side and service-role server clients for secure data management.",
-                "**Styling**: Tailwind CSS with ShadCN UI for a sleek, professional, and fully responsive user interface. The design system is built for a dark mode aesthetic, providing a premium feel.",
-                "**Generative AI**: Google's Gemini model via Genkit to create a personalized \"AI Climate Coach\" that suggests the next best eco-action for users based on their completed tasks, making the experience more engaging and effective.",
-                "**Blockchain Integration**: Ethers.js is integrated for future-ready wallet connectivity, paving the way for Green Points to become on-chain assets."
-            ]},
-            
-            { type: 'heading', level: 2, icon: AlertTriangle, text: 'Challenges we ran into' },
-            { type: 'paragraph', text: 'One of the biggest challenges was designing a secure and scalable admin verification system. We initially had a simple admin route, but it was not properly secured, leading to redirect loops and access issues. We overcame this by implementing a robust, multi-factor admin authentication flow that requires both a specific admin email and a unique password, combined with server-side checks and proper page routing to ensure only the designated administrator can access the verification dashboard. Another challenge was making the AI suggestions relevant and non-repetitive, which we solved by carefully crafting the prompt for the Gemini model to analyze a user\'s history and select a genuinely new and appropriate task.' },
-            
-            { type: 'heading', level: 2, icon: BadgeCheck, text: 'Accomplishments that we\'re proud of' },
-            { type: 'paragraph', text: 'We are incredibly proud of building a full-stack application that seamlessly integrates user authentication, data management, AI, and blockchain principles into a single, cohesive platform. The gamified dashboard, with its real-time updates and visual achievements, is a highlight we believe makes sustainability feel rewarding and fun. Creating a secure, dual-purpose authentication system that routes regular users to their dashboard and the admin to a separate management panel was a significant accomplishment that ensures the platform\'s integrity.' },
-            
-            { type: 'heading', level: 2, icon: BookOpen, text: 'What we learned' },
-            { type: 'paragraph', text: 'This project was a deep dive into full-stack development with Next.js and Supabase. We learned how to manage complex user roles and permissions, securely handle user-generated content, and architect a scalable serverless backend. A key takeaway was the importance of state management in the React ecosystem, especially when dealing with authentication and conditional routing, to prevent issues like infinite loading screens. Furthermore, integrating Genkit and the Gemini API taught us how to leverage the power of large language models to create truly personalized and dynamic user experiences.' },
-            
-            { type: 'heading', level: 2, icon: Target, text: 'What\'s next for EcoReward' },
-            { type: 'paragraph', text: 'The future of EcoReward is bright. Our immediate next step is to fully implement the on-chain functionality, allowing users to mint their Green Points as tokens on a low-emission blockchain (like Polygon). We also plan to expand our Eco-Challenges, introduce team-based competitions, and partner with eco-friendly brands to offer real-world rewards for Green Points. We envision EcoReward becoming a central hub for a new generation of "Eco Warriors," empowering millions to take collective action against climate change.' }
-        ]
-    },
-    {
         icon: 'chatbot',
         title: 'Aura AI - Task Co-Pilot',
         slug: 'aura-ai',
@@ -365,6 +320,51 @@ export const projects: Project[] = [
                     { url: '/images/College/Admin-4.jpg', dataAiHint: 'analytics charts' },
                 ]
             }
+        ]
+    },
+    {
+        icon: 'leaf',
+        title: 'EcoReward',
+        slug: 'ecoreward',
+        description: 'A comprehensive platform that gamifies sustainable living by rewarding eco-friendly actions with points and achievements, leveraging AI and blockchain principles.',
+        category: 'AI / Full-Stack / Blockchain',
+        shortTitle: 'EcoReward',
+        shortDescription: 'Gamified Sustainable Living',
+        githubUrl: 'https://github.com/Aicodebyprince/EcoReward',
+        liveUrl: 'https://ecoreward-seven.vercel.app',
+        tags: ['Next.js', 'Supabase', 'Genkit', 'Tailwind', 'Ethers.js'],
+        stat: 'Gamified Eco-Action Platform',
+        caseStudy: [
+            { type: 'heading', level: 2, icon: Lightbulb, text: 'Inspiration' },
+            { type: 'paragraph', text: "Our inspiration for EcoReward came from a shared sense of urgency about the climate crisis and a common feeling of helplessness. Many people want to contribute to a more sustainable future but feel that their individual actions are just a drop in the ocean. We wanted to build a platform that directly challenges this notion by making the impact of individual eco-friendly actions visible, tangible, and rewarding. By gamifying sustainability and leveraging the transparency of blockchain, we aim to transform eco-consciousness into a powerful, collective movement where every action counts." },
+            { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
+            { type: 'paragraph', text: 'EcoReward is a comprehensive platform that gamifies sustainable living.' },
+            { type: 'heading', level: 3, icon: User, text: 'For Users' },
+            { type: 'paragraph', text: 'Users can join a global community, choose from a list of "Eco-Challenges" (like recycling, using public transport, or having a plant-based meal), and submit photo proof of their actions. Our AI-powered system helps guide them with personalized suggestions for their next eco-task. As their submissions are approved, they earn "Green Points" (GP), unlock achievements, and climb a global leaderboard, visualizing their direct impact on CO₂ reduction. The platform also includes a feature to connect a MetaMask wallet, preparing for on-chain rewards.' },
+            { type: 'heading', level: 3, icon: Shield, text: 'For Admins' },
+            { type: 'paragraph', text: 'A secure, password-protected admin dashboard allows for the verification of user submissions. Admins can review photo evidence, approve or reject submissions, and provide direct feedback to users, ensuring the integrity of the points system. They can also manually award special badges to deserving users.' },
+
+            { type: 'heading', level: 2, icon: Code, text: 'How we built it' },
+            { type: 'paragraph', text: "We built EcoReward on a modern, robust, and scalable tech stack:" },
+            { type: 'list', items: [
+                "**Framework**: Next.js (App Router) for a fast, server-rendered React application.",
+                "**Backend & Database**: Supabase for authentication, user data storage, and object storage for image proofs. We utilized both client-side and service-role server clients for secure data management.",
+                "**Styling**: Tailwind CSS with ShadCN UI for a sleek, professional, and fully responsive user interface. The design system is built for a dark mode aesthetic, providing a premium feel.",
+                "**Generative AI**: Google's Gemini model via Genkit to create a personalized \"AI Climate Coach\" that suggests the next best eco-action for users based on their completed tasks, making the experience more engaging and effective.",
+                "**Blockchain Integration**: Ethers.js is integrated for future-ready wallet connectivity, paving the way for Green Points to become on-chain assets."
+            ]},
+            
+            { type: 'heading', level: 2, icon: AlertTriangle, text: 'Challenges we ran into' },
+            { type: 'paragraph', text: 'One of the biggest challenges was designing a secure and scalable admin verification system. We initially had a simple admin route, but it was not properly secured, leading to redirect loops and access issues. We overcame this by implementing a robust, multi-factor admin authentication flow that requires both a specific admin email and a unique password, combined with server-side checks and proper page routing to ensure only the designated administrator can access the verification dashboard. Another challenge was making the AI suggestions relevant and non-repetitive, which we solved by carefully crafting the prompt for the Gemini model to analyze a user\'s history and select a genuinely new and appropriate task.' },
+            
+            { type: 'heading', level: 2, icon: BadgeCheck, text: 'Accomplishments that we\'re proud of' },
+            { type: 'paragraph', text: 'We are incredibly proud of building a full-stack application that seamlessly integrates user authentication, data management, AI, and blockchain principles into a single, cohesive platform. The gamified dashboard, with its real-time updates and visual achievements, is a highlight we believe makes sustainability feel rewarding and fun. Creating a secure, dual-purpose authentication system that routes regular users to their dashboard and the admin to a separate management panel was a significant accomplishment that ensures the platform\'s integrity.' },
+            
+            { type: 'heading', level: 2, icon: BookOpen, text: 'What we learned' },
+            { type: 'paragraph', text: 'This project was a deep dive into full-stack development with Next.js and Supabase. We learned how to manage complex user roles and permissions, securely handle user-generated content, and architect a scalable serverless backend. A key takeaway was the importance of state management in the React ecosystem, especially when dealing with authentication and conditional routing, to prevent issues like infinite loading screens. Furthermore, integrating Genkit and the Gemini API taught us how to leverage the power of large language models to create truly personalized and dynamic user experiences.' },
+            
+            { type: 'heading', level: 2, icon: Target, text: 'What\'s next for EcoReward' },
+            { type: 'paragraph', text: 'The future of EcoReward is bright. Our immediate next step is to fully implement the on-chain functionality, allowing users to mint their Green Points as tokens on a low-emission blockchain (like Polygon). We also plan to expand our Eco-Challenges, introduce team-based competitions, and partner with eco-friendly brands to offer real-world rewards for Green Points. We envision EcoReward becoming a central hub for a new generation of "Eco Warriors," empowering millions to take collective action against climate change.' }
         ]
     },
     {
