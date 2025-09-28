@@ -63,25 +63,25 @@ const ContactContent = ({ isVisible }: { isVisible?: boolean }) => {
     return (
         <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
-                <h2 className="text-5xl md:text-6xl font-black mb-8">
+                <h2 className="text-4xl md:text-5xl font-black mb-8">
                     Let's Work <span className="solution-text">Together</span>
                 </h2>
-                <p className="text-2xl text-gray-300 font-light">Ready to bring your ideas to life</p>
+                <p className="text-xl text-gray-300 font-light">Ready to bring your ideas to life</p>
             </div>
             <div className="grid md:grid-cols-2 gap-16">
                 <div className="space-y-10">
-                    <Card3D className="glass-card rounded-3xl p-10">
-                        <h3 className="text-3xl font-bold mb-10 gradient-text">Get In Touch</h3>
-                        <div className="space-y-8">
+                    <Card3D className="glass-card rounded-3xl p-8">
+                        <h3 className="text-2xl font-bold mb-8 gradient-text">Get In Touch</h3>
+                        <div className="space-y-6">
                             {contactInfo.map((item, index) => (
                                 <div key={index} className="flex items-center">
-                                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-2xl flex items-center justify-center mr-6">
-                                        <span className="text-3xl">{item.icon}</span>
+                                    <div className="w-14 h-14 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-2xl flex items-center justify-center mr-5">
+                                        <span className="text-2xl">{item.icon}</span>
                                     </div>
                                     <div>
-                                        <div className="font-bold text-lg">{item.label}</div>
-                                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">{item.value}</a>
-                                        <div className={`text-sm ${item.color}`}>{item.detail}</div>
+                                        <div className="font-bold text-md">{item.label}</div>
+                                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-300 hover:text-white transition-colors">{item.value}</a>
+                                        <div className={`text-xs ${item.color}`}>{item.detail}</div>
                                     </div>
                                 </div>
                             ))}
@@ -89,23 +89,23 @@ const ContactContent = ({ isVisible }: { isVisible?: boolean }) => {
                     </Card3D>
                 </div>
 
-                <Card3D className="glass-card rounded-3xl p-10">
-                    <h3 className="text-3xl font-bold mb-10 gradient-text">Send Me a Message</h3>
+                <Card3D className="glass-card rounded-3xl p-8">
+                    <h3 className="text-2xl font-bold mb-8 gradient-text">Send Me a Message</h3>
                     {isMounted && (
-                        <form className="space-y-8" onSubmit={handleSubmit}>
-                            <div className="grid md:grid-cols-2 gap-8">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
+                            <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-sm font-semibold mb-3 text-gray-300">Your Name</label>
-                                    <input type="text" name="name" required className="form-input w-full p-4 rounded-xl text-white" />
+                                    <label className="block text-xs font-semibold mb-2 text-gray-300">Your Name</label>
+                                    <input type="text" name="name" required className="form-input w-full p-3 rounded-lg text-white text-sm" />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold mb-3 text-gray-300">Email</label>
-                                    <input type="email" name="email" required className="form-input w-full p-4 rounded-xl text-white" />
+                                    <label className="block text-xs font-semibold mb-2 text-gray-300">Email</label>
+                                    <input type="email" name="email" required className="form-input w-full p-3 rounded-lg text-white text-sm" />
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold mb-3 text-gray-300">Project Type</label>
-                                <select name="projectType" required className="form-input w-full p-4 rounded-xl text-white">
+                                <label className="block text-xs font-semibold mb-2 text-gray-300">Project Type</label>
+                                <select name="projectType" required className="form-input w-full p-3 rounded-lg text-white text-sm">
                                     <option value="" className="text-black">Select project type</option>
                                     <option value="web-app" className="text-black">Web Application</option>
                                     <option value="mobile-app" className="text-black">Mobile App</option>
@@ -115,15 +115,15 @@ const ContactContent = ({ isVisible }: { isVisible?: boolean }) => {
                                 </select>
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold mb-3 text-gray-300">Project Details</label>
-                                <textarea rows={5} name="details" required placeholder="Tell me about your project..." className="form-input w-full p-4 rounded-xl resize-none text-white"></textarea>
+                                <label className="block text-xs font-semibold mb-2 text-gray-300">Project Details</label>
+                                <textarea rows={4} name="details" required placeholder="Tell me about your project..." className="form-input w-full p-3 rounded-lg resize-none text-white text-sm"></textarea>
                             </div>
-                            <button type="submit" disabled={status === 'sending'} className="w-full btn-solve py-5 rounded-xl font-bold text-lg relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed">
+                            <button type="submit" disabled={status === 'sending'} className="w-full btn-solve py-4 rounded-xl font-bold text-base relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed">
                                 <span className="relative z-10">
                                     {status === 'sending' ? 'Sending...' : 'Send Message 🚀'}
                                 </span>
                             </button>
-                            <div className="text-center text-sm text-gray-400">
+                            <div className="text-center text-xs text-gray-400">
                                 <span className="text-green-400 font-semibold">✓</span> I'll respond within 24 hours
                                 <span className="mx-2">•</span>
                                 <span className="text-green-400 font-semibold">✓</span> Free project consultation
@@ -143,5 +143,3 @@ const ContactSection = () => (
 );
 
 export default ContactSection;
-
-  
