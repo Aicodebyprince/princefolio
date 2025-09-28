@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { projects } from '@/lib/data';
-import { GitBranch, HelpingHand, BookOpen, Code as CodeIcon, BarChart, ArrowRight, Bot, FileQuestion } from 'lucide-react';
+import { GitBranch, HelpingHand, BookOpen, Code as CodeIcon, BarChart, ArrowRight, Bot, FileQuestion, Leaf } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -14,7 +14,8 @@ const iconMap: { [key: string]: React.ElementType } = {
     code: CodeIcon,
     'chart-bar': BarChart,
     chatbot: Bot,
-    automation: FileQuestion
+    automation: FileQuestion,
+    leaf: Leaf
 };
 
 const AllProjectsSection = () => {
