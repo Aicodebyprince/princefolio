@@ -674,14 +674,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px; /* Adjust height as needed */
-  perspective: 1000px;
+  height: 600px; /* Adjust height as needed */
+  perspective: 1500px;
 }
 
 .circular-carousel-container {
   position: relative;
-  width: 200px; /* Adjust width of the central point */
-  height: 200px; /* Adjust height of the central point */
+  width: 300px; /* Adjust width of the central point */
+  height: 300px; /* Adjust height of the central point */
   transform-style: preserve-3d;
 }
 
@@ -689,8 +689,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 150px; /* Adjust image size */
-  height: 150px; /* Adjust image size */
+  width: 250px; /* Adjust image size */
+  height: 250px; /* Adjust image size */
   border-radius: 50%;
   overflow: hidden;
   transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;

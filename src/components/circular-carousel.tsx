@@ -26,13 +26,12 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({ images }) => {
 
   const getStyle = (index: number) => {
     const angle = (360 / numImages) * (index - activeIndex);
-    const radius = 250; // Adjust this for circle size
+    const radius = 350; // Adjust this for circle size
     const x = Math.round(radius * Math.sin((angle * Math.PI) / 180));
     const z = Math.round(radius * Math.cos((angle * Math.PI) / 180)) - radius;
     
-    const scale = (z + radius) / (2 * radius);
-    const perspectiveScale = Math.max(0.6, Math.min(1, 1 - z / (radius * 4)));
-    const opacity = perspectiveScale;
+    const perspectiveScale = Math.max(0.5, Math.min(1.2, 1 - z / (radius * 3)));
+    const opacity = perspectiveScale > 0.6 ? 1 : 0.4;
     const zIndex = Math.round(perspectiveScale * 100);
 
     return {
