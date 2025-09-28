@@ -669,33 +669,55 @@ body {
 }
 
 
-/* Circular Carousel */
-.circular-carousel-wrapper {
+/* Orbital Carousel */
+.orbital-carousel-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px; /* Increased height */
-  perspective: 2000px; /* Increased perspective for more depth */
+  height: 700px;
+  perspective: 2000px;
 }
 
-.circular-carousel-container {
+.orbital-container {
   position: relative;
-  width: 400px; /* Increased width */
-  height: 600px; /* Increased height */
+  width: 150px;
+  height: 150px;
   transform-style: preserve-3d;
+  animation: orbit-rotate 30s infinite linear;
 }
 
-.carousel-item {
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.orbiting-item {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
+  transform-style: preserve-3d;
+}
+
+.orbiting-item-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   overflow: hidden;
-  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease, z-index 1s ease;
   border: 4px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.4), inset 0 0 10px rgba(102, 126, 234, 0.2);
+  transition: transform 0.5s ease;
+  animation: counter-rotate 30s infinite linear;
+}
+
+@keyframes counter-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.orbiting-item:hover .orbiting-item-inner {
+    transform: scale(1.2);
 }
 
 
