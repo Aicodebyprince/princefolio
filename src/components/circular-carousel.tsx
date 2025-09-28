@@ -30,12 +30,15 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({ images }) => {
     const x = Math.round(radius * Math.sin((angle * Math.PI) / 180));
     const z = Math.round(radius * Math.cos((angle * Math.PI) / 180)) - radius;
     
-    const perspectiveScale = Math.max(0.5, Math.min(1.2, 1 - z / (radius * 3)));
-    const opacity = perspectiveScale > 0.6 ? 1 : 0.4;
-    const zIndex = Math.round(perspectiveScale * 100);
+    // Make the front-most image larger
+    const isFront = Math.abs(angle % 360) < 10 || Math.abs(angle % 360) > 350;
+    const scale = isFront ? 1.2 : Math.max(0.4, 1 - Math.abs(z) / (radius * 2));
+    
+    const opacity = isFront ? 1 : 0.4;
+    const zIndex = isFront ? 100 : Math.round(scale * 100);
 
     return {
-      transform: `translateX(${x}px) translateZ(${z}px) scale(${perspectiveScale})`,
+      transform: `translateX(${x}px) translateZ(${z}px) scale(${scale})`,
       opacity: opacity,
       zIndex: zIndex,
     };

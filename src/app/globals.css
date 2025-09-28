@@ -674,14 +674,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px; /* Adjust height as needed */
-  perspective: 1500px;
+  height: 700px; /* Increased height */
+  perspective: 2000px; /* Increased perspective for more depth */
 }
 
 .circular-carousel-container {
   position: relative;
-  width: 300px; /* Adjust width of the central point */
-  height: 450px; /* Adjust height of the central point */
+  width: 400px; /* Increased width */
+  height: 600px; /* Increased height */
   transform-style: preserve-3d;
 }
 
@@ -689,12 +689,12 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 250px;
-  height: 450px;
+  width: 100%;
+  height: 100%;
   border-radius: 1rem;
   overflow: hidden;
-  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
-  border: 4px solid rgba(255, 255, 255, 0.2);
+  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease, z-index 1s ease;
+  border: 4px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
