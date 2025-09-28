@@ -1,6 +1,6 @@
 
 
-import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus, MessageSquare, Bot, Eye, Users, Shield, User, Workflow, CheckCircle, Target, Lightbulb, Package, AlertTriangle, ImageIcon, Sparkles, FileQuestion, BadgeCheck, BookOpen, GitBranch, FileText, Landmark, Banknote } from 'lucide-react';
+import { GraduationCap, School, Code, Layers, Paintbrush, Puzzle, UserPlus, MessageSquare, Bot, Eye, Users, Shield, User, Workflow, CheckCircle, Target, Lightbulb, Package, AlertTriangle, ImageIcon, Sparkles, FileQuestion, BadgeCheck, BookOpen, GitBranch, FileText, Landmark, Banknote, HelpingHand } from 'lucide-react';
 import React from 'react';
 
 export type Screenshot = {
@@ -130,12 +130,12 @@ export const projects: Project[] = [
             { type: 'paragraph', text: "The modern educational landscape is overwhelming. Students juggle multiple assignments, deadlines, and group projects, often leading to stress and burnout. Teachers, in turn, struggle to track individual student progress and manage collaborative work effectively. We were inspired to build a solution that acts as an intelligent partner for both students and educators, automating the administrative burdens of education so they can focus on what truly matters: learning and teaching, not just management." },
             
             { type: 'image_grid', images: [
-                { url: '/images/Aura AI/Landing Page.png', dataAiHint: 'landing page', caption: 'The Aura AI Landing Page' },
-                { url: '/images/Aura AI/Dashborad.png', dataAiHint: 'dashboard', caption: 'Main User Dashboard' },
-                { url: '/images/Aura AI/Calendar.png', dataAiHint: 'calendar view', caption: 'Calendar and Scheduling' },
-                { url: '/images/Aura AI/Analytics.png', dataAiHint: 'analytics charts', caption: 'Task Analytics' },
-                { url: '/images/Aura AI/AI Features.png', dataAiHint: 'ai features', caption: 'AI-Powered Feature Showcase' },
-                { url: '/images/Aura AI/landing Page 2.png', dataAiHint: 'landing page section', caption: 'Landing Page Details' }
+                { url: '/images/Aura/Landing Page.png', dataAiHint: 'landing page', caption: 'The Aura AI Landing Page' },
+                { url: '/images/Aura/Dashboard.png', dataAiHint: 'dashboard', caption: 'Main User Dashboard' },
+                { url: '/images/Aura/Calendar.png', dataAiHint: 'calendar view', caption: 'Calendar and Scheduling' },
+                { url: '/images/Aura/Analytics.png', dataAiHint: 'analytics charts', caption: 'Task Analytics' },
+                { url: '/images/Aura/AI Features.png', dataAiHint: 'ai features', caption: 'AI-Powered Feature Showcase' },
+                { url: '/images/Aura/Landing Page 2.png', dataAiHint: 'landing page section', caption: 'Landing Page Details' }
             ]},
 
             { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
@@ -194,12 +194,12 @@ export const projects: Project[] = [
                 title: 'For the Visitors',
                 description: 'A welcoming and informative experience for prospective students and guests, showcasing campus life and simplifying inquiries.',
                 screenshots: [
-                    { url: '/images/Visitor-1.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-2.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-3.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-4.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-5.png', dataAiHint: 'mobile app screen' },
-                    { url: '/images/Visitor-7.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/College/Visitor-1.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/College/Visitor-2.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/College/Visitor-3.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/College/Visitor-4.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/College/Visitor-5.png', dataAiHint: 'mobile app screen' },
+                    { url: '/images/College/Visitor-7.png', dataAiHint: 'mobile app screen' },
                 ]
             },
             {
@@ -207,10 +207,10 @@ export const projects: Project[] = [
                 title: 'For the Signup',
                 description: 'A simple and secure signup process to onboard new users to the platform.',
                 screenshots: [
-                    { url: '/images/Sign-1.jpg', dataAiHint: 'signup screen' },
-                    { url: '/images/Sign-2.jpg', dataAiHint: 'signup form' },
-                    { url: '/images/Sign-3.jpg', dataAiHint: 'verification screen' },
-                    { url: '/images/Sign-4.jpg', dataAiHint: 'profile setup' },
+                    { url: '/images/College/Sign-1.jpg', dataAiHint: 'signup screen' },
+                    { url: '/images/College/Sign-2.jpg', dataAiHint: 'signup form' },
+                    { url: '/images/College/Sign-3.jpg', dataAiHint: 'verification screen' },
+                    { url: '/images/College/Sign-4.jpg', dataAiHint: 'profile setup' },
                 ]
             },
             {
@@ -218,14 +218,14 @@ export const projects: Project[] = [
                 title: 'For the Students',
                 description: 'A personalized dashboard that puts attendance, schedules, results, and communication right at their fingertips.',
                 screenshots: [
-                    { url: '/images/Student-1.png', dataAiHint: 'student dashboard' },
-                    { url: '/images/Student-2.png', dataAiHint: 'student dashboard' },
-                    { url: '/images/Student-3.png', dataAiHint: 'attendance tracker' },
-                    { url: '/images/Student-4.png', dataAiHint: 'exam results' },
-                    { url: '/images/Student-5.png', dataAiHint: 'class schedule' },
-                    { url: '/images/Student-6.png', dataAiHint: 'chat interface' },
-                    { url: '/images/Student-7.png', dataAiHint: 'student profile' },
-                    { url: '/images/Student-8.png', dataAiHint: 'student profile' },
+                    { url: '/images/College/Student-1.png', dataAiHint: 'student dashboard' },
+                    { url: '/images/College/Student-2.png', dataAiHint: 'student dashboard' },
+                    { url: '/images/College/Student-3.png', dataAiHint: 'attendance tracker' },
+                    { url: '/images/College/Student-4.png', dataAiHint: 'exam results' },
+                    { url: '/images/College/Student-5.png', dataAiHint: 'class schedule' },
+                    { url: '/images/College/Student-6.png', dataAiHint: 'chat interface' },
+                    { url: '/images/College/Student-7.png', dataAiHint: 'student profile' },
+                    { url: '/images/College/Student-8.png', dataAiHint: 'student profile' },
                 ]
             },
             {
@@ -233,10 +233,10 @@ export const projects: Project[] = [
                 title: 'For the Teachers',
                 description: 'Powerful tools for educators to manage classes, track student progress, and communicate effectively.',
                 screenshots: [
-                    { url: '/images/Teacher-1.jpg', dataAiHint: 'teacher dashboard' },
-                    { url: '/images/Teacher-2.jpg', dataAiHint: 'take attendance' },
-                    { url: '/images/Teacher-3.jpg', dataAiHint: 'upload marks' },
-                    { url: '/images/Teacher-4.jpg', dataAiHint: 'send notification' },
+                    { url: '/images/College/Teacher-1.jpg', dataAiHint: 'teacher dashboard' },
+                    { url: '/images/College/Teacher-2.jpg', dataAiHint: 'take attendance' },
+                    { url: '/images/College/Teacher-3.jpg', dataAiHint: 'upload marks' },
+                    { url: '/images/College/Teacher-4.jpg', dataAiHint: 'send notification' },
                 ]
             },
             {
@@ -244,10 +244,10 @@ export const projects: Project[] = [
                 title: 'For the Admins',
                 description: 'A comprehensive overview of campus operations with tools to manage users, send announcements, and monitor analytics.',
                 screenshots: [
-                    { url: '/images/Admin-1.jpg', dataAiHint: 'admin dashboard' },
-                    { url: '/images/Admin-2.jpg', dataAiHint: 'admin dashboard' },
-                    { url: '/images/Admin-3.jpg', dataAiHint: 'user management' },
-                    { url: '/images/Admin-4.jpg', dataAiHint: 'analytics charts' },
+                    { url: '/images/College/Admin-1.jpg', dataAiHint: 'admin dashboard' },
+                    { url: '/images/College/Admin-2.jpg', dataAiHint: 'admin dashboard' },
+                    { url: '/images/College/Admin-3.jpg', dataAiHint: 'user management' },
+                    { url: '/images/College/Admin-4.jpg', dataAiHint: 'analytics charts' },
                 ]
             }
         ]
@@ -390,16 +390,66 @@ export const projects: Project[] = [
     },
     {
         icon: 'vault',
-        title: 'Helpful Vault - AI Secure Storage',
-        description: 'A personal productivity app fully built with AI assistance. The app allows secure storage and quick retrieval of passwords, notes, and links, using OpenAI tools.',
+        title: 'Helpful Vault',
+        slug: 'helpful-vault',
+        description: 'A personal productivity app designed as a single, reliable, and secure space for all your digital items—passwords, notes, schedules, and more.',
         category: 'Productivity Tool',
         shortTitle: 'Helpful Vault',
         shortDescription: 'AI-powered secure storage',
         githubUrl: 'https://github.com/Aicodebyprince/helpful_vault',
-        liveUrl: '',
-        tags: ['Flutter', 'OpenAI', 'Secure Storage'],
-        stat: 'Conceptualized and deployed',
-        slug: 'helpful-vault',
+        liveUrl: 'https://helpfulvault.vercel.app',
+        tags: ['Kiro', 'React.js', 'Vercel', 'AI-assisted'],
+        stat: 'AI-assisted development',
+        caseStudy: [
+            { type: 'heading', level: 2, icon: Lightbulb, text: 'Inspiration' },
+            { type: 'paragraph', text: 'Every day, students, developers, and professionals juggle dozens of small but important digital items — passwords, exam schedules, sticky notes, meeting reminders, and more. Usually, these get scattered across multiple apps: notes in one app, credentials in another, schedules on calendars, and tasks on sticky notes. This leads to lost time, stress, and inefficiency.' },
+            { type: 'paragraph', text: 'We wanted to create something that acts as a single, reliable, and secure space—a personal "helper vault" that can be used by anyone, whether you’re a student preparing for exams, a developer storing your workflow snippets, or an office worker keeping track of important credentials and tasks. The idea was to design a tool that feels like a digital extension of your memory: always there, organized, and safe.' },
+            
+            { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
+            { type: 'paragraph', text: 'Helpful Vault is a secure digital organizer designed to bring everything important into one place.' },
+            { type: 'list', items: [
+                '**Vault Cards**: Store and categorize essential items such as credentials, notes, and quick references in an easy-to-find card format.',
+                '**Sticky Notes**: Create and manage notes or study reminders directly inside the vault.',
+                '**Schedules**: Add and track upcoming exams, meetings, or tasks with a simple scheduler.',
+                '**Authentication & Security**: Secure login and encrypted storage keep sensitive information safe.'
+            ]},
+            
+            { type: 'heading', level: 2, icon: Code, text: 'How we built it' },
+            { type: 'paragraph', text: 'We used a structured workflow, starting with a clear design and then building features step by step. Kiro played a big role:' },
+            { type: 'list', items: [
+                '**Spec-to-code** gave us the base app quickly.',
+                '**Hooks** automated workflows for notes and vaults.',
+                '**Steering** helped polish the UI to look clean and professional.'
+            ]},
+
+            { type: 'heading', level: 2, icon: AlertTriangle, text: 'Challenges we ran into' },
+            { type: 'list', items: [
+                'Designing a clean UI that feels professional but simple.',
+                'Managing state and making sure the workflows feel seamless.',
+                'Time constraints — building and deploying fast while keeping quality.'
+            ]},
+
+            { type: 'heading', level: 2, icon: BadgeCheck, text: 'Accomplishments that we\'re proud of' },
+            { type: 'list', items: [
+                'Built and deployed a fully working web app in a short time.',
+                'Integrated multiple features into one easy-to-use dashboard.',
+                'Created a polished design that feels professional and secure.'
+            ]},
+
+            { type: 'heading', level: 2, icon: BookOpen, text: 'What we learned' },
+            { type: 'list', items: [
+                'How to turn an idea into a working product quickly.',
+                'The value of using tools like Kiro to save time and focus on experience.',
+                'Balancing simplicity and security in productivity apps.'
+            ]},
+
+            { type: 'heading', level: 2, icon: Target, text: 'What\'s next for Helpful-Vault' },
+            { type: 'list', items: [
+                'Adding user authentication and encrypted storage for more security.',
+                'Mobile-friendly version for quick access anywhere.',
+                'Collaboration features so teams can share notes and vaults securely.'
+            ]}
+        ]
     },
     {
         icon: 'library',
