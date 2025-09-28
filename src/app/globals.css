@@ -674,14 +674,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px;
+  height: 800px;
   perspective: 2000px;
 }
 
 .orbital-container {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   transform-style: preserve-3d;
   animation: orbit-rotate 30s infinite linear;
 }

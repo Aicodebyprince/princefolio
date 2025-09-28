@@ -13,7 +13,7 @@ type CircularCarouselProps = {
 
 const CircularCarousel: React.FC<CircularCarouselProps> = ({ images }) => {
   const numImages = images.length;
-  const radius = 300; // Adjust this for circle size
+  const radius = 350; // Adjust this for circle size
 
   return (
     <div className="orbital-carousel-wrapper my-16">
@@ -35,8 +35,8 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({ images }) => {
                  <Image
                     src={image.url}
                     alt={`EcoReward screenshot ${index + 1}`}
-                    width={250}
-                    height={250}
+                    width={300}
+                    height={300}
                     className="object-cover w-full h-full rounded-2xl"
                     data-ai-hint={image.dataAiHint}
                   />
