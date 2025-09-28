@@ -190,7 +190,14 @@ export const projects: Project[] = [
             { type: 'heading', level: 2, icon: Lightbulb, text: 'Inspiration' },
             { type: 'paragraph', text: 'Every day, students, developers, and professionals juggle dozens of small but important digital items — passwords, exam schedules, sticky notes, meeting reminders, and more. Usually, these get scattered across multiple apps: notes in one app, credentials in another, schedules on calendars, and tasks on sticky notes. This leads to lost time, stress, and inefficiency.' },
             { type: 'paragraph', text: 'We wanted to create something that acts as a single, reliable, and secure space—a personal "helper vault" that can be used by anyone, whether you’re a student preparing for exams, a developer storing your workflow snippets, or an office worker keeping track of important credentials and tasks. The idea was to design a tool that feels like a digital extension of your memory: always there, organized, and safe.' },
-            
+            { type: 'image_grid', images: [
+                { url: '/images/Helpful vault/1.png', dataAiHint: 'dashboard', caption: 'Main Dashboard' },
+                { url: '/images/Helpful vault/2.png', dataAiHint: 'credentials storage', caption: 'Secure Credential Vault' },
+                { url: '/images/Helpful vault/3.png', dataAiHint: 'note taking', caption: 'Sticky Notes Interface' },
+                { url: '/images/Helpful vault/4.png', dataAiHint: 'scheduler', caption: 'Exam and Task Scheduler' },
+                { url: '/images/Helpful vault/5.png', dataAiHint: 'adding item', caption: 'Adding a New Vault Item' },
+                { url: '/images/Helpful vault/6.png', dataAiHint: 'user profile', caption: 'User Profile Page' }
+            ]},
             { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
             { type: 'paragraph', text: 'Helpful Vault is a secure digital organizer designed to bring everything important into one place.' },
             { type: 'list', items: [
