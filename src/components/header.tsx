@@ -27,6 +27,29 @@ const Header = () => {
         };
     }, []);
 
+    const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        const targetId = e.currentTarget.getAttribute('href')?.substring(2);
+        
+        // Use requestAnimationFrame to ensure the element is rendered before scrolling.
+        requestAnimationFrame(() => {
+            if (targetId) {
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+
+        if (isMobileMenuOpen) {
+            handleCloseMenu();
+        }
+    };
+    
+    const handleCloseMenu = () => {
+        setIsMobileMenuOpen(false);
+    }
+
     const navLinks = [
         { href: "/#home", label: "Home" },
         { href: "/#about", label: "About" },
@@ -36,24 +59,6 @@ const Header = () => {
         { href: "/#experience", label: "Experience" },
         { href: "/#journey", label: "Journey" },
     ];
-
-    const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        const targetId = e.currentTarget.getAttribute('href')?.substring(2);
-        if (targetId) {
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-        if (isMobileMenuOpen) {
-            handleCloseMenu();
-        }
-    };
-    
-    const handleCloseMenu = () => {
-        setIsMobileMenuOpen(false);
-    }
 
     return (
         <nav className={cn("nav-bar fixed top-0 left-0 right-0 z-50", { scrolled })}>
