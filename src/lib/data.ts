@@ -14,7 +14,8 @@ export type CaseStudyBlock =
     | { type: 'paragraph'; text: string; }
     | { type: 'list'; items: string[]; }
     | { type: 'image'; url: string; dataAiHint: string; caption?: string; }
-    | { type: 'image_grid'; images: Screenshot[] };
+    | { type: 'image_grid'; images: Screenshot[] }
+    | { type: 'circular_carousel'; images: { url: string; dataAiHint: string; }[] };
 
 
 export type ScreenshotsByRole = {
@@ -337,6 +338,19 @@ export const projects: Project[] = [
         caseStudy: [
             { type: 'heading', level: 2, icon: Lightbulb, text: 'Inspiration' },
             { type: 'paragraph', text: "Our inspiration for EcoReward came from a shared sense of urgency about the climate crisis and a common feeling of helplessness. Many people want to contribute to a more sustainable future but feel that their individual actions are just a drop in the ocean. We wanted to build a platform that directly challenges this notion by making the impact of individual eco-friendly actions visible, tangible, and rewarding. By gamifying sustainability and leveraging the transparency of blockchain, we aim to transform eco-consciousness into a powerful, collective movement where every action counts." },
+            { 
+                type: 'circular_carousel',
+                images: [
+                    { url: '/images/ecoreward/Eco 1.png', dataAiHint: 'dashboard' },
+                    { url: '/images/ecoreward/Eco 2.png', dataAiHint: 'challenges' },
+                    { url: '/images/ecoreward/Eco 3.png', dataAiHint: 'leaderboard' },
+                    { url: '/images/ecoreward/Eco 4.png', dataAiHint: 'submit proof' },
+                    { url: '/images/ecoreward/Eco 5.png', dataAiHint: 'profile page' },
+                    { url: '/images/ecoreward/Eco 6.png', dataAiHint: 'admin verification' },
+                    { url: '/images/ecoreward/Eco 7.png', dataAiHint: 'ai coach' },
+                    { url: '/images/ecoreward/Eco 8.png', dataAiHint: 'wallet connection' },
+                ]
+            },
             { type: 'heading', level: 2, icon: Sparkles, text: 'What it does' },
             { type: 'paragraph', text: 'EcoReward is a comprehensive platform that gamifies sustainable living.' },
             { type: 'heading', level: 3, icon: User, text: 'For Users' },

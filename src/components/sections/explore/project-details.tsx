@@ -8,6 +8,7 @@ import { Github, AlertTriangle, Lightbulb, Eye, UserPlus, User, Users, Shield, F
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay"
+import CircularCarousel from '@/components/circular-carousel';
 
 
 const roleIcons: { [key: string]: React.ElementType } = {
@@ -123,6 +124,10 @@ const renderBlock = (block: CaseStudyBlock, index: number) => {
                         </div>
                     ))}
                 </div>
+            );
+         case 'circular_carousel':
+            return (
+                <CircularCarousel key={index} images={block.images} />
             );
         default:
             return null;
