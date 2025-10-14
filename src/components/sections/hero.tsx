@@ -63,9 +63,26 @@ const HeroSection = ({ onExploreClick }: { onExploreClick: (tab: string) => void
             observer.observe(sectionRef.current);
         }
 
+        const handleMouseMove = (e: MouseEvent) => {
+            const { currentTarget: target } = e;
+            if (target && sectionRef.current) {
+                const rect = sectionRef.current.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                sectionRef.current.style.setProperty("--mouse-x", `${x}px`);
+                sectionRef.current.style.setProperty("--mouse-y", `${y}px`);
+            }
+        };
+
+        if (sectionRef.current) {
+            sectionRef.current.addEventListener("mousemove", handleMouseMove);
+        }
+
         return () => {
             if (sectionRef.current) {
                 observer.disconnect();
+                sectionRef.current.removeEventListener("mousemove", handleMouseMove);
             }
         };
     }, []);
@@ -105,7 +122,12 @@ const HeroSection = ({ onExploreClick }: { onExploreClick: (tab: string) => void
     }, []);
 
     return (
-        <section id="home" ref={sectionRef} className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 relative overflow-hidden section-fade" style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(50px)' }}>
+        <section 
+            id="home" 
+            ref={sectionRef} 
+            className="hero-spotlight min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 relative overflow-hidden section-fade" 
+            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(50px)' }}
+        >
             <div className="absolute top-20 left-10 floating-element">
                 <div className="w-20 h-20 bg-gradient-to-br from-red-500/20 to-orange-600/20 rounded-full blur-xl"></div>
             </div>
@@ -141,9 +163,9 @@ const HeroSection = ({ onExploreClick }: { onExploreClick: (tab: string) => void
                     </Button>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto hero-cards-container">
                     {STATS.map(stat => (
-                        <Card3D key={stat.label} className="glass-card rounded-2xl p-4 sm:p-6">
+                        <Card3D key={stat.label} className="glass-card rounded-2xl p-4 sm:p-6 hero-card">
                             <AnimatedCounter target={stat.count} isVisible={isVisible} />
                             <div className="text-xs text-gray-400 uppercase tracking-wider font-semibold">{stat.label}</div>
                         </Card3D>
@@ -155,5 +177,3 @@ const HeroSection = ({ onExploreClick }: { onExploreClick: (tab: string) => void
 };
 
 export default HeroSection;
-
-  

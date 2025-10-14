@@ -414,6 +414,49 @@ body {
   50% { transform: translateY(-20px); }
 }
 
+/* Hero Spotlight Effect */
+.hero-spotlight {
+  position: relative;
+  background-color: #0a0a0a;
+}
+.hero-spotlight:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(102, 126, 234, 0.15),
+    transparent 80%
+  );
+  z-index: 0;
+  transition: background 0.2s ease-out;
+}
+.hero-cards-container > .hero-card {
+  position: relative;
+}
+.hero-cards-container > .hero-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(102, 126, 234, 0.4),
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.hero-cards-container:hover > .hero-card:before {
+  opacity: 1;
+}
+
 /* 3D Card Effect */
 .card-3d {
   transform-style: preserve-3d;
