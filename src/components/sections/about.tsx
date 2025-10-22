@@ -2,10 +2,10 @@
 "use client";
 
 import React from 'react';
-import Card3D from '../card-3d';
+import ProfileCard from '../ProfileCard';
 import SectionWrapper from '../section-wrapper';
-import Image from 'next/image';
 import { GraduationCap, CheckCircle } from 'lucide-react';
+import Card3D from '../card-3d';
 
 const AboutContent = ({ isVisible }: { isVisible?: boolean }) => {
     return (
@@ -19,18 +19,14 @@ const AboutContent = ({ isVisible }: { isVisible?: boolean }) => {
             <div className="grid lg:grid-cols-3 gap-12 items-center">
                 {/* Image Section */}
                 <div className="lg:col-span-1 flex justify-center">
-                    <Card3D className="w-full max-w-sm">
-                        <div className="bg-white/10 rounded-3xl p-2 aspect-square relative shadow-lg">
-                            <Image
-                                src="/images/Prince sherathiya.png"
-                                alt="Profile Picture of Prince Sherathiya"
-                                layout="fill"
-                                objectFit="cover"
-                                className="rounded-2xl"
-                                data-ai-hint="profile picture"
-                            />
-                        </div>
-                    </Card3D>
+                    <ProfileCard
+                      className="about-profile-card"
+                      name="Prince Sherathiya"
+                      title="Developer"
+                      avatarUrl="/images/Prince sherathiya.png"
+                      showUserInfo={false}
+                      enableTilt={true}
+                    />
                 </div>
 
                 {/* Text Content Section */}
@@ -71,5 +67,3 @@ const AboutSection = () => (
 );
 
 export default AboutSection;
-
-  
